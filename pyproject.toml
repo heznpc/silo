@@ -1,0 +1,57 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "silo-experiments"
+version = "0.1.0"
+description = "Computational demonstrations for 'Silo: How AI-Mediated Information Search Creates Confirmation-Biased Digital Hoards'"
+readme = "README.md"
+license = "CC-BY-4.0"
+requires-python = ">=3.11"
+authors = [
+    { name = "Jiyeon Yoon", email = "heznpc@gmail.com" },
+]
+keywords = [
+    "digital-hoarding",
+    "filter-bubbles",
+    "confirmation-bias",
+    "llm",
+    "selective-exposure",
+    "shannon-entropy",
+    "information-diversity",
+    "sycophancy",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scipy>=1.10",
+    "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+"experiments/*" = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

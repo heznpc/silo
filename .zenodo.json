@@ -1,0 +1,21 @@
+{
+  "title": "Silo: How AI-Mediated Information Search Creates Confirmation-Biased Digital Hoards",
+  "description": "Framework paper proposing a three-layer bias model for AI-mediated information search, with agent-based simulation demonstrating confirmation-biased digital hoarding.",
+  "creators": [
+    {
+      "name": "heznpc"
+    }
+  ],
+  "keywords": [
+    "digital hoarding",
+    "confirmation bias",
+    "filter bubble",
+    "AI-mediated search",
+    "selective exposure",
+    "information silos"
+  ],
+  "license": "CC-BY-4.0",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "access_right": "open"
+}
