@@ -32,7 +32,10 @@ import hoard_diversity as hd
 # Reproducibility
 RNG = np.random.default_rng(42)
 
-OUT_DIR = os.path.dirname(os.path.abspath(__file__))
+_SRC_DIR = os.path.dirname(os.path.abspath(__file__))
+_EXP_DIR = os.path.dirname(_SRC_DIR)
+OUT_DIR = os.path.join(_EXP_DIR, "results")
+os.makedirs(OUT_DIR, exist_ok=True)
 
 # ---------------------------------------------------------------------------
 # 1.  Design parameters

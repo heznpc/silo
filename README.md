@@ -17,18 +17,18 @@ Computational demonstrations (Shannon entropy pipeline + agent-based simulation,
 
 ```
 silo/
-├── paper/
-│   └── main.tex              # LaTeX manuscript
-├── experiments/
-│   ├── hoard_diversity.py    # Shannon entropy measurement pipeline
-│   ├── entropy_demo.py       # Agent-based simulation (Study 2)
-│   ├── entropy_demo_results.md
-│   └── figure_*.png          # Result figures
-├── manuscript.md             # Full manuscript (Markdown)
-├── outline.md                # Experimental study outline
-├── TODO.md                   # Research tasks
-├── pyproject.toml
-└── README.md
+├── paper/                      Domain -- manuscript source of truth
+│   ├── main.tex
+│   └── figures/
+├── experiments/                Application -- evidence generation
+│   ├── src/
+│   │   ├── entropy_demo.py     Agent-based simulation (Study 2)
+│   │   └── hoard_diversity.py  Shannon entropy measurement pipeline
+│   └── results/                Generated figures + statistical report
+├── literature/                 Reading notes, gap analysis
+├── planning/                   TODO, review, decisions log
+│   └── drafts/                 manuscript.md, outline.md (superseded)
+└── pyproject.toml
 ```
 
 ## Running Experiments
@@ -39,11 +39,8 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -e ".[dev]"
 
-# Run the entropy measurement module self-tests
-python experiments/hoard_diversity.py
-
 # Run the full simulation (generates figures + statistical report)
-python experiments/entropy_demo.py
+python experiments/src/entropy_demo.py
 ```
 
 ### Outputs
@@ -62,7 +59,6 @@ python experiments/entropy_demo.py
 ## Paper
 
 - LaTeX source: [`paper/main.tex`](paper/main.tex)
-- Target venues: Social Media + Society / FAccT 2027 / CHI 2027
 
 ## License
 
