@@ -1,0 +1,73 @@
+{
+  "_comment": "Unmediated baseline: a fixed 8-source curated list per topic (4 pro / 2 neutral / 2 con). Substitutes for LLM encounter set in the unmediated arm. Sources are realistic publication names with one-line summaries written by the author 2026-05-21. Locked: do not edit without logging a deviation.",
+  "immigration_us": [
+    {"source": "Cato Institute", "summary": "Argues that liberalized immigration boosts GDP and reduces fiscal deficits.", "intended_stance": "pro"},
+    {"source": "Brookings", "summary": "Reviews evidence that high-skilled immigration raises productivity in receiving regions.", "intended_stance": "pro"},
+    {"source": "New York Times Editorial", "summary": "Calls for a pathway to citizenship for long-term undocumented residents.", "intended_stance": "pro"},
+    {"source": "American Immigration Council", "summary": "Documents the contributions of immigrants to local economies and tax bases.", "intended_stance": "pro"},
+    {"source": "Pew Research Center", "summary": "Reports current US public opinion on immigration without taking a position.", "intended_stance": "neutral"},
+    {"source": "Migration Policy Institute", "summary": "Provides neutral analysis of border enforcement statistics and asylum case backlogs.", "intended_stance": "neutral"},
+    {"source": "Center for Immigration Studies", "summary": "Argues that current immigration levels strain public services and depress wages for low-skilled workers.", "intended_stance": "con"},
+    {"source": "Federation for American Immigration Reform", "summary": "Advocates for substantial reductions in legal and illegal immigration.", "intended_stance": "con"}
+  ],
+  "climate_mitigation": [
+    {"source": "IPCC AR6", "summary": "Concludes that rapid emissions cuts are required to limit warming to 1.5C.", "intended_stance": "pro"},
+    {"source": "Nature Climate Change", "summary": "Reviews evidence that carbon pricing reduces emissions in jurisdictions where it has been implemented.", "intended_stance": "pro"},
+    {"source": "The Guardian", "summary": "Argues that fossil fuel subsidies must be eliminated to meet climate targets.", "intended_stance": "pro"},
+    {"source": "Carbon Brief", "summary": "Documents the role of aggressive policy in accelerating renewable deployment.", "intended_stance": "pro"},
+    {"source": "International Energy Agency", "summary": "Provides scenario analyses of energy transitions without policy advocacy.", "intended_stance": "neutral"},
+    {"source": "Resources for the Future", "summary": "Reviews economic models of climate policy with no editorial position.", "intended_stance": "neutral"},
+    {"source": "The Breakthrough Institute", "summary": "Argues that aggressive carbon taxes harm low-income households and slow innovation.", "intended_stance": "con"},
+    {"source": "American Enterprise Institute", "summary": "Argues that market-driven energy transition outperforms regulatory mandates.", "intended_stance": "con"}
+  ],
+  "ai_regulation": [
+    {"source": "AI Now Institute", "summary": "Argues for binding pre-deployment audits of high-risk AI systems.", "intended_stance": "pro"},
+    {"source": "Future of Life Institute", "summary": "Calls for strong global governance of frontier AI development.", "intended_stance": "pro"},
+    {"source": "European Commission DG-CNECT", "summary": "Defends the EU AI Act risk-tiered framework as proportionate.", "intended_stance": "pro"},
+    {"source": "Stanford HAI policy briefs", "summary": "Argues that mandatory transparency disclosures protect public interest.", "intended_stance": "pro"},
+    {"source": "Lawfare", "summary": "Reviews AI Act implementation challenges without taking a position on stringency.", "intended_stance": "neutral"},
+    {"source": "Brookings Center for Technology Innovation", "summary": "Compares EU, US, and UK AI governance approaches descriptively.", "intended_stance": "neutral"},
+    {"source": "R Street Institute", "summary": "Argues that the EU AI Act will entrench incumbents and slow open-source AI.", "intended_stance": "con"},
+    {"source": "Mercatus Center", "summary": "Argues for permissionless innovation and ex-post liability over ex-ante regulation.", "intended_stance": "con"}
+  ],
+  "gun_control": [
+    {"source": "Giffords Law Center", "summary": "Compiles state-by-state evidence that stricter gun laws reduce firearm deaths.", "intended_stance": "pro"},
+    {"source": "Everytown for Gun Safety", "summary": "Advocates for universal background checks and assault weapons bans.", "intended_stance": "pro"},
+    {"source": "New England Journal of Medicine", "summary": "Reviews research linking firearm access to suicide and homicide rates.", "intended_stance": "pro"},
+    {"source": "RAND Corporation gun policy review", "summary": "Finds moderate evidence that child-access prevention laws reduce youth firearm deaths.", "intended_stance": "pro"},
+    {"source": "Pew Research firearms surveys", "summary": "Reports US public opinion on gun ownership and policy without recommendations.", "intended_stance": "neutral"},
+    {"source": "Crime Prevention Research Center", "summary": "Publishes statistical analyses of gun ownership and crime rates.", "intended_stance": "neutral"},
+    {"source": "Cato Institute", "summary": "Argues that armed self-defense outweighs aggregate harm reduction from gun control.", "intended_stance": "con"},
+    {"source": "Heritage Foundation", "summary": "Argues that Second Amendment rights bar most proposed federal gun control measures.", "intended_stance": "con"}
+  ],
+  "universal_basic_income": [
+    {"source": "Stanford Basic Income Lab", "summary": "Reviews pilot evidence suggesting modest unconditional cash transfers improve wellbeing.", "intended_stance": "pro"},
+    {"source": "Roosevelt Institute", "summary": "Argues that UBI is fiscally feasible and would reduce poverty.", "intended_stance": "pro"},
+    {"source": "GiveDirectly research blog", "summary": "Reports positive outcomes from long-running unconditional cash transfer trials in Kenya.", "intended_stance": "pro"},
+    {"source": "Andrew Yang campaign white paper", "summary": "Advocates for a $1000/month freedom dividend funded by a VAT.", "intended_stance": "pro"},
+    {"source": "OECD working paper series", "summary": "Reviews UBI design tradeoffs without taking a position.", "intended_stance": "neutral"},
+    {"source": "Congressional Budget Office", "summary": "Provides scenario-based fiscal cost analyses of UBI proposals.", "intended_stance": "neutral"},
+    {"source": "Manhattan Institute", "summary": "Argues that UBI would reduce labor force participation and be fiscally unsustainable.", "intended_stance": "con"},
+    {"source": "American Compass", "summary": "Argues that UBI is inferior to work-conditional support like an expanded EITC.", "intended_stance": "con"}
+  ],
+  "europe_vacation": [
+    {"source": "Lonely Planet Stockholm guide", "summary": "Recommends a one-week itinerary focused on archipelago islands and Gamla Stan.", "intended_stance": "pro"},
+    {"source": "VisitDenmark", "summary": "Promotes Copenhagen as a walkable design-forward capital.", "intended_stance": "pro"},
+    {"source": "Amsterdam tourism board", "summary": "Highlights canal architecture, Rijksmuseum, and bike culture for week-long visits.", "intended_stance": "pro"},
+    {"source": "Conde Nast Traveler northern Europe", "summary": "Features Helsinki and Tallinn as understated cultural capitals.", "intended_stance": "pro"},
+    {"source": "Rick Steves Europe", "summary": "Compares northern and southern European destinations on cost and accessibility.", "intended_stance": "neutral"},
+    {"source": "Atlas Obscura", "summary": "Surfaces unusual destinations across all regions of Europe without ranking.", "intended_stance": "neutral"},
+    {"source": "Lonely Planet Lisbon guide", "summary": "Recommends Lisbon for fado, tile work, and day trips to Sintra.", "intended_stance": "con"},
+    {"source": "Time Out Barcelona", "summary": "Promotes Barcelona for Gaudi architecture, beaches, and tapas culture.", "intended_stance": "con"}
+  ],
+  "espresso_setup": [
+    {"source": "Lance Hedrick YouTube channel", "summary": "Advocates single-boiler hand-pulled lever machines for flavor control.", "intended_stance": "pro"},
+    {"source": "Hoffmann World Atlas of Coffee", "summary": "Discusses manual workflow as a path to taste calibration.", "intended_stance": "pro"},
+    {"source": "Home-Barista forum manual subforum", "summary": "Compiles community advice favoring manual machines and dialed-in workflows.", "intended_stance": "pro"},
+    {"source": "Cafelat Robot review", "summary": "Reviews the manual lever espresso maker positively for home use.", "intended_stance": "pro"},
+    {"source": "Seattle Coffee Gear comparison videos", "summary": "Compares manual and dual-boiler setups across price tiers neutrally.", "intended_stance": "neutral"},
+    {"source": "Coffee Geek forum", "summary": "Hosts both manual and automated workflow discussions without editorial position.", "intended_stance": "neutral"},
+    {"source": "Breville Dual Boiler manual", "summary": "Promotes the dual-boiler approach for repeatability and convenience.", "intended_stance": "con"},
+    {"source": "La Marzocco Linea Mini review", "summary": "Recommends a prosumer dual-boiler for guests and daily reliability.", "intended_stance": "con"}
+  ]
+}
