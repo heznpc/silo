@@ -1,0 +1,129 @@
+{
+  "version": 1,
+  "reset_anchor_kst": "2026-05-21T03:10:00+09:00",
+  "reset_interval_hours": 5,
+  "cycle_window": "Tokens reset every 5h from anchor: 03:10, 08:10, 13:10, 18:10, 23:10 KST.",
+  "session_resumability": "If the runner hits a rate-limit error, it should exit cleanly leaving in-progress tasks in 'in_progress' state with a 'last_completed_chunk' field. The next session calls resume_status.py to find the next pending/in_progress task and continues.",
+  "tasks": [
+    {
+      "id": "mt_gun_control_neutral",
+      "type": "multiturn_5turn",
+      "status": "pending",
+      "topic_id": "gun_control",
+      "framing": "neutral",
+      "agent_calls_needed": 1,
+      "output_jsonl": "experiments/results/raw/multiturn_round3_20260521.jsonl"
+    },
+    {
+      "id": "mt_espresso_neutral",
+      "type": "multiturn_5turn",
+      "status": "pending",
+      "topic_id": "espresso_setup",
+      "framing": "neutral",
+      "agent_calls_needed": 1,
+      "output_jsonl": "experiments/results/raw/multiturn_round3_20260521.jsonl"
+    },
+    {
+      "id": "judge_build_input",
+      "type": "data_prep",
+      "status": "pending",
+      "agent_calls_needed": 0,
+      "description": "Aggregate all source items from all JSONL files into experiments/results/judge_input.jsonl (one row per source).",
+      "output_path": "experiments/results/judge_input.jsonl"
+    },
+    {
+      "id": "judge_batch_001",
+      "type": "judge_haiku",
+      "status": "pending",
+      "items_range": [0, 60],
+      "agent_calls_needed": 1,
+      "input_path": "experiments/results/judge_input.jsonl",
+      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl"
+    },
+    {
+      "id": "judge_batch_002",
+      "type": "judge_haiku",
+      "status": "pending",
+      "items_range": [60, 120],
+      "agent_calls_needed": 1,
+      "input_path": "experiments/results/judge_input.jsonl",
+      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl"
+    },
+    {
+      "id": "judge_batch_003",
+      "type": "judge_haiku",
+      "status": "pending",
+      "items_range": [120, 180],
+      "agent_calls_needed": 1,
+      "input_path": "experiments/results/judge_input.jsonl",
+      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl"
+    },
+    {
+      "id": "judge_batch_004",
+      "type": "judge_haiku",
+      "status": "pending",
+      "items_range": [180, 240],
+      "agent_calls_needed": 1,
+      "input_path": "experiments/results/judge_input.jsonl",
+      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl"
+    },
+    {
+      "id": "judge_batch_005",
+      "type": "judge_haiku",
+      "status": "pending",
+      "items_range": [240, 300],
+      "agent_calls_needed": 1,
+      "input_path": "experiments/results/judge_input.jsonl",
+      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl"
+    },
+    {
+      "id": "judge_batch_006",
+      "type": "judge_haiku",
+      "status": "pending",
+      "items_range": [300, 360],
+      "agent_calls_needed": 1,
+      "input_path": "experiments/results/judge_input.jsonl",
+      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl"
+    },
+    {
+      "id": "judge_batch_007",
+      "type": "judge_haiku",
+      "status": "pending",
+      "items_range": [360, 420],
+      "agent_calls_needed": 1,
+      "input_path": "experiments/results/judge_input.jsonl",
+      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl"
+    },
+    {
+      "id": "judge_batch_008",
+      "type": "judge_haiku",
+      "status": "pending",
+      "items_range": [420, 480],
+      "agent_calls_needed": 1,
+      "input_path": "experiments/results/judge_input.jsonl",
+      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl"
+    },
+    {
+      "id": "judge_kappa_analysis",
+      "type": "analysis",
+      "status": "pending",
+      "agent_calls_needed": 0,
+      "description": "Compute Cohen's kappa between author-manual labels and Haiku judge labels for the same items.",
+      "output_path": "experiments/results/judge_agreement.md"
+    },
+    {
+      "id": "meta_check_clean_dir",
+      "type": "meta_validation",
+      "status": "pending",
+      "agent_calls_needed": 3,
+      "description": "Spawn 3 Agent calls from a clean directory (no silo context) to verify the immigration-multi-turn refusal was driven by prompt structure alone, not by sub-agent reading the codebase."
+    },
+    {
+      "id": "paper_section4_rewrite",
+      "type": "writing",
+      "status": "pending",
+      "agent_calls_needed": 0,
+      "description": "Rewrite paper §4 (Computational Demonstrations) to integrate the real-LLM pilot results as a new §4.3 subsection, with the simulation results re-cast as §4.1-§4.2 'theoretical predictions' and the LLM pilot as 'empirical instantiation'."
+    }
+  ]
+}
