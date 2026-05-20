@@ -15,7 +15,7 @@ A decade of filter bubble research has focused on what users *see*. Yet seeing i
 
 We introduce the **three-layer bias model**, which decomposes the pathway from information encounter to long-term retention into encounter bias (what AI systems surface), save bias (what users choose to keep), and retrieval bias (how saved content shapes future cognition). LLM-mediated search introduces additional mechanisms -- including sycophantic framing compliance, conversational entrenchment, and apparent comprehensiveness -- that further narrow the information users save.
 
-Computational demonstrations (Shannon entropy pipeline + agent-based simulation, n=240 synthetic participants, 2x3 design) produce a large effect of LLM mediation on hoard homogeneity (Cohen's d = -0.88), a large metacognitive gap whereby LLM users overestimate their hoards' diversity (d = +1.31), and a temporal pattern in which LLM-condition entropy declines over the session while unmediated-condition entropy rises.
+Computational demonstrations (Shannon entropy pipeline + agent-based simulation, n=240 synthetic participants, 2x3 design) produce a large effect of LLM mediation on hoard homogeneity (Cohen's d = -0.88), a large metacognitive gap whereby LLM users overestimate their hoards' diversity (d = +1.31), and a temporal pattern in which LLM-condition entropy declines over the session while unmediated-condition entropy rises. **These effect sizes are the mechanical consequence of the simulation's parameter assumptions, not empirical findings; their role is to translate qualitative claims into pre-registrable quantitative targets for human-subject validation.**
 
 ## Repository Structure
 
