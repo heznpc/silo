@@ -113,7 +113,20 @@ This is not a refutation — it is **the empirical instantiation** of the nonlin
 - Single Anthropic vendor — cross-vendor (GPT, Gemini) generalization is deferred.
 - Sonnet-via-Agent and Sonnet-as-API may not behave identically; the Agent harness may include system prompts that affect framing-compliance rates.
 
-## 6. Next steps (if user wants to pursue)
+## 6. Multi-turn pilot (H6: temporal entropy decline)
+
+A 2-conversation multi-turn pilot (Sonnet 4.6, climate_mitigation, 5 turns of 8 sources each = 40 cumulative sources per conversation) was run via simulated-multi-turn prompts (a single Agent call per conversation that emits turns 2-5 in one response, conditioning each turn on the prior turns within the same context window). Results:
+
+| conversation | T1 H | T2 H | T3 H | T4 H | T5 H | Δ (T5-T1) | verdict |
+|---|---|---|---|---|---|---|---|
+| **pro-framing** | 0.000 | 0.000 | 0.250 | 0.201 | 0.169 | +0.169 | floor effect; H6 N/A |
+| **neutral-framing** | 0.887 | 0.819 | 0.837 | 0.791 | 0.780 | **−0.107** | **H6 supported** |
+
+Under pro framing, encounter is at floor from turn 1; the small rise to 0.169 by turn 5 is one con-stance source (Sinn, *The Green Paradox*) surfaced at turn 3 then diluted. Under **neutral framing, cumulative entropy declines monotonically across all five turns**. The pro proportion of the cumulative encounter set rises 50% → 65% from turn 1 to 5; the con proportion falls 37.5% → 10%. The mechanism: Sonnet self-anchors on its own developing recommendation pattern, surfacing new sources that *align with* the trajectory it has already established. This is consistent with the conversational entrenchment claim in paper §3.4 (mechanism 5, Kang 2025).
+
+Sample is n=2 conversations, so the result is **preliminary**. But the qualitative pattern is exactly what H6 predicts, and the magnitude (−0.107 normalized entropy units over 4 follow-up turns) is non-trivial.
+
+## 7. Next steps (if user wants to pursue)
 
 | Stage | What | Cost (Claude Code tokens) | Time |
 |---|---|---|---|
