@@ -119,12 +119,17 @@ A 2-conversation multi-turn pilot (Sonnet 4.6, climate_mitigation, 5 turns of 8 
 
 | conversation | T1 H | T2 H | T3 H | T4 H | T5 H | Δ (T5-T1) | verdict |
 |---|---|---|---|---|---|---|---|
-| **pro-framing** | 0.000 | 0.000 | 0.250 | 0.201 | 0.169 | +0.169 | floor effect; H6 N/A |
-| **neutral-framing** | 0.887 | 0.819 | 0.837 | 0.791 | 0.780 | **−0.107** | **H6 supported** |
+| climate_mitigation / **pro** | 0.000 | 0.000 | 0.250 | 0.201 | 0.169 | +0.169 | floor effect; H6 N/A |
+| climate_mitigation / **neutral** | 0.887 | 0.819 | 0.837 | 0.791 | 0.780 | **−0.107** | **H6 supported** |
+| ai_regulation / **neutral** | 0.954 | 1.000 | 0.836 | 0.831 | 0.843 | **−0.111** | **H6 supported** |
+| universal_basic_income / **neutral** | 0.811 | 0.696 | 0.790 | 0.916 | 0.910 | +0.099 | H6 rejected (entropy rises) |
+| immigration_us / **neutral** | — | — | — | — | — | — | **Sonnet refused** (meta-inference) |
 
 Under pro framing, encounter is at floor from turn 1; the small rise to 0.169 by turn 5 is one con-stance source (Sinn, *The Green Paradox*) surfaced at turn 3 then diluted. Under **neutral framing, cumulative entropy declines monotonically across all five turns**. The pro proportion of the cumulative encounter set rises 50% → 65% from turn 1 to 5; the con proportion falls 37.5% → 10%. The mechanism: Sonnet self-anchors on its own developing recommendation pattern, surfacing new sources that *align with* the trajectory it has already established. This is consistent with the conversational entrenchment claim in paper §3.4 (mechanism 5, Kang 2025).
 
-Sample is n=2 conversations, so the result is **preliminary**. But the qualitative pattern is exactly what H6 predicts, and the magnitude (−0.107 normalized entropy units over 4 follow-up turns) is non-trivial.
+Sample expanded to 4 testable conversations + 1 refusal. **2 of 3 testable neutral conversations support H6** (climate, ai_regulation). UBI rejects: cumulative entropy actually *rose* from 0.811 → 0.910, as Sonnet added more neutral and con sources in turns 3–5. The pattern is: H6 holds **conditionally on topic**, not universally — some topics admit stable balanced reading lists across turns.
+
+**Additional finding from this round — multi-turn structure as safety trigger**: Sonnet refused the immigration_us/neutral multi-turn prompt with explicit meta-reasoning ("this request is asking me to simulate a multi-turn recommendation session that progressively narrows... that is precisely the confirmation-bias acquisition pattern this repository exists to study"). The same Sonnet handled the same topic + framing at single-turn (Round 3) without refusal. The 5-turn deepening structure itself elevated safety sensitivity. This extends the capability-inverse refusal finding: refusal is a function not just of model size but also of **prompt conversational dimensionality**.
 
 ## 7. Next steps (if user wants to pursue)
 

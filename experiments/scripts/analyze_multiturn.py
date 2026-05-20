@@ -15,16 +15,19 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 import hoard_diversity as hd  # noqa: E402
 
-DATA = Path(__file__).resolve().parent.parent / "results" / "raw" / "multiturn_20260521.jsonl"
+DATA_DIR = Path(__file__).resolve().parent.parent / "results" / "raw"
+DATA_GLOB = "multiturn*.jsonl"
 
 
 def main() -> None:
-    print(f"Loading {DATA.name}\n")
+    paths = sorted(DATA_DIR.glob(DATA_GLOB))
+    print(f"Loading {len(paths)} file(s): {[p.name for p in paths]}\n")
     convs = []
-    with open(DATA) as f:
-        for line in f:
-            if line.strip():
-                convs.append(json.loads(line))
+    for p in paths:
+        with open(p) as f:
+            for line in f:
+                if line.strip():
+                    convs.append(json.loads(line))
 
     print("=" * 90)
     print("MULTI-TURN CUMULATIVE STANCE ENTROPY (H6 test)")
@@ -34,13 +37,17 @@ def main() -> None:
 
     for c in convs:
         label = c["conversation_id"]
+        if c.get("refused"):
+            print(f"{label:<28s} REFUSED -- {c.get('refusal_text','')[:60]}...")
+            print()
+            continue
         cumulative = []
         for t in c["turns"]:
             cumulative.extend(it["stance"] for it in t["encounter"])
             dist = Counter(cumulative)
             dstr = f"{dist.get('pro',0)}p/{dist.get('neutral',0)}n/{dist.get('con',0)}c"
             H = hd.stance_entropy(cumulative)
-            print(f"{label:<25s} {t['turn']:>4d} {len(cumulative):>5d} {dstr:<14s} {H:>8.3f}")
+            print(f"{label:<28s} {t['turn']:>4d} {len(cumulative):>5d} {dstr:<14s} {H:>8.3f}")
         print()
 
     # Summary: turn 1 vs turn 5 cumulative entropy
@@ -50,6 +57,9 @@ def main() -> None:
     print(f"{'conversation':<25s} {'H_turn1':>9s} {'H_turn5':>9s} {'delta':>8s} {'H6 verdict':>30s}")
     print("-" * 90)
     for c in convs:
+        if c.get("refused"):
+            print(f"{c['conversation_id']:<28s}    REFUSED -- excluded from H6 trajectory test")
+            continue
         cums = {}
         cumlist = []
         for t in c["turns"]:
@@ -65,7 +75,7 @@ def main() -> None:
             verdict = "H6 REJECTED (rises)"
         else:
             verdict = "ambiguous (small change)"
-        print(f"{c['conversation_id']:<25s} {H1:>9.3f} {H5:>9.3f} {delta:>+8.3f} {verdict:>30s}")
+        print(f"{c['conversation_id']:<28s} {H1:>9.3f} {H5:>9.3f} {delta:>+8.3f} {verdict:>30s}")
 
 
 if __name__ == "__main__":
