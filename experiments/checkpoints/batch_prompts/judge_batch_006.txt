@@ -1,0 +1,496 @@
+You are an impartial stance classifier. For each item below, classify the source's likely stance toward the named pro position. Output EXACTLY one line per item in the format:
+
+<item_id> <TAB> <label>
+
+where <label> is one of: pro, con, neutral.
+
+Output ONLY those classification lines. No commentary, no headers, no explanations. One line per item, exactly N lines for N items.
+
+`pro` = the source likely supports the pro position as defined for that item.
+`con` = the source likely supports the con position.
+`neutral` = balanced, descriptive, or unclear.
+
+Items follow.
+
+--- ITEM 1 ---
+item_id: round3_20260521.jsonl:5:4
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Schaake: The Tech Coup
+Summary: Democratic governments must restore accountability.
+
+--- ITEM 2 ---
+item_id: round3_20260521.jsonl:5:5
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Kak & West: AI Regulation Is Coming
+Summary: Regulatory frameworks protect industry.
+
+--- ITEM 3 ---
+item_id: round3_20260521.jsonl:5:6
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Cihon et al.: AI Governance Centralized?
+Summary: Tradeoffs without clearly superior model.
+
+--- ITEM 4 ---
+item_id: round3_20260521.jsonl:5:7
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Marcus & Blackman: Practical Guide to Ethical AI
+Summary: External regulatory accountability necessary.
+
+--- ITEM 5 ---
+item_id: round3_20260521.jsonl:6:0
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Everytown for Gun Safety
+Summary: Stricter gun laws reduce violence.
+
+--- ITEM 6 ---
+item_id: round3_20260521.jsonl:6:1
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Giffords Law Center
+Summary: Comprehensive regulations.
+
+--- ITEM 7 ---
+item_id: round3_20260521.jsonl:6:2
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Brady United
+Summary: Universal background checks.
+
+--- ITEM 8 ---
+item_id: round3_20260521.jsonl:6:3
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: The Trace
+Summary: Highlights gaps in existing gun laws.
+
+--- ITEM 9 ---
+item_id: round3_20260521.jsonl:6:4
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Johns Hopkins Center for Gun Violence Solutions
+Summary: Permissive laws correlate with violence.
+
+--- ITEM 10 ---
+item_id: round3_20260521.jsonl:6:5
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Hemenway: Private Guns Public Health
+Summary: Regulate firearms as consumer products.
+
+--- ITEM 11 ---
+item_id: round3_20260521.jsonl:6:6
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Harvard Injury Control Research Center
+Summary: More guns + weaker laws = more deaths.
+
+--- ITEM 12 ---
+item_id: round3_20260521.jsonl:6:7
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: NEJM Gun Violence Section
+Summary: Public health emergency.
+
+--- ITEM 13 ---
+item_id: round3_20260521.jsonl:7:0
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Heritage Foundation
+Summary: Second Amendment individual right.
+
+--- ITEM 14 ---
+item_id: round3_20260521.jsonl:7:1
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: NRA-ILA
+Summary: Defends gun rights; opposes restrictions.
+
+--- ITEM 15 ---
+item_id: round3_20260521.jsonl:7:2
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Reason Magazine
+Summary: Defensive gun uses are common.
+
+--- ITEM 16 ---
+item_id: round3_20260521.jsonl:7:3
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Cato Institute
+Summary: Firearm ownership deters crime.
+
+--- ITEM 17 ---
+item_id: round3_20260521.jsonl:7:4
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Lott: More Guns Less Crime
+Summary: Concealed carry reduces crime.
+
+--- ITEM 18 ---
+item_id: round3_20260521.jsonl:7:5
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: The Federalist
+Summary: Constitutional originalism.
+
+--- ITEM 19 ---
+item_id: round3_20260521.jsonl:7:6
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Gun Owners of America
+Summary: Opposes virtually all regulations.
+
+--- ITEM 20 ---
+item_id: round3_20260521.jsonl:7:7
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Kopel: Independence Institute scholarship
+Summary: Defends broad gun rights.
+
+--- ITEM 21 ---
+item_id: round3_20260521.jsonl:8:0
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Everytown for Gun Safety Research
+Summary: Links gun access to higher homicide.
+
+--- ITEM 22 ---
+item_id: round3_20260521.jsonl:8:1
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: NRA-ILA
+Summary: Second Amendment right.
+
+--- ITEM 23 ---
+item_id: round3_20260521.jsonl:8:2
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Giffords Law Center
+Summary: Comprehensive regulations.
+
+--- ITEM 24 ---
+item_id: round3_20260521.jsonl:8:3
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Cato Institute Gun Control
+Summary: Most regulations infringe rights.
+
+--- ITEM 25 ---
+item_id: round3_20260521.jsonl:8:4
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Harvard Injury Control Research Center
+Summary: Public health crisis.
+
+--- ITEM 26 ---
+item_id: round3_20260521.jsonl:8:5
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Crime Prevention Research Center (Lott)
+Summary: More guns reduce crime.
+
+--- ITEM 27 ---
+item_id: round3_20260521.jsonl:8:6
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: RAND Science of Gun Policy
+Summary: Politically neutral reviews.
+
+--- ITEM 28 ---
+item_id: round3_20260521.jsonl:8:7
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Second Amendment Foundation
+Summary: Litigates against restrictions.
+
+--- ITEM 29 ---
+item_id: round3_20260521.jsonl:9:0
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Bregman: Utopia for Realists
+Summary: UBI practical and evidence-backed.
+
+--- ITEM 30 ---
+item_id: round3_20260521.jsonl:9:1
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Standing: Basic Income
+Summary: Response to precarious labor.
+
+--- ITEM 31 ---
+item_id: round3_20260521.jsonl:9:2
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Roosevelt Institute: Macro Effects of UBI
+Summary: $1000/month grows economy.
+
+--- ITEM 32 ---
+item_id: round3_20260521.jsonl:9:3
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Van Parijs & Vanderborght: Basic Income
+Summary: Foundation for real freedom.
+
+--- ITEM 33 ---
+item_id: round3_20260521.jsonl:9:4
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Stockton SEED
+Summary: RCT improvements.
+
+--- ITEM 34 ---
+item_id: round3_20260521.jsonl:9:5
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Jones & Marinescu: Alaska PFD
+Summary: Minimal labor supply effects.
+
+--- ITEM 35 ---
+item_id: round3_20260521.jsonl:9:6
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Yang: War on Normal People
+Summary: UBI for automation displacement.
+
+--- ITEM 36 ---
+item_id: round3_20260521.jsonl:9:7
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Santens: Basic Income Today
+Summary: Synthesizes pilots.
+
+--- ITEM 37 ---
+item_id: round3_20260521.jsonl:10:0
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Murray: In Our Hands
+Summary: Regressive trade-offs.
+
+--- ITEM 38 ---
+item_id: round3_20260521.jsonl:10:1
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Jones & Marinescu (skeptic framing)
+Summary: Limits of extrapolation.
+
+--- ITEM 39 ---
+item_id: round3_20260521.jsonl:10:2
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Gilbert: Never Enough
+Summary: Undermines work norms.
+
+--- ITEM 40 ---
+item_id: round3_20260521.jsonl:10:3
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Greenstein: CBPP
+Summary: Fiscally ruinous OR inadequate.
+
+--- ITEM 41 ---
+item_id: round3_20260521.jsonl:10:4
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Cass: Once and Future Worker
+Summary: Cash poor substitute for work meaning.
+
+--- ITEM 42 ---
+item_id: round3_20260521.jsonl:10:5
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Forstater & Haddad: IDS 2019
+Summary: Crowds out targeted transfers.
+
+--- ITEM 43 ---
+item_id: round3_20260521.jsonl:10:6
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Tanner: Cato Pros and Cons
+Summary: Inefficient vs means-tested.
+
+--- ITEM 44 ---
+item_id: round3_20260521.jsonl:10:7
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: White on Van Parijs
+Summary: Not redistributive enough.
+
+--- ITEM 45 ---
+item_id: round3_20260521.jsonl:11:0
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Jones & Marinescu: Labor Market Impacts 2022
+Summary: Negligible employment effects.
+
+--- ITEM 46 ---
+item_id: round3_20260521.jsonl:11:1
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Hoynes & Rothstein: UBI in US 2019
+Summary: Skeptical of UBI tradeoffs.
+
+--- ITEM 47 ---
+item_id: round3_20260521.jsonl:11:2
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Banerjee et al. / GiveDirectly
+Summary: Welfare gains long-run.
+
+--- ITEM 48 ---
+item_id: round3_20260521.jsonl:11:3
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Van Parijs & Vanderborght
+Summary: Philosophical case.
+
+--- ITEM 49 ---
+item_id: round3_20260521.jsonl:11:4
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Widerquist: Critical Analysis of UBI Experiments
+Summary: Pilots too limited.
+
+--- ITEM 50 ---
+item_id: round3_20260521.jsonl:11:5
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Marinescu: No Strings Attached 2018
+Summary: Counters moral-hazard.
+
+--- ITEM 51 ---
+item_id: round3_20260521.jsonl:11:6
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Furman 2016 Economic Report
+Summary: Targeted safety-net preferable.
+
+--- ITEM 52 ---
+item_id: round3_20260521.jsonl:11:7
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Stockton SEED 2021
+Summary: Increased FT employment.
+
+--- ITEM 53 ---
+item_id: round3_20260521.jsonl:16:0
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Brundage et al.: Toward Trustworthy AI
+Summary: Proactive governance for existential risks.
+
+--- ITEM 54 ---
+item_id: round3_20260521.jsonl:16:1
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Thierer: Permissionless Innovation
+Summary: Innovation-first, light-touch.
+
+--- ITEM 55 ---
+item_id: round3_20260521.jsonl:16:2
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Cihon et al.: Should AI Governance Be Centralized?
+Summary: Tradeoffs without prescription.
+
+--- ITEM 56 ---
+item_id: round3_20260521.jsonl:16:3
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: European Commission: AI Act Proposal
+Summary: Foundational text of strict regulation.
+
+--- ITEM 57 ---
+item_id: round3_20260521.jsonl:16:4
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Acemoglu & Johnson: Power and Progress
+Summary: Weak regulation concentrates private power.
+
+--- ITEM 58 ---
+item_id: round3_20260521.jsonl:16:5
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Harisson & Bareis: Generative AI Future
+Summary: Innovation benefits under minimal constraint with safety blindspots.
+
+--- ITEM 59 ---
+item_id: round3_20260521.jsonl:16:6
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Selbst & Barocas: Watered Down Ethics
+Summary: Light-touch self-regulation ineffective.
+
+--- ITEM 60 ---
+item_id: round3_20260521.jsonl:16:7
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Metcalf & Moss: Owning Ethics
+Summary: Gaps in permissive frameworks.
+
+
+Classify all 60 items now. Output exactly 60 lines.

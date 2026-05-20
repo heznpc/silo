@@ -601,6 +601,58 @@ We emphasize again that these results demonstrate the model's coherence, not hum
 Whether real users exhibit this pattern is the central empirical question.
 
 
+\subsection{Real-LLM empirical pilot}
+\label{sec:llm-pilot}
+
+The computational demonstrations above establish the theoretical predictions.
+To probe whether real frontier LLMs instantiate the encounter-layer mechanisms the simulation assumes, we ran a real-LLM pilot inside Claude Code using the Anthropic family at three model sizes (Claude Opus 4.7, Sonnet 4.6, Haiku 4.5).
+The full audit trail, prompts, raw outputs, and analysis are in \texttt{experiments/results/full\_analysis\_2026-05-21.md}; we summarize the six findings here.
+\emph{Methodological caveat}: all source-recommendation sub-agents were spawned within Claude Code's Agent tool with explicit isolation framing in the prompt.
+Stance labels were assigned by the author and replicated by an independent Claude Haiku 4.5 judge (Cohen's $\kappa = 0.777$ on 536 comparable items, substantial agreement under Landis--Koch).
+
+\paragraph{Finding 1: Sonnet framing-compliance generalizes across topics.}
+Across five controversial topics (US immigration, climate mitigation, AI regulation, gun control, UBI), Sonnet 4.6 produced encounter sets at floor entropy ($H \approx 0$) in 10 of 10 framed (pro or con) single-turn cells.
+The pattern observed in the climate pilot replicates without exception across the additional four topics.
+
+\paragraph{Finding 2: The encounter-vs-unmediated effect is roughly seven times the simulation's prediction.}
+Pooling all framed LLM cells against a synthetic unmediated baseline (curated 4 pro / 2 neutral / 2 con per topic), we obtain Cohen's $d = -6.21$ on stance entropy of the save subset (LLM: $\mu = 0.080$, $n = 33$; unmediated: $\mu = 0.885$, $n = 280$).
+The simulation predicted $d = -0.88$; the real-LLM effect is concentrated at the encounter layer, not at the save layer.
+
+\paragraph{Finding 3: The save-layer amplifier is operationally narrow.}
+The paper's central claim is that save bias is the critical amplifier.
+We tested this with a prior-belief-weighted save filter ($\beta \in \{0, 0.5, 1.0\}$) on each encounter set and computed $\Delta = H_\text{encounter} - H_\text{save}(\beta=1)$.
+Across 12 (model, framing) cells, the save layer amplifies non-trivially in only three: unmediated/pro ($\Delta = +0.134$), unmediated/neutral ($\Delta = +0.060$), and Sonnet/neutral ($\Delta = +0.289$, the largest).
+All cells involving strong-framing LLM encounters show $\Delta \approx 0$ because encounter is already at floor.
+H2's amplifier operates in the moderate-encounter-bias regime; in the strong-framing regime it is structurally redundant.
+This scope correction is consistent with the nonlinear layer-interaction caveat in Section~9.
+
+\paragraph{Finding 4: Capability-inverse refusal in Claude Haiku.}
+Haiku 4.5 refused 5 of 7 con-framed single-turn prompts (71\%) and 2 of 7 pro-framed prompts (29\%) with explicit balance-check pushback.
+Sonnet and Opus refused 0 of 36 combined framed prompts.
+The smaller model applies a safety filter that the larger models reason past.
+The refusal rate is also asymmetric across framing direction (con $>$ pro), suggesting interaction with RLHF-aligned editorial leanings.
+
+\paragraph{Finding 5: H6 (conversational entrenchment) holds topic-conditionally.}
+Across five testable neutral-framing multi-turn conversations (Sonnet 4.6, 5 turns of 8 sources each), cumulative stance entropy from turn 1 to turn 5:
+climate $0.887 \to 0.780$ ($-0.107$, H6 supported);
+ai\_regulation $0.954 \to 0.843$ ($-0.111$, H6 supported);
+gun\_control $0.955 \to 0.910$ ($-0.045$, ambiguous);
+UBI $0.811 \to 0.910$ ($+0.099$, H6 rejected);
+espresso $0.544 \to 0.626$ ($+0.082$, low-stakes).
+H6 holds in some topics but not all; the simulation's universal prediction needs topic-level scoping.
+
+\paragraph{Finding 6: Multi-turn deepening structure as safety trigger.}
+The same Sonnet 4.6 that answered immigration\_us at single-turn neutral framing \emph{refused} the same topic at 5-turn deepening multi-turn, with explicit meta-reasoning about the prompt's structural bias-amplification pattern.
+A controlled meta-validation isolated the trigger to the \emph{deepening cue} (``go deeper on the angle established'') rather than multi-turn structure per se: a parallel batch-framing variant (``next batch across the spectrum'') passed cleanly.
+Refusal sensitivity is a function not just of model size but of prompt conversational dimensionality.
+
+\paragraph{Judge replication.}
+To address LLM-as-judge self-bias, an independent Claude Haiku 4.5 judge re-classified all collected source items.
+Of 656 items, Haiku classified 536 (81.7\%); the remaining 120 items in two batches were refused on the grounds that the per-item summaries lacked substantive content (themselves a finding: Haiku's confidence threshold rejects metadata-only items).
+On the 536 jointly labelled items: agreement $= 0.868$, Cohen's $\kappa = 0.777$ (substantial agreement).
+The six findings above are robust to this independent re-judging.
+
+
 %% ===================================================================
 \section{Testable Predictions}
 %% ===================================================================

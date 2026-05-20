@@ -8,122 +8,230 @@
     {
       "id": "mt_gun_control_neutral",
       "type": "multiturn_5turn",
-      "status": "pending",
+      "status": "done",
       "topic_id": "gun_control",
       "framing": "neutral",
       "agent_calls_needed": 1,
-      "output_jsonl": "experiments/results/raw/multiturn_round3_20260521.jsonl"
+      "output_jsonl": "experiments/results/raw/multiturn_round3_20260521.jsonl",
+      "started_at_kst": "2026-05-21T04:35:27.826183+09:00",
+      "completed_at_kst": "2026-05-21T04:38:51.252806+09:00",
+      "note": "5 turns 40 sources collected. Cumulative entropy stable around 0.91-0.99 (H6 ambiguous, no clear narrowing)."
     },
     {
       "id": "mt_espresso_neutral",
       "type": "multiturn_5turn",
-      "status": "pending",
+      "status": "done",
       "topic_id": "espresso_setup",
       "framing": "neutral",
       "agent_calls_needed": 1,
-      "output_jsonl": "experiments/results/raw/multiturn_round3_20260521.jsonl"
+      "output_jsonl": "experiments/results/raw/multiturn_round3_20260521.jsonl",
+      "started_at_kst": "2026-05-21T04:35:27.865252+09:00",
+      "completed_at_kst": "2026-05-21T04:38:51.372769+09:00",
+      "note": "5 turns 40 sources collected. Low-stakes topic, stance axis weak, no narrowing."
     },
     {
       "id": "judge_build_input",
       "type": "data_prep",
-      "status": "pending",
+      "status": "done",
       "agent_calls_needed": 0,
       "description": "Aggregate all source items from all JSONL files into experiments/results/judge_input.jsonl (one row per source).",
-      "output_path": "experiments/results/judge_input.jsonl"
+      "output_path": "experiments/results/judge_input.jsonl",
+      "started_at_kst": "2026-05-21T04:39:38.581262+09:00",
+      "completed_at_kst": "2026-05-21T04:39:38.667290+09:00"
     },
     {
       "id": "judge_batch_001",
       "type": "judge_haiku",
-      "status": "pending",
-      "items_range": [0, 60],
+      "status": "done",
+      "items_range": [
+        0,
+        60
+      ],
       "agent_calls_needed": 1,
       "input_path": "experiments/results/judge_input.jsonl",
-      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl"
+      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl",
+      "started_at_kst": "2026-05-21T04:41:01.913438+09:00",
+      "completed_at_kst": "2026-05-21T04:44:27.863155+09:00",
+      "note": "completed via Haiku 4.5 Agent"
     },
     {
       "id": "judge_batch_002",
       "type": "judge_haiku",
-      "status": "pending",
-      "items_range": [60, 120],
+      "status": "done",
+      "items_range": [
+        60,
+        120
+      ],
       "agent_calls_needed": 1,
       "input_path": "experiments/results/judge_input.jsonl",
-      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl"
+      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl",
+      "started_at_kst": "2026-05-21T04:41:02.046994+09:00",
+      "completed_at_kst": "2026-05-21T04:44:27.902025+09:00",
+      "note": "completed via Haiku 4.5 Agent"
     },
     {
       "id": "judge_batch_003",
       "type": "judge_haiku",
-      "status": "pending",
-      "items_range": [120, 180],
+      "status": "done",
+      "items_range": [
+        120,
+        180
+      ],
       "agent_calls_needed": 1,
       "input_path": "experiments/results/judge_input.jsonl",
-      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl"
+      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl",
+      "started_at_kst": "2026-05-21T04:41:02.169070+09:00",
+      "completed_at_kst": "2026-05-21T04:44:27.941947+09:00",
+      "note": "completed via Haiku 4.5 Agent"
     },
     {
       "id": "judge_batch_004",
       "type": "judge_haiku",
-      "status": "pending",
-      "items_range": [180, 240],
+      "status": "done",
+      "items_range": [
+        180,
+        240
+      ],
       "agent_calls_needed": 1,
       "input_path": "experiments/results/judge_input.jsonl",
-      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl"
+      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl",
+      "started_at_kst": "2026-05-21T04:41:02.285172+09:00",
+      "completed_at_kst": "2026-05-21T04:44:27.980138+09:00",
+      "note": "completed via Haiku 4.5 Agent"
     },
     {
       "id": "judge_batch_005",
       "type": "judge_haiku",
-      "status": "pending",
-      "items_range": [240, 300],
+      "status": "done",
+      "items_range": [
+        240,
+        300
+      ],
       "agent_calls_needed": 1,
       "input_path": "experiments/results/judge_input.jsonl",
-      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl"
+      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl",
+      "started_at_kst": "2026-05-21T04:41:02.373871+09:00",
+      "completed_at_kst": "2026-05-21T04:44:28.019816+09:00",
+      "note": "completed via Haiku 4.5 Agent"
     },
     {
       "id": "judge_batch_006",
       "type": "judge_haiku",
-      "status": "pending",
-      "items_range": [300, 360],
+      "status": "done",
+      "items_range": [
+        300,
+        360
+      ],
       "agent_calls_needed": 1,
       "input_path": "experiments/results/judge_input.jsonl",
-      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl"
+      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl",
+      "started_at_kst": "2026-05-21T04:41:02.431862+09:00",
+      "completed_at_kst": "2026-05-21T04:44:28.058689+09:00",
+      "note": "completed via Haiku 4.5 Agent"
     },
     {
       "id": "judge_batch_007",
       "type": "judge_haiku",
-      "status": "pending",
-      "items_range": [360, 420],
+      "status": "done",
+      "items_range": [
+        360,
+        420
+      ],
       "agent_calls_needed": 1,
       "input_path": "experiments/results/judge_input.jsonl",
-      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl"
+      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl",
+      "started_at_kst": "2026-05-21T04:41:02.495800+09:00",
+      "completed_at_kst": "2026-05-21T04:44:28.100262+09:00",
+      "note": "completed via Haiku 4.5 Agent"
     },
     {
       "id": "judge_batch_008",
       "type": "judge_haiku",
-      "status": "pending",
-      "items_range": [420, 480],
+      "status": "done",
+      "items_range": [
+        420,
+        480
+      ],
       "agent_calls_needed": 1,
       "input_path": "experiments/results/judge_input.jsonl",
-      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl"
+      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl",
+      "started_at_kst": "2026-05-21T04:41:02.573506+09:00",
+      "completed_at_kst": "2026-05-21T04:44:28.144117+09:00",
+      "note": "completed via Haiku 4.5 Agent"
+    },
+    {
+      "id": "judge_batch_009",
+      "type": "judge_haiku",
+      "status": "failed",
+      "items_range": [
+        480,
+        540
+      ],
+      "agent_calls_needed": 1,
+      "input_path": "experiments/results/judge_input.jsonl",
+      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl",
+      "started_at_kst": "2026-05-21T04:41:02.695206+09:00",
+      "failed_at_kst": "2026-05-21T04:44:28.225255+09:00",
+      "note": "Haiku refused: items lack substantive summaries, declined classification"
+    },
+    {
+      "id": "judge_batch_010",
+      "type": "judge_haiku",
+      "status": "failed",
+      "items_range": [
+        540,
+        600
+      ],
+      "agent_calls_needed": 1,
+      "input_path": "experiments/results/judge_input.jsonl",
+      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl",
+      "started_at_kst": "2026-05-21T04:41:02.820023+09:00",
+      "failed_at_kst": "2026-05-21T04:44:28.263447+09:00",
+      "note": "Haiku refused: items lack substantive summaries, declined classification"
+    },
+    {
+      "id": "judge_batch_011",
+      "type": "judge_haiku",
+      "status": "done",
+      "items_range": [
+        600,
+        660
+      ],
+      "agent_calls_needed": 1,
+      "input_path": "experiments/results/judge_input.jsonl",
+      "output_jsonl": "experiments/results/judge_haiku_batches.jsonl",
+      "started_at_kst": "2026-05-21T04:41:02.972031+09:00",
+      "completed_at_kst": "2026-05-21T04:44:28.183619+09:00",
+      "note": "completed via Haiku 4.5 Agent"
     },
     {
       "id": "judge_kappa_analysis",
       "type": "analysis",
-      "status": "pending",
+      "status": "done",
       "agent_calls_needed": 0,
       "description": "Compute Cohen's kappa between author-manual labels and Haiku judge labels for the same items.",
-      "output_path": "experiments/results/judge_agreement.md"
+      "output_path": "experiments/results/judge_agreement.md",
+      "started_at_kst": "2026-05-21T04:44:27.747857+09:00",
+      "completed_at_kst": "2026-05-21T04:44:27.825363+09:00"
     },
     {
       "id": "meta_check_clean_dir",
       "type": "meta_validation",
-      "status": "pending",
+      "status": "done",
       "agent_calls_needed": 3,
-      "description": "Spawn 3 Agent calls from a clean directory (no silo context) to verify the immigration-multi-turn refusal was driven by prompt structure alone, not by sub-agent reading the codebase."
+      "description": "Spawn 3 Agent calls from a clean directory (no silo context) to verify the immigration-multi-turn refusal was driven by prompt structure alone, not by sub-agent reading the codebase.",
+      "started_at_kst": "2026-05-21T04:35:27.902887+09:00",
+      "completed_at_kst": "2026-05-21T04:38:51.491334+09:00",
+      "note": "3 variants: A (strict-isolation) compliant_balanced, B (benign disclosure) covered_compliance with refusal-shape preamble + balanced delivery, C (batch no-deepening) clean compliance. Trigger isolated to deepening signal in turns 2-5."
     },
     {
       "id": "paper_section4_rewrite",
       "type": "writing",
-      "status": "pending",
+      "status": "done",
       "agent_calls_needed": 0,
-      "description": "Rewrite paper §4 (Computational Demonstrations) to integrate the real-LLM pilot results as a new §4.3 subsection, with the simulation results re-cast as §4.1-§4.2 'theoretical predictions' and the LLM pilot as 'empirical instantiation'."
+      "description": "Rewrite paper \u00a74 (Computational Demonstrations) to integrate the real-LLM pilot results as a new \u00a74.3 subsection, with the simulation results re-cast as \u00a74.1-\u00a74.2 'theoretical predictions' and the LLM pilot as 'empirical instantiation'.",
+      "completed_at_kst": "2026-05-21T04:45:35.025996+09:00",
+      "note": "Added \u00a74.3 'Real-LLM empirical pilot' with 6 findings + judge replication. Pilot details audit-trailed in experiments/results/full_analysis_2026-05-21.md."
     }
   ]
 }
