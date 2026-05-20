@@ -62,18 +62,21 @@ except ImportError as e:
 # Configuration -- locked per pre-registration
 # ---------------------------------------------------------------------------
 
-# Model IDs. Use Anthropic's stable aliases; the actual versions are recorded
-# in run_manifest.json from the API response.
+# Model IDs verified from sub-agent self-report 2026-05-21:
+#   "opus"   -> claude-opus-4-7      (1M context, cutoff Jan 2026)
+#   "sonnet" -> claude-sonnet-4-6    (cutoff Aug 2025)
+#   "haiku"  -> claude-haiku-4-5     (release 2025-10-01)
+# Actual versions are also recorded in run_manifest.json from API responses.
 MODELS = {
-    "opus":   "claude-opus-4-5",
-    "sonnet": "claude-sonnet-4-5",
+    "opus":   "claude-opus-4-7",
+    "sonnet": "claude-sonnet-4-6",
     "haiku":  "claude-haiku-4-5",
 }
 # Fallback model ids if the above are not available on this account.
 MODEL_FALLBACKS = {
-    "opus":   ["claude-opus-4-1-20250805", "claude-3-opus-20240229"],
-    "sonnet": ["claude-sonnet-4-20250514", "claude-3-5-sonnet-20241022"],
-    "haiku":  ["claude-haiku-4-5-20251001", "claude-3-5-haiku-20241022"],
+    "opus":   ["claude-opus-4-7-1m", "claude-opus-4-5", "claude-opus-4-1-20250805"],
+    "sonnet": ["claude-sonnet-4-6-20251101", "claude-sonnet-4-5"],
+    "haiku":  ["claude-haiku-4-5-20251001", "claude-haiku-4-5-latest"],
 }
 
 JUDGE_PRIMARY_KEY = "haiku"
