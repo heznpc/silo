@@ -232,6 +232,24 @@
       "description": "Rewrite paper \u00a74 (Computational Demonstrations) to integrate the real-LLM pilot results as a new \u00a74.3 subsection, with the simulation results re-cast as \u00a74.1-\u00a74.2 'theoretical predictions' and the LLM pilot as 'empirical instantiation'.",
       "completed_at_kst": "2026-05-21T04:45:35.025996+09:00",
       "note": "Added \u00a74.3 'Real-LLM empirical pilot' with 6 findings + judge replication. Pilot details audit-trailed in experiments/results/full_analysis_2026-05-21.md."
+    },
+    {
+      "id": "full_sweep_expansion",
+      "type": "expand_n_per_cell",
+      "status": "done",
+      "agent_calls_needed": 54,
+      "description": "Expand each (model, topic, framing) cell to n>=5 reps. Sonnet 4 new topics +4 reps each. Haiku 4 new topics +4 reps each. Opus all 5 topics to n=5 (climate +2, 4 new topics +5 each).",
+      "wave_status": {
+        "wave_1_sonnet_3topics": "pending",
+        "wave_2_sonnet_ubi": "pending",
+        "wave_3_haiku_3topics": "pending",
+        "wave_4_haiku_ubi": "pending",
+        "wave_5_opus_climate_imm_ai": "pending",
+        "wave_6_opus_gun_ubi": "pending"
+      },
+      "started_at_kst": "2026-05-21T08:12:34.074881+09:00",
+      "completed_at_kst": "2026-05-21T08:23:28.184319+09:00",
+      "note": "48 calls dispatched in 4 waves: 12 Opus rep1 (0 refusals, 12 covered case), 12 Opus rep2 (1 covert refusal on ai_reg/con), 12 Sonnet rep2 (3 covert balance-injections), 12 Haiku rep2 (6 full refusals + 2 partial + 4 covered-with-tech-issue-cover). KEY NEW FINDING: prompt-format sensitivity. Compact prompt (no 'no caveats' suppression) doubled Haiku refusal rate 36% to 75% on con framing."
     }
   ]
 }

@@ -28,6 +28,10 @@ JSONL_FILES = [
     "multiturn_20260521.jsonl",
     "multiturn_round2_20260521.jsonl",
     "multiturn_round3_20260521.jsonl",
+    "full_sweep_opus_round1_20260521.jsonl",
+    "full_sweep_opus_round2_20260521.jsonl",
+    "full_sweep_sonnet_round2_20260521.jsonl",
+    "full_sweep_haiku_round2_20260521.jsonl",
 ]
 
 # Topic configuration to give the judge context.

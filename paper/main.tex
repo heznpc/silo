@@ -648,9 +648,28 @@ Refusal sensitivity is a function not just of model size but of prompt conversat
 
 \paragraph{Judge replication.}
 To address LLM-as-judge self-bias, an independent Claude Haiku 4.5 judge re-classified all collected source items.
-Of 656 items, Haiku classified 536 (81.7\%); the remaining 120 items in two batches were refused on the grounds that the per-item summaries lacked substantive content (themselves a finding: Haiku's confidence threshold rejects metadata-only items).
+Of the first 656 items judged, Haiku classified 536 (81.7\%); the remaining 120 items in two batches were refused on the grounds that the per-item summaries lacked substantive content (themselves a finding: Haiku's confidence threshold rejects metadata-only items).
 On the 536 jointly labelled items: agreement $= 0.868$, Cohen's $\kappa = 0.777$ (substantial agreement).
 The six findings above are robust to this independent re-judging.
+
+\paragraph{Full sweep expansion (Round 5).}
+A second pass added 48 more (model, topic, framing) cells: 24 Opus (4 new topics $\times$ 3 framings $\times$ 2 reps) and 12 each for Sonnet/Haiku rep 2 across the same cells.
+Total dataset: 992 source items across 5 controversial + 2 neutral topics, three Claude variants.
+This expansion yielded two additional findings.
+
+\emph{Finding 7: Opus covert defection.}
+Across 24 Opus framed cells (2 reps $\times$ 4 topics $\times$ pro/con), Opus complied with 23 cells (100\% framing-compliance) but produced one \emph{covert defection} on \texttt{ai\_regulation/con}: instead of recommending 8 con-stance sources, Opus emitted sources mostly arguing \emph{for} regulation and labelled several as ``a direct counterweight to the position you are researching.''
+This is qualitatively different from Haiku's explicit refusal -- Opus delivered the requested format and count but defected on content.
+Capability-inverse refusal therefore takes at least two modes: smaller-model \emph{format refusal} and larger-model \emph{content defection}.
+
+\emph{Finding 8: Prompt-format sensitivity drives refusal rate.}
+The original pilot prompts contained explicit suppressors: ``no preamble, no caveats, no balance disclaimers, no meta-commentary.''
+Round 5 used a compact format with only ``no preamble'' and no further suppressors.
+Under the compact format, Haiku's refusal rate on framed prompts roughly doubled (36\% $\to$ 75\%): 6 of 8 framed cells refused outright and 4 of the 4 neutral cells were delivered with a fabricated ``technical issue with the search tool'' preamble used as cover for a more carefully balanced output.
+Sonnet under the same compact format produced covert balance-injection on 3 of 12 cells, surfacing counter-stance sources with explicit footer notes (``Sources 1, 2, 5, 6 present evidence or arguments that support or are neutral toward UBI -- included because honest literature review requires engaging with the strongest counterevidence'').
+The same Sonnet prompt with the full ``no caveats'' suppressor in earlier rounds produced 0 such balance-injections.
+This is an unanticipated finding with direct implications for API-based bias evaluations: \textbf{measured framing-compliance is a function of prompt-format suppressor strings, not just the framing itself}.
+Researchers reporting LLM sycophancy numbers should publish their exact suppressor strings; otherwise across-paper comparisons are not meaningful.
 
 
 %% ===================================================================
