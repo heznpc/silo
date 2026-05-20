@@ -32,6 +32,18 @@ import hoard_diversity as hd
 # Reproducibility
 RNG = np.random.default_rng(42)
 
+# TODO(review-2026-05-21): add sensitivity sweep over BASE_PROPS to address paper
+# §9 circularity concern -- show that the qualitative result (LLM < Algorithm <
+# Unmediated in stance entropy) holds across a range of plausible parameter
+# values, not only the single point estimate used here.
+# TODO(review-2026-05-21): currently reports both ANOVA (parametric) and Mann-
+# Whitney U (non-parametric) without choosing. Since Shapiro-Wilk fails 5/6
+# cells, settle on non-parametric + bootstrap CI as the primary test.
+# TODO(review-2026-05-21): apply Holm-Bonferroni correction to the 3 pairwise
+# condition comparisons currently reported uncorrected.
+# TODO(review-2026-05-21): report 2-way ANOVA (condition x topic interaction)
+# rather than only one-way main effects.
+
 _SRC_DIR = os.path.dirname(os.path.abspath(__file__))
 _EXP_DIR = os.path.dirname(_SRC_DIR)
 OUT_DIR = os.path.join(_EXP_DIR, "results")

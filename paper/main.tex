@@ -43,6 +43,7 @@ We argue that save bias is the critical but understudied amplifier in this chain
 Large language model (LLM)-mediated search introduces additional mechanisms---including sycophantic framing compliance, conversational entrenchment, and apparent comprehensiveness---that further narrow the information users save.
 To validate the model's internal coherence, we present two computational demonstrations: a Shannon entropy measurement pipeline for quantifying hoard diversity, and an agent-based simulation ($n = 240$ synthetic participants, $2 \times 3$ design).
 The simulation produces a large effect of LLM mediation on hoard homogeneity (Cohen's $d = -0.88$ on stance entropy), a large metacognitive gap whereby LLM users overestimate their hoards' diversity ($d = +1.31$), and a temporal pattern in which LLM-condition entropy declines over the session while unmediated-condition entropy rises.
+These effect sizes follow as the mechanical consequence of the simulation's parameter assumptions, not as empirical findings; their function is to translate qualitative claims into pre-registrable quantitative targets for human-subject validation.
 These demonstrations establish the framework's internal consistency and generate testable predictions for empirical validation.
 We conclude that digital hoards are not neutral storage---they are biased archives that shape cognition---and that the save layer warrants attention from researchers, platform designers, and regulators alike.
 
@@ -172,6 +173,12 @@ The conversational search paradigm intensifies bias further: \citet{SharmaLiao20
 These mechanisms are structurally embedded in current LLM architectures.
 Overoptimization in reinforcement learning from human feedback creates ``sycophantic attractors'' that bias models toward agreeable responses at the expense of truthfulness, and sycophantic agreement, genuine agreement, and sycophantic praise are encoded along distinct linear directions in latent space \citep{Chen2025}.
 Multi-turn conversations progressively narrow the information space, with average performance dropping 39\% from single-turn to multi-turn across six generation tasks \citep{Kang2025}.
+
+A growing wave of 2025 evaluation work directly quantifies these dynamics across models and conversational turns.
+\citet{Wang2025_Chameleon} introduce a benchmark of 17{,}770 question--answer pairs spanning 1{,}180 multi-turn conversations across 12 controversial domains and report severe stance instability in Llama-4-Maverick, GPT-4o-mini, and Gemini-2.5-Flash.
+\citet{Fanous2025_SycEval} provide a cross-model sycophancy evaluation framework; \citet{Sharma2025_MillStone} measure stance shift under user pressure across LLMs; and \citet{Wei2025_ArgSyc} document argument-driven sycophancy in single- versus multi-turn settings.
+The present paper does not relitigate whether encounter-layer sycophancy exists---it does, robustly, across models.
+Our contribution is to argue that the qualitatively distinct shift occurs at the \emph{save} layer, where already-biased LLM outputs are filtered a second time by human selective saving and crystallized into a persistent archive that subsequently shapes recommendation algorithms and the user's own future reasoning.
 
 
 %% ===================================================================
@@ -416,6 +423,8 @@ Each hypothesis specifies a predicted direction and identifies the theoretical m
 Save bias (Layer~2) accounts for more variance in archive homogeneity than encounter bias (Layer~1) alone.
 Specifically, the reduction in Shannon entropy from the encounter set to the saved set will be significantly greater than the reduction from the available information pool to the encounter set.
 This follows from the four properties that distinguish saves from views: persistence, algorithmic weight, subjective endorsement, and cross-platform portability (Section~3.3).
+\textit{Scope note}: H1 requires separate measurement of encounter-set and save-set diversity within the same participants and is therefore not addressed by the present computational demonstration, which samples the save distribution directly from a single layer.
+A focused test of H1 is reserved for the controlled experiment described in Section~8 and for the human study planned thereafter.
 
 \paragraph{H2: AI-mediated save bias amplification.}
 AI-mediated search (LLM conversational search) amplifies save bias through reduced cognitive effort and sycophantic framing, producing hoards with lower stance entropy than algorithm-curated or unmediated search conditions.
@@ -735,6 +744,12 @@ The simulation combines them parametrically, but the real combined effect could 
 Sixth, most existing digital hoarding research uses convenience samples of Chinese college students \citep{Bai2025,Wang2023,Wu2023,LiuLiu2024}, and platform affordances differ across TikTok, Instagram, YouTube, and browser bookmarks.
 The model's predictions may not generalize uniformly across cultures and platforms.
 
+% TODO(review-2026-05-21): consider adding Bonferroni or Benjamini-Hochberg correction for pairwise comparisons in §4.2.
+% TODO(review-2026-05-21): report 2-way ANOVA (condition x topic interaction) explicitly in §4.2 -- currently only main-effect one-way ANOVAs are reported.
+% TODO(review-2026-05-21): add 95% bootstrap CI on Cohen's d values throughout §4.2 (currently point estimates only).
+% TODO(review-2026-05-21): the stance taxonomy is 3-categorical; future work should test sensitivity to a continuous stance score.
+% TODO(review-2026-05-21): the present demonstration uses English-language synthetic content and US-centric topic framings; replicate with Korean and EU contexts in follow-up.
+
 
 %% ===================================================================
 \section{Future Work}
@@ -965,6 +980,30 @@ Wang, J., Miao, C., Jia, J., \& Lai, K. (2023).
 Digital hoarding behaviour and social networking service use: The role of FoMO and dispositional greed.
 \emph{Social Media + Society}, \emph{9}(1).
 \url{https://doi.org/10.1177/20563051221150420}
+
+\bibitem[Wang et~al.(2025)]{Wang2025_Chameleon}
+Wang, W., et~al. (2025).
+The chameleon nature of LLMs: Quantifying multi-turn stance instability in search-enabled language models.
+\emph{arXiv preprint}, arXiv:2510.16712.
+% TODO(review-2026-05-21): verify first-author surname when citation is finalized.
+
+\bibitem[Fanous et~al.(2025)]{Fanous2025_SycEval}
+Fanous, A., et~al. (2025).
+SycEval: Evaluating LLM sycophancy.
+\emph{arXiv preprint}, arXiv:2502.08177.
+% TODO(review-2026-05-21): verify first-author surname.
+
+\bibitem[Sharma et~al.(2025)]{Sharma2025_MillStone}
+Sharma, S., et~al. (2025).
+MillStone: How open-minded are LLMs?
+\emph{arXiv preprint}, arXiv:2509.11967.
+% TODO(review-2026-05-21): verify first-author surname.
+
+\bibitem[Wei et~al.(2025)]{Wei2025_ArgSyc}
+Wei, J., et~al. (2025).
+Argument-driven sycophancy in large language models.
+In \emph{Findings of EMNLP 2025}.
+% TODO(review-2026-05-21): verify first-author surname and full citation.
 
 \bibitem[Wu and Zhao(2023)]{Wu2023}
 Wu, J., \& Zhao, X. (2023).

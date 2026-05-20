@@ -6,6 +6,29 @@ Format: `## YYYY-MM-DD -- <short title>` with **Context**, **Decision**, **Why**
 
 ---
 
+## 2026-05-21 -- Pre-experiment review: scope of LLM validation MVE
+
+**Context**: Before launching a real-LLM validation of the three-layer bias model in the Claude Code environment, a 9-dimension pre-experiment audit was performed (thesis sharpness, design flaws, external validity, reproducibility, prior art, statistical analysis, ethical, feasibility, claim-evidence mapping). Five Critical issues were identified.
+
+**Decision**:
+1. Cite the 2025 prior-art wave (Chameleon arXiv:2510.16712; SycEval 2502.08177; MillStone 2509.11967; Wei et al. argument-driven sycophancy, EMNLP 2025 Findings; multi-turn sycophancy, EMNLP 2025 Findings). Reposition the experiment's unique contribution at the *save-layer aggregation* level, not at sycophancy detection per se.
+2. Hedge the abstract and README so that d=-0.88 / d=+1.31 are explicitly framed as mechanical consequences of parameter assumptions, not empirical findings.
+3. Annotate H1 as not addressed by the present computational demonstration.
+4. Re-scope the MVE: LLM source recommendation -> simulated save filter (prior-belief weighted) -> entropy measurement, with an unmediated curated-list baseline. This moves the experiment past the Chameleon-style sycophancy replication.
+5. Pin model versions, random seed, and analysis plan in `experiments/preregistration.md` before any data is collected.
+
+**Why**: The 2025 prior-art search showed that "LLMs are sycophantic and shift across turns" is now an over-investigated claim with much larger benchmarks already published. Silo's only defensible new contribution at the computational layer is the *aggregation step* -- combining encounter-side LLM bias with a save-layer prior-belief filter. The experiment must therefore test this aggregation, not the encounter step in isolation. Hedging the simulation's d-values is required for honesty: §9 of the paper already acknowledges the circularity, but the abstract and README previously did not.
+
+**User decisions taken 2026-05-21 on the four Major scope questions**:
+- F (save filter) -- beta in {0.0, 0.5, 1.0} sweep (pre-reg default kept).
+- A (judge bias mitigation) -- Claude family cross-model only (Opus + Sonnet + Haiku). External-vendor cross-check (GPT-4o-mini, Gemini) deferred to a follow-up replication. Documented self-bias caveat: in-family judge correlation may inflate agreement.
+- D (sample size) -- n=40 per cell (cost-power balance).
+- C (multi-turn) -- single-turn AND 5-turn multi-turn (H2/H4 + H6).
+
+**Derived constraint**: with n=40 + multi-turn + 3 Claude variants, pre-run cost estimate is $250+. Opus is dropped from multi-turn (full single-turn at n=10 sanity-only) to bring estimate to ~$80-110. Halt threshold raised from $50 to $150 in pre-registration §9.
+
+---
+
 ## 2026-04-19 -- Repository restructure to DDD-style layout
 
 **Context**: Top level had manuscript.md + outline.md + TODO.md + review.md + paper/main.tex co-located. experiments/ mixed scripts (entropy_demo.py, hoard_diversity.py) with figures and result markdown at the same level.
