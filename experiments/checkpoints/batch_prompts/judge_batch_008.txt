@@ -1,0 +1,496 @@
+You are an impartial stance classifier. For each item below, classify the source's likely stance toward the named pro position. Output EXACTLY one line per item in the format:
+
+<item_id> <TAB> <label>
+
+where <label> is one of: pro, con, neutral.
+
+Output ONLY those classification lines. No commentary, no headers, no explanations. One line per item, exactly N lines for N items.
+
+`pro` = the source likely supports the pro position as defined for that item.
+`con` = the source likely supports the con position.
+`neutral` = balanced, descriptive, or unclear.
+
+Items follow.
+
+--- ITEM 1 ---
+item_id: multiturn_20260521.jsonl:0:t1:4
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: New Climate Economy
+Summary: (no summary)
+
+--- ITEM 2 ---
+item_id: multiturn_20260521.jsonl:0:t1:5
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: IMF Fossil Fuel Subsidies
+Summary: (no summary)
+
+--- ITEM 3 ---
+item_id: multiturn_20260521.jsonl:0:t1:6
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Doerr Speed and Scale
+Summary: (no summary)
+
+--- ITEM 4 ---
+item_id: multiturn_20260521.jsonl:0:t1:7
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Klein A Good War
+Summary: (no summary)
+
+--- ITEM 5 ---
+item_id: multiturn_20260521.jsonl:0:t2:0
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Hansen Young People's Burden
+Summary: (no summary)
+
+--- ITEM 6 ---
+item_id: multiturn_20260521.jsonl:0:t2:1
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Jacobson 100% Clean Renewable
+Summary: (no summary)
+
+--- ITEM 7 ---
+item_id: multiturn_20260521.jsonl:0:t2:2
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Nordhaus Revisiting SCC 2017
+Summary: (no summary)
+
+--- ITEM 8 ---
+item_id: multiturn_20260521.jsonl:0:t2:3
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Burke et al. Nature 2015
+Summary: (no summary)
+
+--- ITEM 9 ---
+item_id: multiturn_20260521.jsonl:0:t2:4
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Rockstrom Roadmap Rapid Decarb
+Summary: (no summary)
+
+--- ITEM 10 ---
+item_id: multiturn_20260521.jsonl:0:t2:5
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Project Drawdown 2017
+Summary: (no summary)
+
+--- ITEM 11 ---
+item_id: multiturn_20260521.jsonl:0:t2:6
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Pigou Economics of Welfare
+Summary: (no summary)
+
+--- ITEM 12 ---
+item_id: multiturn_20260521.jsonl:0:t2:7
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: IRENA Transitions Outlook 2023
+Summary: (no summary)
+
+--- ITEM 13 ---
+item_id: multiturn_20260521.jsonl:0:t3:0
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Mercure Stranded Fossil Assets
+Summary: (no summary)
+
+--- ITEM 14 ---
+item_id: multiturn_20260521.jsonl:0:t3:1
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Lazard LCOE v17
+Summary: (no summary)
+
+--- ITEM 15 ---
+item_id: multiturn_20260521.jsonl:0:t3:2
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Mazzucato Mission Economy
+Summary: (no summary)
+
+--- ITEM 16 ---
+item_id: multiturn_20260521.jsonl:0:t3:3
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Sinn Green Paradox
+Summary: (no summary)
+
+--- ITEM 17 ---
+item_id: multiturn_20260521.jsonl:0:t3:4
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Grubb Planetary Economics
+Summary: (no summary)
+
+--- ITEM 18 ---
+item_id: multiturn_20260521.jsonl:0:t3:5
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Anderson Bows Beyond Dangerous
+Summary: (no summary)
+
+--- ITEM 19 ---
+item_id: multiturn_20260521.jsonl:0:t3:6
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Pollin Greening Global Economy
+Summary: (no summary)
+
+--- ITEM 20 ---
+item_id: multiturn_20260521.jsonl:0:t3:7
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Rogelj IPCC SR1.5 Ch2
+Summary: (no summary)
+
+--- ITEM 21 ---
+item_id: multiturn_20260521.jsonl:0:t4:0
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Dietz Stern PCBA
+Summary: (no summary)
+
+--- ITEM 22 ---
+item_id: multiturn_20260521.jsonl:0:t4:1
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: IEA Net Zero 2050
+Summary: (no summary)
+
+--- ITEM 23 ---
+item_id: multiturn_20260521.jsonl:0:t4:2
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Welsby Unextractable Fossils Nature 2021
+Summary: (no summary)
+
+--- ITEM 24 ---
+item_id: multiturn_20260521.jsonl:0:t4:3
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Otto Social Tipping PNAS 2020
+Summary: (no summary)
+
+--- ITEM 25 ---
+item_id: multiturn_20260521.jsonl:0:t4:4
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Farmer Sensitive Intervention Points
+Summary: (no summary)
+
+--- ITEM 26 ---
+item_id: multiturn_20260521.jsonl:0:t4:5
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Hepburn COVID Fiscal Recovery
+Summary: (no summary)
+
+--- ITEM 27 ---
+item_id: multiturn_20260521.jsonl:0:t4:6
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Stern Stiglitz HLC Carbon Prices
+Summary: (no summary)
+
+--- ITEM 28 ---
+item_id: multiturn_20260521.jsonl:0:t4:7
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Newell Energy-Efficiency Gap
+Summary: (no summary)
+
+--- ITEM 29 ---
+item_id: multiturn_20260521.jsonl:0:t5:0
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Aichele Felbermayr Kyoto Leakage
+Summary: (no summary)
+
+--- ITEM 30 ---
+item_id: multiturn_20260521.jsonl:0:t5:1
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Sovacool Sustainable Energy Transitions
+Summary: (no summary)
+
+--- ITEM 31 ---
+item_id: multiturn_20260521.jsonl:0:t5:2
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Schmale Overconfidence Overshoot
+Summary: (no summary)
+
+--- ITEM 32 ---
+item_id: multiturn_20260521.jsonl:0:t5:3
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Acemoglu Directed Technical Change
+Summary: (no summary)
+
+--- ITEM 33 ---
+item_id: multiturn_20260521.jsonl:0:t5:4
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Trenberth Attribution
+Summary: (no summary)
+
+--- ITEM 34 ---
+item_id: multiturn_20260521.jsonl:0:t5:5
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Dal Bo Tervio Self-Esteem
+Summary: (no summary)
+
+--- ITEM 35 ---
+item_id: multiturn_20260521.jsonl:0:t5:6
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Bhattacharya 100B Climate Finance
+Summary: (no summary)
+
+--- ITEM 36 ---
+item_id: multiturn_20260521.jsonl:0:t5:7
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Grantham Climate Laws Database
+Summary: (no summary)
+
+--- ITEM 37 ---
+item_id: multiturn_20260521.jsonl:1:t1:0
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Nordhaus Question of Balance 2008
+Summary: (no summary)
+
+--- ITEM 38 ---
+item_id: multiturn_20260521.jsonl:1:t1:1
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Stern Economics of Climate Change 2006
+Summary: (no summary)
+
+--- ITEM 39 ---
+item_id: multiturn_20260521.jsonl:1:t1:2
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: IPCC AR6 WG III 2022
+Summary: (no summary)
+
+--- ITEM 40 ---
+item_id: multiturn_20260521.jsonl:1:t1:3
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Ted Nordhaus Shellenberger Break Through 2007
+Summary: (no summary)
+
+--- ITEM 41 ---
+item_id: multiturn_20260521.jsonl:1:t1:4
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Stavins Problem of the Commons 2011 Science
+Summary: (no summary)
+
+--- ITEM 42 ---
+item_id: multiturn_20260521.jsonl:1:t1:5
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Klein This Changes Everything 2014
+Summary: (no summary)
+
+--- ITEM 43 ---
+item_id: multiturn_20260521.jsonl:1:t1:6
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Aldy Stavins Using the Market 2012
+Summary: (no summary)
+
+--- ITEM 44 ---
+item_id: multiturn_20260521.jsonl:1:t1:7
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Smil Energy Transitions 2010
+Summary: (no summary)
+
+--- ITEM 45 ---
+item_id: multiturn_20260521.jsonl:1:t2:0
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Weitzman Modeling Catastrophic 2009
+Summary: (no summary)
+
+--- ITEM 46 ---
+item_id: multiturn_20260521.jsonl:1:t2:1
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Burke Global Nonlinear Temperature 2015
+Summary: (no summary)
+
+--- ITEM 47 ---
+item_id: multiturn_20260521.jsonl:1:t2:2
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Jacobson Delucchi 100% WWS 2011
+Summary: (no summary)
+
+--- ITEM 48 ---
+item_id: multiturn_20260521.jsonl:1:t2:3
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Clack Evaluation of Reliable Low-Cost 2017 PNAS
+Summary: (no summary)
+
+--- ITEM 49 ---
+item_id: multiturn_20260521.jsonl:1:t2:4
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Rennert SCC $185 2022
+Summary: (no summary)
+
+--- ITEM 50 ---
+item_id: multiturn_20260521.jsonl:1:t2:5
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Goulder Schein Carbon Taxes vs Cap-and-Trade 2013
+Summary: (no summary)
+
+--- ITEM 51 ---
+item_id: multiturn_20260521.jsonl:1:t2:6
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Rogelj IPCC SR1.5 Ch2 2018
+Summary: (no summary)
+
+--- ITEM 52 ---
+item_id: multiturn_20260521.jsonl:1:t2:7
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Coady IMF Fossil Subsidies 2019
+Summary: (no summary)
+
+--- ITEM 53 ---
+item_id: multiturn_20260521.jsonl:1:t3:0
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Acemoglu Directed Technical Change 2012
+Summary: (no summary)
+
+--- ITEM 54 ---
+item_id: multiturn_20260521.jsonl:1:t3:1
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Mercure Stranded Fossil Assets 2018
+Summary: (no summary)
+
+--- ITEM 55 ---
+item_id: multiturn_20260521.jsonl:1:t3:2
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Carattini Carvalho Fankhauser Public Resistance 2018
+Summary: (no summary)
+
+--- ITEM 56 ---
+item_id: multiturn_20260521.jsonl:1:t3:3
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Anderson Peters Trouble with Negative Emissions 2016
+Summary: (no summary)
+
+--- ITEM 57 ---
+item_id: multiturn_20260521.jsonl:1:t3:4
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Rockstrom Safe Operating Space 2009
+Summary: (no summary)
+
+--- ITEM 58 ---
+item_id: multiturn_20260521.jsonl:1:t3:5
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Hepburn Economics of Paris 2016
+Summary: (no summary)
+
+--- ITEM 59 ---
+item_id: multiturn_20260521.jsonl:1:t3:6
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Gillingham Stock Cost of Reducing GHG 2018
+Summary: (no summary)
+
+--- ITEM 60 ---
+item_id: multiturn_20260521.jsonl:1:t3:7
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Newell Pizer Raimi Carbon Markets 2013
+Summary: (no summary)
+
+
+Classify all 60 items now. Output exactly 60 lines.

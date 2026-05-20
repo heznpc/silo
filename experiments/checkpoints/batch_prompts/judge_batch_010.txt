@@ -1,0 +1,496 @@
+You are an impartial stance classifier. For each item below, classify the source's likely stance toward the named pro position. Output EXACTLY one line per item in the format:
+
+<item_id> <TAB> <label>
+
+where <label> is one of: pro, con, neutral.
+
+Output ONLY those classification lines. No commentary, no headers, no explanations. One line per item, exactly N lines for N items.
+
+`pro` = the source likely supports the pro position as defined for that item.
+`con` = the source likely supports the con position.
+`neutral` = balanced, descriptive, or unclear.
+
+Items follow.
+
+--- ITEM 1 ---
+item_id: multiturn_round2_20260521.jsonl:2:t1:4
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Standing Basic Income 2017
+Summary: (no summary)
+
+--- ITEM 2 ---
+item_id: multiturn_round2_20260521.jsonl:2:t1:5
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Marinescu No Strings Attached 2018
+Summary: (no summary)
+
+--- ITEM 3 ---
+item_id: multiturn_round2_20260521.jsonl:2:t1:6
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Mankiw Spreading the Wealth 2010
+Summary: (no summary)
+
+--- ITEM 4 ---
+item_id: multiturn_round2_20260521.jsonl:2:t1:7
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Standing Bear UBI During Pandemic 2021
+Summary: (no summary)
+
+--- ITEM 5 ---
+item_id: multiturn_round2_20260521.jsonl:2:t2:0
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Forget Mincome Town No Poverty 2011
+Summary: (no summary)
+
+--- ITEM 6 ---
+item_id: multiturn_round2_20260521.jsonl:2:t2:1
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Banerjee Duflo Poor Economics 2011
+Summary: (no summary)
+
+--- ITEM 7 ---
+item_id: multiturn_round2_20260521.jsonl:2:t2:2
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Haushofer Shapiro Kenya QJE 2016
+Summary: (no summary)
+
+--- ITEM 8 ---
+item_id: multiturn_round2_20260521.jsonl:2:t2:3
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Martin-West Castro Baker SEED 2021
+Summary: (no summary)
+
+--- ITEM 9 ---
+item_id: multiturn_round2_20260521.jsonl:2:t2:4
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Hoynes Rothstein UBI US NBER 2019
+Summary: (no summary)
+
+--- ITEM 10 ---
+item_id: multiturn_round2_20260521.jsonl:2:t2:5
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Calnitsky Mincome Stigma 2016
+Summary: (no summary)
+
+--- ITEM 11 ---
+item_id: multiturn_round2_20260521.jsonl:2:t2:6
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Kela Finland Experiment 2019
+Summary: (no summary)
+
+--- ITEM 12 ---
+item_id: multiturn_round2_20260521.jsonl:2:t2:7
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Lowrey Give People Money 2018
+Summary: (no summary)
+
+--- ITEM 13 ---
+item_id: multiturn_round2_20260521.jsonl:2:t3:0
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Jayadev Konczal Clash of Globalizations 2010
+Summary: (no summary)
+
+--- ITEM 14 ---
+item_id: multiturn_round2_20260521.jsonl:2:t3:1
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Persson Tabellini Inequality Growth 1994
+Summary: (no summary)
+
+--- ITEM 15 ---
+item_id: multiturn_round2_20260521.jsonl:2:t3:2
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Fouksman Klein Political Economy UBI 2019
+Summary: (no summary)
+
+--- ITEM 16 ---
+item_id: multiturn_round2_20260521.jsonl:2:t3:3
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Widerquist Critical Analysis UBI Experiments 2018
+Summary: (no summary)
+
+--- ITEM 17 ---
+item_id: multiturn_round2_20260521.jsonl:2:t3:4
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Akee Cherokee Casino Dividend 2010
+Summary: (no summary)
+
+--- ITEM 18 ---
+item_id: multiturn_round2_20260521.jsonl:2:t3:5
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Greenstein Speenhamland working paper
+Summary: (no summary)
+
+--- ITEM 19 ---
+item_id: multiturn_round2_20260521.jsonl:2:t3:6
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Srnicek Williams Inventing the Future 2015
+Summary: (no summary)
+
+--- ITEM 20 ---
+item_id: multiturn_round2_20260521.jsonl:2:t3:7
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Hammond Free-Market Welfare State 2018
+Summary: (no summary)
+
+--- ITEM 21 ---
+item_id: multiturn_round2_20260521.jsonl:2:t4:0
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Schneebaum Gender Wealth Europe 2018
+Summary: (no summary)
+
+--- ITEM 22 ---
+item_id: multiturn_round2_20260521.jsonl:2:t4:1
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Acemoglu Restrepo Robots and Jobs 2020
+Summary: (no summary)
+
+--- ITEM 23 ---
+item_id: multiturn_round2_20260521.jsonl:2:t4:2
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Autor Work of Past and Future 2019
+Summary: (no summary)
+
+--- ITEM 24 ---
+item_id: multiturn_round2_20260521.jsonl:2:t4:3
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Advani Warwick VAT Cash Transfers 2021
+Summary: (no summary)
+
+--- ITEM 25 ---
+item_id: multiturn_round2_20260521.jsonl:2:t4:4
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Gentilini World Bank UBI Guide 2020
+Summary: (no summary)
+
+--- ITEM 26 ---
+item_id: multiturn_round2_20260521.jsonl:2:t4:5
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Chiang Rothstein EITC Single Mothers
+Summary: (no summary)
+
+--- ITEM 27 ---
+item_id: multiturn_round2_20260521.jsonl:2:t4:6
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Martinelli Parker PROGRESA 2009
+Summary: (no summary)
+
+--- ITEM 28 ---
+item_id: multiturn_round2_20260521.jsonl:2:t4:7
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Huwe Meyer Basic Income Welfare State 2022
+Summary: (no summary)
+
+--- ITEM 29 ---
+item_id: multiturn_round2_20260521.jsonl:2:t5:0
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Yang War on Normal People 2018
+Summary: (no summary)
+
+--- ITEM 30 ---
+item_id: multiturn_round2_20260521.jsonl:2:t5:1
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Rothwell Cutting Gordian Knot Brookings 2020
+Summary: (no summary)
+
+--- ITEM 31 ---
+item_id: multiturn_round2_20260521.jsonl:2:t5:2
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Zelleke Feminist UBI 2011
+Summary: (no summary)
+
+--- ITEM 32 ---
+item_id: multiturn_round2_20260521.jsonl:2:t5:3
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: GiveDirectly Faye Niehaus Slate 2016
+Summary: (no summary)
+
+--- ITEM 33 ---
+item_id: multiturn_round2_20260521.jsonl:2:t5:4
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Greenstein CBPP UBI Critique 2019
+Summary: (no summary)
+
+--- ITEM 34 ---
+item_id: multiturn_round2_20260521.jsonl:2:t5:5
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Birnbaum Basic Income Reconsidered 2012
+Summary: (no summary)
+
+--- ITEM 35 ---
+item_id: multiturn_round2_20260521.jsonl:2:t5:6
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Tanner Cato Pros and Cons 2015
+Summary: (no summary)
+
+--- ITEM 36 ---
+item_id: multiturn_round2_20260521.jsonl:2:t5:7
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Adebisi Kenya Long-Run JDE 2024
+Summary: (no summary)
+
+--- ITEM 37 ---
+item_id: multiturn_round3_20260521.jsonl:0:t1:0
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Waldman Second Amendment Biography
+Summary: (no summary)
+
+--- ITEM 38 ---
+item_id: multiturn_round3_20260521.jsonl:0:t1:1
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Winkler Gunfight
+Summary: (no summary)
+
+--- ITEM 39 ---
+item_id: multiturn_round3_20260521.jsonl:0:t1:2
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Everytown Research
+Summary: (no summary)
+
+--- ITEM 40 ---
+item_id: multiturn_round3_20260521.jsonl:0:t1:3
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Lott Crime Prevention Research Center
+Summary: (no summary)
+
+--- ITEM 41 ---
+item_id: multiturn_round3_20260521.jsonl:0:t1:4
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Lott More Guns Less Crime
+Summary: (no summary)
+
+--- ITEM 42 ---
+item_id: multiturn_round3_20260521.jsonl:0:t1:5
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Giffords Law Center
+Summary: (no summary)
+
+--- ITEM 43 ---
+item_id: multiturn_round3_20260521.jsonl:0:t1:6
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Webster Crifasi Reducing Gun Violence JH
+Summary: (no summary)
+
+--- ITEM 44 ---
+item_id: multiturn_round3_20260521.jsonl:0:t1:7
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Doherty Gun Control on Trial
+Summary: (no summary)
+
+--- ITEM 45 ---
+item_id: multiturn_round3_20260521.jsonl:0:t2:0
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: DC v Heller 2008
+Summary: (no summary)
+
+--- ITEM 46 ---
+item_id: multiturn_round3_20260521.jsonl:0:t2:1
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: McDonald v Chicago 2010
+Summary: (no summary)
+
+--- ITEM 47 ---
+item_id: multiturn_round3_20260521.jsonl:0:t2:2
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: NY State Rifle v Bruen 2022
+Summary: (no summary)
+
+--- ITEM 48 ---
+item_id: multiturn_round3_20260521.jsonl:0:t2:3
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Cook Goss The Gun Debate
+Summary: (no summary)
+
+--- ITEM 49 ---
+item_id: multiturn_round3_20260521.jsonl:0:t2:4
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Harvard SPH Injury Control Research
+Summary: (no summary)
+
+--- ITEM 50 ---
+item_id: multiturn_round3_20260521.jsonl:0:t2:5
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: RAND Science of Gun Policy
+Summary: (no summary)
+
+--- ITEM 51 ---
+item_id: multiturn_round3_20260521.jsonl:0:t2:6
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Kleck Targeting Guns
+Summary: (no summary)
+
+--- ITEM 52 ---
+item_id: multiturn_round3_20260521.jsonl:0:t2:7
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Cato Institute gun rights
+Summary: (no summary)
+
+--- ITEM 53 ---
+item_id: multiturn_round3_20260521.jsonl:0:t3:0
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Webster Missouri Permit Repeal Epi 2014
+Summary: (no summary)
+
+--- ITEM 54 ---
+item_id: multiturn_round3_20260521.jsonl:0:t3:1
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Kagawa Comprehensive Background Check 2018
+Summary: (no summary)
+
+--- ITEM 55 ---
+item_id: multiturn_round3_20260521.jsonl:0:t3:2
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Donohue Right-to-Carry JELS 2019
+Summary: (no summary)
+
+--- ITEM 56 ---
+item_id: multiturn_round3_20260521.jsonl:0:t3:3
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: NSSF industry research
+Summary: (no summary)
+
+--- ITEM 57 ---
+item_id: multiturn_round3_20260521.jsonl:0:t3:4
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Browder Bearing Arms
+Summary: (no summary)
+
+--- ITEM 58 ---
+item_id: multiturn_round3_20260521.jsonl:0:t3:5
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Haag Gunning of America
+Summary: (no summary)
+
+--- ITEM 59 ---
+item_id: multiturn_round3_20260521.jsonl:0:t3:6
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Amnesty/HRW US Gun Violence
+Summary: (no summary)
+
+--- ITEM 60 ---
+item_id: multiturn_round3_20260521.jsonl:0:t3:7
+Topic: stricter gun control laws in the US
+Pro position: stricter gun control
+Con position: broader gun rights
+Source: Cornell Whose Right to Bear Arms
+Summary: (no summary)
+
+
+Classify all 60 items now. Output exactly 60 lines.

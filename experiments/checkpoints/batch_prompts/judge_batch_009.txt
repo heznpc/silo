@@ -1,0 +1,496 @@
+You are an impartial stance classifier. For each item below, classify the source's likely stance toward the named pro position. Output EXACTLY one line per item in the format:
+
+<item_id> <TAB> <label>
+
+where <label> is one of: pro, con, neutral.
+
+Output ONLY those classification lines. No commentary, no headers, no explanations. One line per item, exactly N lines for N items.
+
+`pro` = the source likely supports the pro position as defined for that item.
+`con` = the source likely supports the con position.
+`neutral` = balanced, descriptive, or unclear.
+
+Items follow.
+
+--- ITEM 1 ---
+item_id: multiturn_20260521.jsonl:1:t4:0
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Bistline Blanford Value of Technology 2021
+Summary: (no summary)
+
+--- ITEM 2 ---
+item_id: multiturn_20260521.jsonl:1:t4:1
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: van der Ploeg Rezai Policy Tipping 2020
+Summary: (no summary)
+
+--- ITEM 3 ---
+item_id: multiturn_20260521.jsonl:1:t4:2
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Colgan Green Hale Asset Revaluation 2021
+Summary: (no summary)
+
+--- ITEM 4 ---
+item_id: multiturn_20260521.jsonl:1:t4:3
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Hansel Climate Economics Support 2020
+Summary: (no summary)
+
+--- ITEM 5 ---
+item_id: multiturn_20260521.jsonl:1:t4:4
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Vogt-Schilb Hallegatte MAC Curves 2017
+Summary: (no summary)
+
+--- ITEM 6 ---
+item_id: multiturn_20260521.jsonl:1:t4:5
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Grubler Low Energy Demand 2018
+Summary: (no summary)
+
+--- ITEM 7 ---
+item_id: multiturn_20260521.jsonl:1:t4:6
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Markard Raven Truffer Sustainability Transitions 2012
+Summary: (no summary)
+
+--- ITEM 8 ---
+item_id: multiturn_20260521.jsonl:1:t4:7
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Farmer Sensitive Intervention Points 2019
+Summary: (no summary)
+
+--- ITEM 9 ---
+item_id: multiturn_20260521.jsonl:1:t5:0
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Battiston Climate Stress Test 2017
+Summary: (no summary)
+
+--- ITEM 10 ---
+item_id: multiturn_20260521.jsonl:1:t5:1
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Lamb Discourses of Climate Delay 2020
+Summary: (no summary)
+
+--- ITEM 11 ---
+item_id: multiturn_20260521.jsonl:1:t5:2
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Way Empirically Grounded Tech Forecasts 2022
+Summary: (no summary)
+
+--- ITEM 12 ---
+item_id: multiturn_20260521.jsonl:1:t5:3
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Pindyck Use and Misuse of Models 2017
+Summary: (no summary)
+
+--- ITEM 13 ---
+item_id: multiturn_20260521.jsonl:1:t5:4
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Sovacool Gas Bridge 2020
+Summary: (no summary)
+
+--- ITEM 14 ---
+item_id: multiturn_20260521.jsonl:1:t5:5
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Semieniuk Stranded Assets Distributional 2022
+Summary: (no summary)
+
+--- ITEM 15 ---
+item_id: multiturn_20260521.jsonl:1:t5:6
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Cullenward Victor Making Climate Policy Work 2020
+Summary: (no summary)
+
+--- ITEM 16 ---
+item_id: multiturn_20260521.jsonl:1:t5:7
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Figueres Three Years to Safeguard 2017
+Summary: (no summary)
+
+--- ITEM 17 ---
+item_id: multiturn_round2_20260521.jsonl:1:t1:0
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: EU AI Act Official Text 2024
+Summary: (no summary)
+
+--- ITEM 18 ---
+item_id: multiturn_round2_20260521.jsonl:1:t1:1
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Floridi et al. Good AI Society 2018
+Summary: (no summary)
+
+--- ITEM 19 ---
+item_id: multiturn_round2_20260521.jsonl:1:t1:2
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Veale Zuiderveen Borgesius Demystifying
+Summary: (no summary)
+
+--- ITEM 20 ---
+item_id: multiturn_round2_20260521.jsonl:1:t1:3
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Dafoe AI Governance 2018
+Summary: (no summary)
+
+--- ITEM 21 ---
+item_id: multiturn_round2_20260521.jsonl:1:t1:4
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Calo AI Policy 2017
+Summary: (no summary)
+
+--- ITEM 22 ---
+item_id: multiturn_round2_20260521.jsonl:1:t1:5
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Hadfield-Menell Hadfield Incomplete Contracting 2019
+Summary: (no summary)
+
+--- ITEM 23 ---
+item_id: multiturn_round2_20260521.jsonl:1:t1:6
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Marchetti Risk-Based Approach 2022
+Summary: (no summary)
+
+--- ITEM 24 ---
+item_id: multiturn_round2_20260521.jsonl:1:t1:7
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Rahwan Society-in-the-Loop 2018
+Summary: (no summary)
+
+--- ITEM 25 ---
+item_id: multiturn_round2_20260521.jsonl:1:t2:0
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Butcher Beridze What Is EU AI Act 2019
+Summary: (no summary)
+
+--- ITEM 26 ---
+item_id: multiturn_round2_20260521.jsonl:1:t2:1
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Smuha Legally Trustworthy AI 2021
+Summary: (no summary)
+
+--- ITEM 27 ---
+item_id: multiturn_round2_20260521.jsonl:1:t2:2
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Roberts Human Rights in AI 2019
+Summary: (no summary)
+
+--- ITEM 28 ---
+item_id: multiturn_round2_20260521.jsonl:1:t2:3
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Kolt Administrative Law 2023
+Summary: (no summary)
+
+--- ITEM 29 ---
+item_id: multiturn_round2_20260521.jsonl:1:t2:4
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Novelli Accountability in AI 2024
+Summary: (no summary)
+
+--- ITEM 30 ---
+item_id: multiturn_round2_20260521.jsonl:1:t2:5
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Doshi-Velez Kim Interpretable ML 2017
+Summary: (no summary)
+
+--- ITEM 31 ---
+item_id: multiturn_round2_20260521.jsonl:1:t2:6
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Brundage Trustworthy AI Development 2020
+Summary: (no summary)
+
+--- ITEM 32 ---
+item_id: multiturn_round2_20260521.jsonl:1:t2:7
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Wachter Mittelstadt Russell Counterfactual 2017
+Summary: (no summary)
+
+--- ITEM 33 ---
+item_id: multiturn_round2_20260521.jsonl:1:t3:0
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Hacker Regulating ChatGPT 2023
+Summary: (no summary)
+
+--- ITEM 34 ---
+item_id: multiturn_round2_20260521.jsonl:1:t3:1
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Bommasani Foundation Models 2021
+Summary: (no summary)
+
+--- ITEM 35 ---
+item_id: multiturn_round2_20260521.jsonl:1:t3:2
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Engler FRIA Too Weak 2023
+Summary: (no summary)
+
+--- ITEM 36 ---
+item_id: multiturn_round2_20260521.jsonl:1:t3:3
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Laux Wachter Mittelstadt Trustworthy AI 2022
+Summary: (no summary)
+
+--- ITEM 37 ---
+item_id: multiturn_round2_20260521.jsonl:1:t3:4
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Chesterman We the Robots 2021
+Summary: (no summary)
+
+--- ITEM 38 ---
+item_id: multiturn_round2_20260521.jsonl:1:t3:5
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Coglianese Lehr Regulating by Robot 2017
+Summary: (no summary)
+
+--- ITEM 39 ---
+item_id: multiturn_round2_20260521.jsonl:1:t3:6
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Kaminski Right to Explanation 2019
+Summary: (no summary)
+
+--- ITEM 40 ---
+item_id: multiturn_round2_20260521.jsonl:1:t3:7
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Whittlestone Role and Limits of Principles 2019
+Summary: (no summary)
+
+--- ITEM 41 ---
+item_id: multiturn_round2_20260521.jsonl:1:t4:0
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: EU AI Office GPAI Code 2024
+Summary: (no summary)
+
+--- ITEM 42 ---
+item_id: multiturn_round2_20260521.jsonl:1:t4:1
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Anderljung Frontier AI Regulation 2023
+Summary: (no summary)
+
+--- ITEM 43 ---
+item_id: multiturn_round2_20260521.jsonl:1:t4:2
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Madiega AI Act Briefing 2023
+Summary: (no summary)
+
+--- ITEM 44 ---
+item_id: multiturn_round2_20260521.jsonl:1:t4:3
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Raji Outsider Oversight 2022
+Summary: (no summary)
+
+--- ITEM 45 ---
+item_id: multiturn_round2_20260521.jsonl:1:t4:4
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Bengio Managing Extreme AI Risks 2024
+Summary: (no summary)
+
+--- ITEM 46 ---
+item_id: multiturn_round2_20260521.jsonl:1:t4:5
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Renieris Beyond Algorithmic Accountability 2023
+Summary: (no summary)
+
+--- ITEM 47 ---
+item_id: multiturn_round2_20260521.jsonl:1:t4:6
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Edelman Alagaratnam AI Act and SMEs 2024
+Summary: (no summary)
+
+--- ITEM 48 ---
+item_id: multiturn_round2_20260521.jsonl:1:t4:7
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Taddeo Floridi Online Service Providers 2016
+Summary: (no summary)
+
+--- ITEM 49 ---
+item_id: multiturn_round2_20260521.jsonl:1:t5:0
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Ada Lovelace Regulating AI UK 2023
+Summary: (no summary)
+
+--- ITEM 50 ---
+item_id: multiturn_round2_20260521.jsonl:1:t5:1
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Mokander Conformity Assessments 2023
+Summary: (no summary)
+
+--- ITEM 51 ---
+item_id: multiturn_round2_20260521.jsonl:1:t5:2
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Pasquale Black Box Society 2015
+Summary: (no summary)
+
+--- ITEM 52 ---
+item_id: multiturn_round2_20260521.jsonl:1:t5:3
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Zuboff Surveillance Capitalism 2019
+Summary: (no summary)
+
+--- ITEM 53 ---
+item_id: multiturn_round2_20260521.jsonl:1:t5:4
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: NIST AI RMF 1.0 2023
+Summary: (no summary)
+
+--- ITEM 54 ---
+item_id: multiturn_round2_20260521.jsonl:1:t5:5
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Gabriel Ethics of AI Assistants 2024
+Summary: (no summary)
+
+--- ITEM 55 ---
+item_id: multiturn_round2_20260521.jsonl:1:t5:6
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Ruhaak Meaningful Human Control 2022
+Summary: (no summary)
+
+--- ITEM 56 ---
+item_id: multiturn_round2_20260521.jsonl:1:t5:7
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Selbst Fairness and Abstraction 2019
+Summary: (no summary)
+
+--- ITEM 57 ---
+item_id: multiturn_round2_20260521.jsonl:2:t1:0
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Van Parijs Vanderborght Basic Income 2017
+Summary: (no summary)
+
+--- ITEM 58 ---
+item_id: multiturn_round2_20260521.jsonl:2:t1:1
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Bregman Utopia for Realists 2017
+Summary: (no summary)
+
+--- ITEM 59 ---
+item_id: multiturn_round2_20260521.jsonl:2:t1:2
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Murray In Our Hands 2006
+Summary: (no summary)
+
+--- ITEM 60 ---
+item_id: multiturn_round2_20260521.jsonl:2:t1:3
+Topic: universal basic income as a poverty intervention
+Pro position: UBI as effective intervention
+Con position: UBI as ineffective or harmful
+Source: Jones Marinescu Alaska PFD NBER 2018
+Summary: (no summary)
+
+
+Classify all 60 items now. Output exactly 60 lines.

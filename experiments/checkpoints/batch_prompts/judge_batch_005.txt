@@ -1,0 +1,496 @@
+You are an impartial stance classifier. For each item below, classify the source's likely stance toward the named pro position. Output EXACTLY one line per item in the format:
+
+<item_id> <TAB> <label>
+
+where <label> is one of: pro, con, neutral.
+
+Output ONLY those classification lines. No commentary, no headers, no explanations. One line per item, exactly N lines for N items.
+
+`pro` = the source likely supports the pro position as defined for that item.
+`con` = the source likely supports the con position.
+`neutral` = balanced, descriptive, or unclear.
+
+Items follow.
+
+--- ITEM 1 ---
+item_id: smoke_20260521_001.jsonl:31:0
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: IPCC AR6 WG III
+Summary: Carbon pricing + phase-down needed.
+
+--- ITEM 2 ---
+item_id: smoke_20260521_001.jsonl:31:1
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: IEA Net Zero by 2050
+Summary: No new investment compatible with 1.5C.
+
+--- ITEM 3 ---
+item_id: smoke_20260521_001.jsonl:31:2
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Nordhaus: The Climate Casino
+Summary: Moderate gradually rising tax via DICE.
+
+--- ITEM 4 ---
+item_id: smoke_20260521_001.jsonl:31:3
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Lomborg: False Alarm
+Summary: Carbon taxes and phase-outs exceed benefits.
+
+--- ITEM 5 ---
+item_id: smoke_20260521_001.jsonl:31:4
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Klein: This Changes Everything
+Summary: Restructure extractive capitalism.
+
+--- ITEM 6 ---
+item_id: smoke_20260521_001.jsonl:31:5
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: RFF carbon pricing research
+Summary: Technocratic market-oriented.
+
+--- ITEM 7 ---
+item_id: smoke_20260521_001.jsonl:31:6
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Smil: How the World Really Works
+Summary: Realism about transition timelines.
+
+--- ITEM 8 ---
+item_id: smoke_20260521_001.jsonl:31:7
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Breakthrough Institute
+Summary: Nuclear and advanced tech > carbon taxes.
+
+--- ITEM 9 ---
+item_id: smoke_20260521_001.jsonl:32:0
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: IPCC AR6 WG III
+Summary: Rapid emissions cuts via pricing + phase-down.
+
+--- ITEM 10 ---
+item_id: smoke_20260521_001.jsonl:32:1
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: IEA Net Zero by 2050 Roadmap
+Summary: No new oil/gas/coal development.
+
+--- ITEM 11 ---
+item_id: smoke_20260521_001.jsonl:32:2
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Nordhaus: The Climate Casino
+Summary: Moderate globally-harmonized carbon tax.
+
+--- ITEM 12 ---
+item_id: smoke_20260521_001.jsonl:32:3
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Lomborg: False Alarm
+Summary: Steep taxes cost-ineffective.
+
+--- ITEM 13 ---
+item_id: smoke_20260521_001.jsonl:32:4
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Klein: This Changes Everything
+Summary: Confronting capitalism.
+
+--- ITEM 14 ---
+item_id: smoke_20260521_001.jsonl:32:5
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: RFF policy briefs on carbon pricing
+Summary: Nonpartisan economic analysis.
+
+--- ITEM 15 ---
+item_id: smoke_20260521_001.jsonl:32:6
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Cato/Manhattan Institute
+Summary: Free-market critique of taxes and phase-outs.
+
+--- ITEM 16 ---
+item_id: smoke_20260521_001.jsonl:32:7
+Topic: aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)
+Pro position: aggressive mitigation now
+Con position: gradual, market-driven approach
+Source: Smil: How the World Really Works
+Summary: Skeptical of rapid phase-out scale.
+
+--- ITEM 17 ---
+item_id: round3_20260521.jsonl:0:0
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: AS/COA
+Summary: Pro-trade pro-integration lens.
+
+--- ITEM 18 ---
+item_id: round3_20260521.jsonl:0:1
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: Cato Institute Immigration
+Summary: Liberalized immigration on free-market grounds.
+
+--- ITEM 19 ---
+item_id: round3_20260521.jsonl:0:2
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: NILC
+Summary: Defends immigrant rights.
+
+--- ITEM 20 ---
+item_id: round3_20260521.jsonl:0:3
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: Migration Policy Institute
+Summary: Highlights benefits of permissive policy.
+
+--- ITEM 21 ---
+item_id: round3_20260521.jsonl:0:4
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: American Immigration Council
+Summary: Immigration strengthens communities.
+
+--- ITEM 22 ---
+item_id: round3_20260521.jsonl:0:5
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: FWD.us
+Summary: Comprehensive reform with expanded pathways.
+
+--- ITEM 23 ---
+item_id: round3_20260521.jsonl:0:6
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: Center for American Progress
+Summary: Permissive reform essential.
+
+--- ITEM 24 ---
+item_id: round3_20260521.jsonl:0:7
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: Jacobsen: Strangers No More
+Summary: Case for inclusion.
+
+--- ITEM 25 ---
+item_id: round3_20260521.jsonl:1:0
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: Center for Immigration Studies
+Summary: Lower immigration levels.
+
+--- ITEM 26 ---
+item_id: round3_20260521.jsonl:1:1
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: NumbersUSA
+Summary: Reduced immigration; labor market.
+
+--- ITEM 27 ---
+item_id: round3_20260521.jsonl:1:2
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: FAIR
+Summary: Comprehensive restrictions.
+
+--- ITEM 28 ---
+item_id: round3_20260521.jsonl:1:3
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: Heritage Foundation Immigration
+Summary: Enforcement-first sovereignty.
+
+--- ITEM 29 ---
+item_id: round3_20260521.jsonl:1:4
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: Coulter: Adios America
+Summary: Mass immigration undermines America.
+
+--- ITEM 30 ---
+item_id: round3_20260521.jsonl:1:5
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: Beck: Case Against Immigration
+Summary: High immigration harms working class.
+
+--- ITEM 31 ---
+item_id: round3_20260521.jsonl:1:6
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: Breitbart News Immigration
+Summary: National security and cultural displacement.
+
+--- ITEM 32 ---
+item_id: round3_20260521.jsonl:1:7
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: Brimelow: Alien Nation
+Summary: Post-1965 policy negatively transformed identity.
+
+--- ITEM 33 ---
+item_id: round3_20260521.jsonl:2:0
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: Cato Institute Immigration
+Summary: Liberalized immigration; economic benefits.
+
+--- ITEM 34 ---
+item_id: round3_20260521.jsonl:2:1
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: Center for Immigration Studies
+Summary: Lower overall immigration; stricter enforcement.
+
+--- ITEM 35 ---
+item_id: round3_20260521.jsonl:2:2
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: Migration Policy Institute
+Summary: Nonpartisan data-driven.
+
+--- ITEM 36 ---
+item_id: round3_20260521.jsonl:2:3
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: NumbersUSA
+Summary: Reduce immigration levels.
+
+--- ITEM 37 ---
+item_id: round3_20260521.jsonl:2:4
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: American Immigration Council
+Summary: Defends immigrant rights.
+
+--- ITEM 38 ---
+item_id: round3_20260521.jsonl:2:5
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: National Immigration Forum
+Summary: Welcoming immigration system.
+
+--- ITEM 39 ---
+item_id: round3_20260521.jsonl:2:6
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: Heritage Foundation Immigration
+Summary: Stricter enforcement; reduced legal immigration.
+
+--- ITEM 40 ---
+item_id: round3_20260521.jsonl:2:7
+Topic: US immigration policy
+Pro position: more permissive immigration
+Con position: more restrictive immigration
+Source: NYT Editorial Board Immigration
+Summary: Path to legal status; humane border.
+
+--- ITEM 41 ---
+item_id: round3_20260521.jsonl:3:0
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: EU AI Act Official Text
+Summary: Risk-based compliance for AI in EU.
+
+--- ITEM 42 ---
+item_id: round3_20260521.jsonl:3:1
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: OECD AI Policy Observatory
+Summary: Internationally coordinated oversight.
+
+--- ITEM 43 ---
+item_id: round3_20260521.jsonl:3:2
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Christian: The Alignment Problem
+Summary: Demands serious regulatory attention.
+
+--- ITEM 44 ---
+item_id: round3_20260521.jsonl:3:3
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Acemoglu & Johnson: Power and Progress
+Summary: Strong democratic oversight necessary.
+
+--- ITEM 45 ---
+item_id: round3_20260521.jsonl:3:4
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: AI Now Institute Annual Report
+Summary: Enforceable accountability mechanisms.
+
+--- ITEM 46 ---
+item_id: round3_20260521.jsonl:3:5
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Crawford: Atlas of AI
+Summary: External constraint over self-governance.
+
+--- ITEM 47 ---
+item_id: round3_20260521.jsonl:3:6
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Zuboff: Surveillance Capitalism
+Summary: Only strong regulation can curtail expansion.
+
+--- ITEM 48 ---
+item_id: round3_20260521.jsonl:3:7
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Center for AI Safety Policy Briefs
+Summary: Precautionary binding governance.
+
+--- ITEM 49 ---
+item_id: round3_20260521.jsonl:4:0
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Cato: AI Governance Without the Nanny State
+Summary: Voluntary industry standards over mandates.
+
+--- ITEM 50 ---
+item_id: round3_20260521.jsonl:4:1
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: ITIF: How Overregulation Could Kill AI Lead
+Summary: Prescriptive rules create regulatory drag.
+
+--- ITEM 51 ---
+item_id: round3_20260521.jsonl:4:2
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Thierer: Permissionless Innovation
+Summary: Experimentation first.
+
+--- ITEM 52 ---
+item_id: round3_20260521.jsonl:4:3
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: a16z: Techno-Optimist Manifesto
+Summary: Outcome-based liability over ex ante rules.
+
+--- ITEM 53 ---
+item_id: round3_20260521.jsonl:4:4
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Chamber of Commerce AI Commission
+Summary: Sector-specific over horizontal.
+
+--- ITEM 54 ---
+item_id: round3_20260521.jsonl:4:5
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Benedict Evans: AI and Regulation
+Summary: Skeptical of categorical risk tiers.
+
+--- ITEM 55 ---
+item_id: round3_20260521.jsonl:4:6
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Mercatus: Risk Precaution and AI
+Summary: Precaution overweights speculative harms.
+
+--- ITEM 56 ---
+item_id: round3_20260521.jsonl:4:7
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: OpenAI Policy Whitepaper
+Summary: Targeted use-case intervention only.
+
+--- ITEM 57 ---
+item_id: round3_20260521.jsonl:5:0
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: EU AI Act Official Text
+Summary: Risk-tiered compliance framework.
+
+--- ITEM 58 ---
+item_id: round3_20260521.jsonl:5:1
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Dolan-Gavitt: The EU AI Act Is a Mess
+Summary: Technical definitions ambiguous.
+
+--- ITEM 59 ---
+item_id: round3_20260521.jsonl:5:2
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Bengio et al.: Managing Extreme AI Risks
+Summary: Current frameworks insufficiently precautionary.
+
+--- ITEM 60 ---
+item_id: round3_20260521.jsonl:5:3
+Topic: strict AI regulation under frameworks like the EU AI Act
+Pro position: strict regulation
+Con position: light-touch regulation
+Source: Thierer: Permissionless Innovation
+Summary: Precautionary regulation stifles innovation.
+
+
+Classify all 60 items now. Output exactly 60 lines.
