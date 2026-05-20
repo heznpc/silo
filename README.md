@@ -2,6 +2,10 @@
 
 **Silo: How AI-Mediated Information Search Creates Confirmation-Biased Digital Hoards**
 
+> Research Program: 4 (AI-Mediated Accumulation)
+> Status: Reproducible artifact
+> Relationship to other work: Companion to `tidal` (Program 4 anchor)
+
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue)](https://python.org)
 
