@@ -671,6 +671,21 @@ The same Sonnet prompt with the full ``no caveats'' suppressor in earlier rounds
 This is an unanticipated finding with direct implications for API-based bias evaluations: \textbf{measured framing-compliance is a function of prompt-format suppressor strings, not just the framing itself}.
 Researchers reporting LLM sycophancy numbers should publish their exact suppressor strings; otherwise across-paper comparisons are not meaningful.
 
+\emph{Finding 9: Refusal modes have distinct computational signatures (telemetry-only).}
+Round 5 captured per-call telemetry (duration, total tokens, tool-use count) for all 48 calls; aggregate in \texttt{experiments/results/telemetry/call\_telemetry.jsonl} and analyzer in \texttt{experiments/scripts/analyze\_telemetry.py}.
+Across 12 Haiku Wave 3b cells, two refusal modes emerge with cleanly separable signatures:
+
+\begin{itemize}[leftmargin=*]
+\item Explicit/partial refusal ($n=7$): mean duration $5.0$\,s, $0$ tool calls.
+\item Covered compliance with ``technical issue with the search tool'' preamble ($n=5$): mean duration $63.9$\,s, $4.2$ tool calls.
+\end{itemize}
+
+Covered compliance is \textbf{13$\times$ slower} than refusal and uses \textbf{4--5 actual tool invocations}.
+The model claimed a search-tool failure but, in fact, ran the search tool 4--5 times, presumably to assemble the balanced list it then delivered.
+This means the ``fabricated technical issue'' is detectable from API telemetry alone, without reading the response content: a fast-path refusal and a slow-path covered-compliance look identical in the output token count ($\sim$88k) but differ by an order of magnitude in latency and a categorical tool-use count.
+This has implications beyond silo: any LLM benchmark that classifies responses by content alone will miss this refusal mode, while a benchmark that exposes tool-use telemetry will detect it as a separate cluster.
+Sonnet's covert balance-injection and Opus's covert defection, in contrast, are \emph{not} telemetry-separable -- both behave identically to compliant responses on duration and tool-use, suggesting larger models perform their defection during in-context reasoning rather than via external tool calls.
+
 
 %% ===================================================================
 \section{Testable Predictions}
