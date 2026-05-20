@@ -29,6 +29,28 @@ Format: `## YYYY-MM-DD -- <short title>` with **Context**, **Decision**, **Why**
 
 ---
 
+## 2026-05-21 -- Smoke/tiny run via Claude Code Agent tool (in lieu of external API)
+
+**Context**: External Anthropic API key was unavailable in this Claude Code session (`ANTHROPIC_API_KEY` was empty; host-managed OAuth not exposed to the Python SDK). User instructed to run the experiment inside Claude Code itself.
+
+**Decision**: Use Claude Code's Agent tool with `model={opus,sonnet,haiku}` parameter to spawn sub-agent invocations as a stand-in for Anthropic API calls. Each sub-agent is given the framed user prompt and returns a numbered source list, which is then parsed and stance-judged by the author (smoke tier compromise -- the locked judge protocol is deferred to a follow-up run).
+
+**Result**:
+- 33 cells collected (15 Sonnet n=5/framing + 9 Haiku n=3/framing + 9 Opus n=3/framing), 1 refusal (Haiku/con).
+- Cohen's d (framed vs neutral encounter-set entropy) = -7.74, ~9x the simulation's predicted -0.88.
+- 6/9 (model, framing) cells show save layer is structurally inert because encounter entropy is already at floor.
+- Haiku produced an explicit balance-refusal on con framing (1/3); Sonnet and Opus never refused (0/24 combined).
+
+**Why this matters**: The paper's central thesis -- "save bias is the critical amplifier" -- needs a scope correction. Save bias is the critical amplifier *when encounter bias is moderate*, not in the strong-framing regime where encounter alone produces floor entropy. The pilot also surfaced a capability-inverse refusal signature worth a follow-up note.
+
+**Deviations from pre-registration logged here**:
+- Judge model: pre-reg specifies Claude Haiku 3.5 primary + Sonnet 4.6 cross-check; this run used author manual judging. Follow-up run must apply the locked protocol.
+- n size: smoke at n=3-5 per cell rather than the locked n=40. This is a sanity/pilot run, not the full sweep.
+- Topic count: only `climate_mitigation` rather than the 5 controversial + 2 neutral. Generalization is a follow-up.
+- Multi-turn: not yet run. H6 still untested.
+
+---
+
 ## 2026-04-19 -- Repository restructure to DDD-style layout
 
 **Context**: Top level had manuscript.md + outline.md + TODO.md + review.md + paper/main.tex co-located. experiments/ mixed scripts (entropy_demo.py, hoard_diversity.py) with figures and result markdown at the same level.

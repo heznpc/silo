@@ -448,6 +448,13 @@ This follows from apparent comprehensiveness (mechanism~3): LLM responses appear
 In LLM-mediated search sessions, cumulative stance entropy will decline over the course of the session (negative temporal slope), whereas in unmediated sessions, cumulative entropy will increase (positive temporal slope).
 This follows from conversational entrenchment (mechanism~5): multi-turn LLM conversations progressively narrow the information space \citep{Kang2025}.
 
+\paragraph{Scope correction from a real-LLM pilot.}
+A small real-LLM pilot run (2026-05-21; \texttt{climate\_mitigation} topic only; n=3--5 per (model, framing) cell across Claude Opus 4.7, Sonnet 4.6, Haiku 4.5; see \texttt{experiments/results/llm\_stance\_entropy.md}) shows that under framed prompts (pro or con) the \emph{encounter} layer already reaches floor entropy ($H \approx 0$, $d \approx -7.7$ vs.\ neutral baseline) in 19 of 21 non-refused cells.
+When encounter entropy is already at floor, save-layer filtering by construction cannot amplify the bias further.
+The save-bias amplifier predicted by H2 therefore operates only in the \emph{moderate-encounter-bias} regime; in the strong-framing regime it is structurally redundant.
+This is consistent with the nonlinear-layer-interaction caveat noted in Section~9 (Limitations) and reframes the paper's core claim: save bias is the critical amplifier \emph{when encounter bias is moderate}, not in all conditions.
+The same pilot also surfaced a capability-inverse refusal signature in Haiku (1/3 con-framed prompts refused with an explicit balance-check; 0/15 in Sonnet and 0/9 in Opus); this is left to follow-up work.
+
 \paragraph{H7: Bubble-to-chamber progression.}
 Users who accumulate homogeneous hoards over time will transition from epistemic bubble characteristics (low awareness, correctable by exposure) to echo chamber characteristics (active distrust of counter-attitudinal sources).
 Specifically, trust in counter-attitudinal sources will be negatively predicted by hoard homogeneity duration, controlling for initial attitude strength.
