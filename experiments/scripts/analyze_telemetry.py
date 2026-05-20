@@ -84,6 +84,59 @@ def main() -> None:
             print(f"  Covered is {speedup:.1f}x slower than refused.")
             print(f"  Refusals consistently use 0 tools (fast-path); covered_compliance uses 4-5 tools (slow-path).")
 
+    # ===== Cycle-position effect (Wave 3b mid vs Wave 4 start, Haiku only) =====
+    print("\n" + "=" * 90)
+    print("CYCLE-POSITION EFFECT (Haiku, 12 cells each wave, identical prompts)")
+    print("=" * 90)
+    by_wave = defaultdict(list)
+    for r in rows:
+        if r["model"] != "haiku":
+            continue
+        cid = r.get("call_id", "")
+        wave = r.get("wave", "")
+        if cid.startswith("fs_w3b") or "w3b" in wave:
+            by_wave["mid (~105 min)"].append(r)
+        elif cid.startswith("fs_w4") or "w4" in wave:
+            by_wave["start (~14 min)"].append(r)
+    if by_wave:
+        for wave_label, items in sorted(by_wave.items()):
+            if not items:
+                continue
+            outcome_counts = defaultdict(int)
+            for r in items:
+                outcome_counts[r["outcome"]] += 1
+            n = len(items)
+            ref_share = (outcome_counts["refused"] + outcome_counts["partial_refused"]) / n
+            cov_share = outcome_counts["covered_compliance"] / n
+            mean_tools = mean(r["tool_uses"] for r in items)
+            mean_dur = mean(r["duration_ms"] / 1000 for r in items)
+            print(f"  {wave_label:<22s} n={n:>3d}  refused={ref_share:.0%}  covered={cov_share:.0%}  mean_tools={mean_tools:.1f}  mean_dur={mean_dur:.1f}s")
+        # Outcome shift
+        mid = by_wave.get("mid (~105 min)", [])
+        start = by_wave.get("start (~14 min)", [])
+        if mid and start:
+            mid_ref = sum(1 for r in mid if r["outcome"] in ("refused", "partial_refused")) / len(mid)
+            start_ref = sum(1 for r in start if r["outcome"] in ("refused", "partial_refused")) / len(start)
+            mid_dur = mean(r["duration_ms"] / 1000 for r in mid)
+            start_dur = mean(r["duration_ms"] / 1000 for r in start)
+            print(f"\n  Δ refusal rate (start - mid):  {start_ref - mid_ref:+.0%}")
+            print(f"  Δ mean duration (start - mid): {start_dur - mid_dur:+.1f}s")
+            print(f"  Interpretation: cycle-start has {'fewer' if start_ref < mid_ref else 'more'} refusals "
+                  f"and {'longer' if start_dur > mid_dur else 'shorter'} mean call duration.")
+
+    # ===== New: refused_after_tool_use sub-mode =====
+    print("\n" + "=" * 90)
+    print("NEW SUB-MODE: refused_after_tool_use (Wave 4 anomaly)")
+    print("=" * 90)
+    refused_with_tools = [r for r in rows if r["outcome"] == "refused" and r["tool_uses"] > 0]
+    refused_no_tools = [r for r in rows if r["outcome"] == "refused" and r["tool_uses"] == 0]
+    if refused_with_tools:
+        print(f"  refused, 0 tool_uses (fast-path): n={len(refused_no_tools)}, "
+              f"mean dur {mean(r['duration_ms']/1000 for r in refused_no_tools):.1f}s")
+        print(f"  refused, with tool_uses (used tools but refused output): n={len(refused_with_tools)}, "
+              f"mean dur {mean(r['duration_ms']/1000 for r in refused_with_tools):.1f}s")
+        print(f"  Sub-mode emerges in Wave 4 only -- model invoked WebSearch but then refused to compile a source list.")
+
     # ===== Cost estimation =====
     print("\n" + "=" * 90)
     print("APPROXIMATE TOKEN COST BY MODEL (treating total_tokens as billable input+output)")

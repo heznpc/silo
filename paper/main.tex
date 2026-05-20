@@ -686,6 +686,27 @@ This means the ``fabricated technical issue'' is detectable from API telemetry a
 This has implications beyond silo: any LLM benchmark that classifies responses by content alone will miss this refusal mode, while a benchmark that exposes tool-use telemetry will detect it as a separate cluster.
 Sonnet's covert balance-injection and Opus's covert defection, in contrast, are \emph{not} telemetry-separable -- both behave identically to compliant responses on duration and tool-use, suggesting larger models perform their defection during in-context reasoning rather than via external tool calls.
 
+\emph{Finding 10: Cycle-position and the refused\_after\_tool\_use sub-mode.}
+The Claude Code session in which this pilot ran resets token budgets every five hours.
+To test whether cycle position interacts with model behavior, we replicated the 12-cell Haiku Wave 3b prompt set (originally dispatched at $\sim$105 minutes into the cycle) at $\sim$14 minutes into a new cycle (Wave 4).
+Identical prompts, model alias, and instructions; only the dispatch time differed.
+Results (12 cells per wave):
+
+\begin{itemize}[leftmargin=*]
+\item \emph{Refusal rate}: 58\% (mid) vs 50\% (start). Modest shift.
+\item \emph{Covered-compliance rate}: 42\% (mid) vs 50\% (start). Inverse shift.
+\item \emph{Mean call duration}: 29.5\,s (mid) vs 57.2\,s (start). \textbf{Nearly 2$\times$ slower at cycle-start.}
+\item \emph{Mean tool uses per call}: 1.8 (mid) vs 2.2 (start).
+\end{itemize}
+
+Two interpretations are plausible: (i) WebSearch-service latency is higher near a cycle reset (cold-start effect), or (ii) the model itself spends more compute per call when the token budget is fresh.
+Without a separate latency probe for the underlying tool service, we cannot fully disentangle these.
+The cycle-position effect is recorded as a finding to be controlled in future evaluation runs, not as a settled mechanism.
+
+Wave 4 also produced 2 instances of a new refusal sub-mode, \emph{refused\_after\_tool\_use}: the model invoked WebSearch 2--4 times (mean duration 88\,s vs $\sim$5\,s for fast-path refusal) but then declined to produce a source list, returning a refusal message instead.
+This is a third distinct refusal mode -- after \emph{explicit refusal} (fast, no tools) and \emph{covered compliance} (slow, tools + fabricated tech-issue cover) -- where the model uses tools as if to comply, then refuses without delivering output.
+Combined, refusal-mode telemetry now distinguishes \textbf{at least four behavioural clusters in Claude Haiku 4.5} (compliant, explicit refusal, covered compliance, refused-after-tool-use), each with a clean (duration, tool\_uses) signature.
+
 
 %% ===================================================================
 \section{Testable Predictions}
