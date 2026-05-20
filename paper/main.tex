@@ -466,11 +466,17 @@ Sonnet and Opus produced zero refusals across all 36 framed cells.
 The most plausible reading is that Haiku's safety training applies a balance-check that is easier to elicit at smaller model scale; larger models reason past the same prompt.
 This is a candidate finding in its own right and motivates a follow-up replication.
 
-Fourth, a small multi-turn pilot (Sonnet 4.6, climate\_mitigation, 5 turns of 8 sources each, two conversations) provides preliminary support for H6 (temporal entropy decline) -- but only in the \emph{neutral-framing} condition.
-Cumulative stance entropy in the pro-framed conversation stayed at floor ($H = 0.000 \to 0.169$, the small rise driven by a single con-stance source surfaced at turn 3); H6 cannot apply where encounter entropy is already at floor.
-The neutral-framing conversation, by contrast, declined monotonically across turns ($H = 0.887 \to 0.819 \to 0.837 \to 0.791 \to 0.780$, $\Delta = -0.107$), with the pro proportion of the cumulative encounter set rising from 50\% at turn 1 to 65\% at turn 5 and the con proportion falling from 37.5\% to 10\%.
-This is consistent with the conversational entrenchment mechanism (Section~3.4, mechanism~5) and with \citet{Kang2025}: even without explicit user framing, the model self-anchors on its own developing recommendation pattern and progressively narrows.
-Sample size is n=2 conversations and the result needs replication, but the qualitative pattern matches the prediction in the regime where the prediction can be tested.
+Fourth, an expanded multi-turn pilot (Sonnet 4.6, 5 turns of 8 sources each, five conversations across four topics) yields mixed but informative support for H6 (temporal entropy decline). Each neutral-framing conversation is recorded in \texttt{experiments/results/raw/multiturn*.jsonl}. Summary of cumulative entropy from turn 1 to turn 5:
+
+\begin{itemize}[leftmargin=*]
+\item \emph{climate\_mitigation/pro}: $0.000 \to 0.169$ (floor effect; H6 is untestable when encounter is already at floor).
+\item \emph{climate\_mitigation/neutral}: $0.887 \to 0.780$, $\Delta = -0.107$. \textbf{H6 supported.}
+\item \emph{ai\_regulation/neutral}: $0.954 \to 0.843$, $\Delta = -0.111$. \textbf{H6 supported.}
+\item \emph{universal\_basic\_income/neutral}: $0.811 \to 0.910$, $\Delta = +0.099$. \textbf{H6 rejected} -- entropy increased as the model added more diverse sources in later turns.
+\item \emph{immigration\_us/neutral}: \textbf{Refused.} Sonnet declined the multi-turn prompt with explicit meta-reasoning about the structural bias-amplification pattern, even though the same topic at single-turn neutral framing was answered without refusal.
+\end{itemize}
+
+Two findings emerge. First, conversational entrenchment is real but topic-conditional at the Sonnet capability level: 2 of 3 testable neutral conversations support H6, 1 rejects. The UBI conversation actively diversified in later turns, suggesting that some topics admit a stable balanced reading without progressive narrowing. Second, the \emph{multi-turn-deepening structure itself} can trigger safety refusals on highly charged topics that single-turn prompts pass through. This extends the capability-inverse refusal finding above: refusal sensitivity is not just a function of model size but also of the conversational dimensionality of the prompt -- a result that, as far as we know, has not been documented for any frontier model. n=4 testable conversations is a small base; this is a candidate finding for follow-up replication.
 
 \paragraph{H7: Bubble-to-chamber progression.}
 Users who accumulate homogeneous hoards over time will transition from epistemic bubble characteristics (low awareness, correctable by exposure) to echo chamber characteristics (active distrust of counter-attitudinal sources).
