@@ -28,15 +28,15 @@ H_null: stance entropy of saved subset is independent of source condition.
 
 Per user decision 2026-05-21 the first run stays within the Anthropic Claude family. External-vendor (GPT, Gemini) cross-validation is deferred to a follow-up run. The "model" factor therefore reads as *model-size axis* (Opus / Sonnet / Haiku) rather than *vendor axis*.
 
-Source-recommender models (resolve to exact provider model_id at run time and record in `results/run_manifest.json`):
+Source-recommender models (verified via sub-agent self-report on 2026-05-21):
 
-- Claude Opus 4.7 -- **single-turn only**, n=10 sanity cells (full multi-turn dropped for Opus due to cost ceiling; see Section 9).
-- Claude Sonnet 4.6 -- full sweep, n=40, single-turn + 5-turn multi-turn.
-- Claude Haiku 3.5 -- full sweep, n=40, single-turn + 5-turn multi-turn.
+- **Claude Opus 4.7** (`claude-opus-4-7`, 1M context, cutoff Jan 2026) -- single-turn only, n=10 sanity cells (full multi-turn dropped for Opus due to cost ceiling; see Section 9).
+- **Claude Sonnet 4.6** (`claude-sonnet-4-6`, cutoff Aug 2025) -- full sweep, n=40, single-turn + 5-turn multi-turn.
+- **Claude Haiku 4.5** (`claude-haiku-4-5-20251001`) -- full sweep, n=40, single-turn + 5-turn multi-turn.
 
 Judge models for stance classification (also Claude-family):
 
-- Primary judge: Claude Haiku 3.5 at temperature=0.
+- Primary judge: Claude Haiku 4.5 at temperature=0.
 - Cross-check judge: Claude Sonnet 4.6 at temperature=0, applied to a random subsample of n=500 saved items.
 - Disagreement protocol: items where the two judges disagree on the subsample are flagged; if subsample kappa < 0.6, escalate to manual recoding of the full disagreed set before any primary analysis is reported.
 
