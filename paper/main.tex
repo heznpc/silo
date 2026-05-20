@@ -466,6 +466,12 @@ Sonnet and Opus produced zero refusals across all 36 framed cells.
 The most plausible reading is that Haiku's safety training applies a balance-check that is easier to elicit at smaller model scale; larger models reason past the same prompt.
 This is a candidate finding in its own right and motivates a follow-up replication.
 
+Fourth, a small multi-turn pilot (Sonnet 4.6, climate\_mitigation, 5 turns of 8 sources each, two conversations) provides preliminary support for H6 (temporal entropy decline) -- but only in the \emph{neutral-framing} condition.
+Cumulative stance entropy in the pro-framed conversation stayed at floor ($H = 0.000 \to 0.169$, the small rise driven by a single con-stance source surfaced at turn 3); H6 cannot apply where encounter entropy is already at floor.
+The neutral-framing conversation, by contrast, declined monotonically across turns ($H = 0.887 \to 0.819 \to 0.837 \to 0.791 \to 0.780$, $\Delta = -0.107$), with the pro proportion of the cumulative encounter set rising from 50\% at turn 1 to 65\% at turn 5 and the con proportion falling from 37.5\% to 10\%.
+This is consistent with the conversational entrenchment mechanism (Section~3.4, mechanism~5) and with \citet{Kang2025}: even without explicit user framing, the model self-anchors on its own developing recommendation pattern and progressively narrows.
+Sample size is n=2 conversations and the result needs replication, but the qualitative pattern matches the prediction in the regime where the prediction can be tested.
+
 \paragraph{H7: Bubble-to-chamber progression.}
 Users who accumulate homogeneous hoards over time will transition from epistemic bubble characteristics (low awareness, correctable by exposure) to echo chamber characteristics (active distrust of counter-attitudinal sources).
 Specifically, trust in counter-attitudinal sources will be negatively predicted by hoard homogeneity duration, controlling for initial attitude strength.
