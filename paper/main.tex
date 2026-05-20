@@ -448,12 +448,23 @@ This follows from apparent comprehensiveness (mechanism~3): LLM responses appear
 In LLM-mediated search sessions, cumulative stance entropy will decline over the course of the session (negative temporal slope), whereas in unmediated sessions, cumulative entropy will increase (positive temporal slope).
 This follows from conversational entrenchment (mechanism~5): multi-turn LLM conversations progressively narrow the information space \citep{Kang2025}.
 
-\paragraph{Scope correction from a real-LLM pilot.}
-A small real-LLM pilot run (2026-05-21; \texttt{climate\_mitigation} topic only; n=3--5 per (model, framing) cell across Claude Opus 4.7, Sonnet 4.6, Haiku 4.5; see \texttt{experiments/results/llm\_stance\_entropy.md}) shows that under framed prompts (pro or con) the \emph{encounter} layer already reaches floor entropy ($H \approx 0$, $d \approx -7.7$ vs.\ neutral baseline) in 19 of 21 non-refused cells.
-When encounter entropy is already at floor, save-layer filtering by construction cannot amplify the bias further.
+\paragraph{Scope correction from a cross-topic real-LLM pilot.}
+A cross-topic real-LLM pilot run (2026-05-21; 5 controversial topics + 2 neutral baselines; 57 LLM cells across Claude Opus 4.7, Sonnet 4.6, Haiku 4.5, plus 420 synthetic unmediated-baseline cells; see \texttt{experiments/results/full\_analysis\_2026-05-21.md}) yielded three findings that scope the paper's central claim.
+
+First, under framed prompts (pro or con), the \emph{encounter} layer already reaches floor entropy ($H \approx 0$) in essentially all Sonnet and Opus cells across all five controversial topics (immigration, climate, AI regulation, gun control, UBI).
+The pooled Cohen's $d$ between LLM-framed save subsets ($b=1.0$, $\mu = 0.080$, $n = 33$) and the unmediated curated baseline ($\mu = 0.885$, $n = 280$) is $d = -6.21$ -- roughly seven times the simulation's predicted $-0.88$.
+The dominant effect is at the encounter step.
+
+Second, when encounter entropy is already at floor, save-layer filtering by construction cannot amplify the bias further.
+The save layer materially amplifies in only three of twelve (model, framing) cells, all involving moderate encounter bias (unmediated/pro $\Delta = +0.134$; unmediated/neutral $\Delta = +0.060$; Sonnet/neutral $\Delta = +0.289$).
 The save-bias amplifier predicted by H2 therefore operates only in the \emph{moderate-encounter-bias} regime; in the strong-framing regime it is structurally redundant.
-This is consistent with the nonlinear-layer-interaction caveat noted in Section~9 (Limitations) and reframes the paper's core claim: save bias is the critical amplifier \emph{when encounter bias is moderate}, not in all conditions.
-The same pilot also surfaced a capability-inverse refusal signature in Haiku (1/3 con-framed prompts refused with an explicit balance-check; 0/15 in Sonnet and 0/9 in Opus); this is left to follow-up work.
+This reframes the paper's core claim: save bias is the critical amplifier \emph{when encounter bias is moderate} -- a scope statement consistent with the nonlinear-layer-interaction caveat noted in Section~9.
+
+Third, the pilot surfaced an unanticipated capability-inverse refusal signature in Claude Haiku 4.5.
+Haiku refused or partially refused 5 of 7 con-framed prompts (71\%) and 2 of 7 pro-framed prompts (29\%) across the five controversial topics, with an asymmetric pattern in which con framing (anti-permissive, anti-regulation, anti-control, anti-UBI) triggers refusal substantially more than pro framing.
+Sonnet and Opus produced zero refusals across all 36 framed cells.
+The most plausible reading is that Haiku's safety training applies a balance-check that is easier to elicit at smaller model scale; larger models reason past the same prompt.
+This is a candidate finding in its own right and motivates a follow-up replication.
 
 \paragraph{H7: Bubble-to-chamber progression.}
 Users who accumulate homogeneous hoards over time will transition from epistemic bubble characteristics (low awareness, correctable by exposure) to echo chamber characteristics (active distrust of counter-attitudinal sources).
