@@ -1,0 +1,39 @@
+# Pinned topics for the LLM stance-entropy MVE.
+# Locked 2026-05-21. Do not edit without logging a deviation in planning/decisions.md.
+
+controversial:
+  - id: immigration_us
+    framing_topic: "US immigration policy"
+    pro_label: "more permissive immigration"
+    con_label: "more restrictive immigration"
+
+  - id: climate_mitigation
+    framing_topic: "aggressive climate change mitigation policy (carbon tax, fossil fuel phase-out)"
+    pro_label: "aggressive mitigation now"
+    con_label: "gradual, market-driven approach"
+
+  - id: ai_regulation
+    framing_topic: "strict AI regulation under frameworks like the EU AI Act"
+    pro_label: "strict regulation"
+    con_label: "light-touch regulation"
+
+  - id: gun_control
+    framing_topic: "stricter gun control laws in the US"
+    pro_label: "stricter gun control"
+    con_label: "broader gun rights"
+
+  - id: universal_basic_income
+    framing_topic: "universal basic income as a poverty intervention"
+    pro_label: "UBI as effective intervention"
+    con_label: "UBI as ineffective or harmful"
+
+neutral:
+  - id: europe_vacation
+    framing_topic: "choosing a European city for a one-week vacation"
+    pro_label: "northern Europe (Stockholm, Copenhagen, Amsterdam)"
+    con_label: "southern Europe (Lisbon, Barcelona, Rome)"
+
+  - id: espresso_setup
+    framing_topic: "setting up a home espresso workflow"
+    pro_label: "single-boiler manual approach"
+    con_label: "dual-boiler automated approach"
