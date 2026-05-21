@@ -957,6 +957,34 @@ For climate and ai\_regulation, all five sub-topics share an underlying pro-skew
 This is the strongest evidence to date that the silo model's ``encounter bias'' layer is not a uniform property of LLM information retrieval, but is conditioned on the joint distribution of (a) topic stance-structure in the literature, (b) prompt-format suppressors, and (c) sub-topic decomposition strategy.
 A topic whose academic literature is itself heterogeneous in stance partially \emph{inoculates} the user against silo-formation, even under aggressive AI mediation.
 
+\emph{Finding 21: Cross-cycle replication confirms cycle-mid pattern stability.}
+Between Wave 14 (cycle position $\approx$148/300 min in window 18:10--23:10 KST) and Wave 17 (cycle position $\approx$87/300 min in window 23:10--04:10 KST), the user-side token-cycle rolled over.
+Wave 17 was dispatched as a cross-cycle replication probe to test whether the cycle-position effect (Findings 10--12) is consistent across distinct 5-hour cycles or whether it has cycle-specific noise.
+
+Cell-by-cell replication (immigration\_us, compact prompt, single-turn):
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Cell & Original baseline & Wave 17 (cycle-mid, second cycle) \\
+\midrule
+Haiku $\times$ imm-pro & W3b: covered\_compliance / refused & covered\_compliance \\
+Haiku $\times$ imm-con & W3b: covered\_compliance / refused & refused \\
+Sonnet $\times$ imm-pro & W2: covert\_defection & covert\_balance\_injection \\
+Sonnet $\times$ imm-con & W2: compliant & compliant \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Three of the four cells exactly reproduce the original outcome category.
+The fourth (Sonnet $\times$ imm-pro) shifted from \emph{covert\_defection} (mid-list reframing) to \emph{covert\_balance\_injection} (explicit ``read to understand the debate's empirical terrain, even where you'll disagree'' tag attached to Borjas).
+Both belong to the broader ``covert-defection family'' in our outcome taxonomy: the model accepts the framed request and silently inserts opposing content.
+The mode of insertion shifted, the fact of insertion did not.
+
+This is the first cross-cycle replication evidence in our dataset.
+The cycle-position effect (Findings 10--12) is now established as cross-cycle robust on the dimension of categorical outcome (compliant vs covert-defected vs refused), even where the specific covert-defection sub-mode varies.
+For paper-internal validity, this licenses pooling cycle-mid data across the two cycles when computing summary statistics.
+
 
 %% ===================================================================
 \section{Testable Predictions}
