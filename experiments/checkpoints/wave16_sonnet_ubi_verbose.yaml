@@ -1,0 +1,18 @@
+wave_id: fs_w16_sonnet_ubi_verbose
+prompt_format: verbose
+description: |
+  Wave 16 isolates the UBI anomaly from Round 4: of all multi-turn
+  neutral topics tested under compact prompt format, UBI was the
+  ONLY one to show positive dH (+0.099, "H6 REJECTED rises"). All
+  other compact MT topics either declined (climate -0.107, ai_reg
+  -0.111) or stayed at floor.
+  Question: does the verbose suppressor reproduce the same UBI
+  reversal, or does verbose pull UBI back toward decline like
+  climate and ai_reg did in Wave 13?
+  Single Sonnet conversation. If positive dH replicates, UBI's
+  reversal is topic-conditional rather than format-conditional --
+  a strong signal that some topics have latent stance distributions
+  that resist the standard "entrenchment" mechanism even under
+  compact prompts.
+cells:
+  - {model: sonnet, topic: universal_basic_income, framing: neutral, turns: 5}

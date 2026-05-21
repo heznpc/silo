@@ -1,0 +1,14 @@
+wave_id: fs_w15_opus_mt_verbose
+prompt_format: verbose
+description: |
+  Wave 15 closes the model x prompt-format x multi-turn matrix by
+  dispatching Opus (claude-opus-4-7) on the same 2 conversations used
+  in Wave 13 (Sonnet) and Wave 14 (Haiku). Low concurrency to avoid
+  rate-limit triggers (lesson from Wave 11).
+  Expected pattern (hypothesis): Opus tracks closer to Sonnet
+  (high turn-1 entropy + mild decline) than to Haiku (turn-1 floor +
+  topic-rescue rise). If Opus mirrors Haiku, Finding 18 must be
+  reframed as "Sonnet-specific" rather than "Sonnet-class".
+cells:
+  - {model: opus, topic: climate_mitigation, framing: neutral, turns: 5}
+  - {model: opus, topic: ai_regulation,      framing: neutral, turns: 5}

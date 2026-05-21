@@ -908,6 +908,55 @@ This is the inverse of Sonnet's compact-prompt pattern (high turn-1 entropy foll
 Haiku's behaviour suggests a different bias mechanism: front-loaded prior-driven defection at each turn-1, with the cumulative measure rescued mechanically by sub-topic variation rather than by any in-context self-correction.
 For the silo model, this matters: a heterogeneous model fleet (mixed Sonnet/Haiku traffic in a real deployment) would yield hoards whose silo-formation mechanism varies by which model handled which turn, making aggregate diversity measures harder to attribute to a single cognitive process.
 
+\emph{Finding 19: Opus completes the model matrix; Haiku is the outlier, not Sonnet.}
+Wave 15 dispatched the same two multi-turn verbose conversations on Opus to close the model $\times$ prompt-format $\times$ multi-turn matrix.
+
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Topic (verbose multi-turn, neutral framing) & Haiku $\Delta H$ & Sonnet $\Delta H$ & Opus $\Delta H$ \\
+\midrule
+climate\_mitigation & $+0.807$ (retry) / refused & $-0.065$ & $-0.068$ \\
+ai\_regulation & $+0.708$ (retry) / partial & $-0.042$ & $+0.000$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Opus's climate trajectory ($\Delta H = -0.068$) is essentially identical to Sonnet's verbose climate ($-0.065$), and its ai\_regulation trajectory ($\Delta H = +0.000$, flat) sits between Sonnet's mild decline and complete neutrality.
+The Haiku--Sonnet gap of $\approx 0.87$ in $\Delta H$ on climate (and $\approx 0.75$ on ai\_regulation) is two orders of magnitude larger than the Opus--Sonnet gap.
+
+This reframes Finding 18.
+The relevant cleavage is not ``Sonnet-class vs others'' but ``models that exhibit in-context self-conditioning (Sonnet, Opus) vs models that do not (Haiku).''
+Haiku's front-loaded prior defection appears to dominate any cumulative steering by its own developing context, while Sonnet and Opus both show the mild entrenchment trajectory predicted by H6.
+A practical consequence: any deployment that routes traffic between Sonnet/Opus and Haiku will produce mixed silo-formation regimes, and the bias-diagnostic suite must include \emph{both} measures (turn-1 entropy floor count and turn-1$\to$turn-5 $\Delta H$).
+
+\emph{Finding 20: UBI shows topic-conditional anti-entrenchment immunity, amplified by verbose.}
+The H6 multi-turn pilot in Round 4 found that of all neutral-framing topics tested under compact prompts, UBI was the only one to reject H6 with positive $\Delta H$ ($+0.099$); all others either supported H6 or stayed at floor.
+We isolated this anomaly by re-running UBI under verbose prompt format (Wave 16, Sonnet).
+
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+Topic (Sonnet, neutral framing, 5 turns) & Compact $\Delta H$ & Verbose $\Delta H$ \\
+\midrule
+climate\_mitigation & $-0.107$ & $-0.065$ ($\approx 40\%$ reduction in $|\Delta H|$) \\
+ai\_regulation & $-0.111$ & $-0.042$ ($\approx 60\%$ reduction in $|\Delta H|$) \\
+universal\_basic\_income & $+0.099$ & $+0.399$ ($\approx 4\times$ amplification) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+For climate and ai\_regulation, verbose moves $\Delta H$ \emph{toward zero} (suppressor partially neutralises entrenchment).
+For UBI, verbose moves $\Delta H$ \emph{farther positive} (suppressor amplifies the existing reversal).
+This rules out a simple ``verbose neutralises bias'' interpretation: verbose acts \emph{relative to the topic's stance-structure}.
+
+Mechanistic interpretation: UBI's five sub-topics (philosophy, empirical pilots, labor supply, fiscal feasibility, alternatives) naturally span the full pro/con spectrum, with the ``alternatives'' turn structurally pulling in con-coded sources (NIT wage subsidies, EITC, job guarantee).
+The model, freed from balance disclaimers under verbose, lists pro-saturated philosophical sources in turn 1 ($7/8$ pro under verbose) and then mechanically diversifies as subsequent sub-topics force in different stance distributions.
+For climate and ai\_regulation, all five sub-topics share an underlying pro-skewed academic literature, so diversification across turns is weaker.
+
+This is the strongest evidence to date that the silo model's ``encounter bias'' layer is not a uniform property of LLM information retrieval, but is conditioned on the joint distribution of (a) topic stance-structure in the literature, (b) prompt-format suppressors, and (c) sub-topic decomposition strategy.
+A topic whose academic literature is itself heterogeneous in stance partially \emph{inoculates} the user against silo-formation, even under aggressive AI mediation.
+
 
 %% ===================================================================
 \section{Testable Predictions}
