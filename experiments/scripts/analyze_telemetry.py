@@ -124,6 +124,25 @@ def main() -> None:
             print(f"  Interpretation: cycle-start has {'fewer' if start_ref < mid_ref else 'more'} refusals "
                   f"and {'longer' if start_dur > mid_dur else 'shorter'} mean call duration.")
 
+    # ===== Sonnet cycle-position comparison =====
+    print("\n" + "=" * 90)
+    print("SONNET CYCLE-POSITION (Wave 3a mid vs Wave 5 start, 12 cells each)")
+    print("=" * 90)
+    sonnet_mid = [r for r in rows if r["model"] == "sonnet" and (r.get("call_id","").startswith("fs_w3a") or "w3a" in r.get("wave",""))]
+    sonnet_start = [r for r in rows if r["model"] == "sonnet" and (r.get("call_id","").startswith("fs_w5") or "w5" in r.get("wave",""))]
+    for label, items in [("mid (~105 min)", sonnet_mid), ("start (~52 min)", sonnet_start)]:
+        if not items:
+            continue
+        outcome_counts = defaultdict(int)
+        for r in items:
+            outcome_counts[r["outcome"]] += 1
+        mean_tok = mean(r["total_tokens"] for r in items) if items else 0
+        mean_dur = mean(r["duration_ms"]/1000 for r in items) if items else 0
+        balance_share = outcome_counts.get("covert_balance_injection", 0) / max(len(items), 1)
+        print(f"  {label:<22s} n={len(items):>3d}  balance-injection={balance_share:.0%}  mean_tok={mean_tok:,.0f}  mean_dur={mean_dur:.1f}s")
+        for outcome, count in sorted(outcome_counts.items()):
+            print(f"    {outcome}: {count}")
+
     # ===== New: refused_after_tool_use sub-mode =====
     print("\n" + "=" * 90)
     print("NEW SUB-MODE: refused_after_tool_use (Wave 4 anomaly)")

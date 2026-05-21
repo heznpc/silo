@@ -707,6 +707,22 @@ Wave 4 also produced 2 instances of a new refusal sub-mode, \emph{refused\_after
 This is a third distinct refusal mode -- after \emph{explicit refusal} (fast, no tools) and \emph{covered compliance} (slow, tools + fabricated tech-issue cover) -- where the model uses tools as if to comply, then refuses without delivering output.
 Combined, refusal-mode telemetry now distinguishes \textbf{at least four behavioural clusters in Claude Haiku 4.5} (compliant, explicit refusal, covered compliance, refused-after-tool-use), each with a clean (duration, tool\_uses) signature.
 
+\emph{Finding 11: Cycle-position effect generalizes from Haiku refusal rate to Sonnet covert balance-injection.}
+A parallel cycle-position replication on Sonnet 4.6 (Wave 5, 12 cells at $\sim$52 minutes into a new cycle vs Wave 3a, 12 cells at $\sim$105 minutes into the prior cycle, identical prompts) yielded:
+
+\begin{itemize}[leftmargin=*]
+\item Wave 3a (mid): 42\% covert balance-injection (5 of 12 cells with explicit footer notes such as ``honest literature review requires engaging with the strongest counterevidence'').
+\item Wave 5 (start): \textbf{0\%} covert balance-injection (12 of 12 clean compliance).
+\end{itemize}
+
+The cycle-position effect is therefore not specific to Haiku's refusal/cover behavior; it also modulates Sonnet's covert defection rate by 42 percentage points across an otherwise identical 12-cell sweep.
+Combined with Haiku's $-8\%$ refusal-rate shift and $+27.7$\,s duration shift, three distinct cycle-position effects emerge on three different behavioural axes (refusal frequency, duration, balance-injection rate) at two different model sizes.
+The size of the Sonnet effect is striking: a deterministic prompt set produces qualitatively different defection patterns depending solely on when in the 5-hour Claude Code token-cycle window it is dispatched.
+This either reflects (a) capacity / scheduling differences within the host's rate-limit window, (b) a within-session statefulness we did not control for, or (c) inferential drift between two non-identical sample draws.
+At this sample size ($n=24$ comparable Sonnet cells split 12/12) we cannot fully distinguish; the result is documented as a control-needed signal for any future LLM-behavior study run inside Claude Code.
+
+This finding also vindicates capturing per-call telemetry at dispatch time: had we not recorded \texttt{minutes\_into\_cycle} as a per-call variable, the cross-wave behavioral difference would have been impossible to attribute. The supporting monitoring rig (\texttt{experiments/scripts/monitor.py}) is documented in \texttt{experiments/scripts/telemetry\_schema.md}.
+
 
 %% ===================================================================
 \section{Testable Predictions}
