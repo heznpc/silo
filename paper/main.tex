@@ -851,6 +851,33 @@ Verbose suppressor eliminates Opus defection at both cycle positions.
 Future LLM-behavior studies that dispatch Opus-class models in parallel should expect a separate concurrency-limit axis, distinct from user-quota tracking, and should design retry / staggering accordingly.
 The 2 failed cells are recorded in \texttt{call\_telemetry.jsonl} with \texttt{outcome\_override="api\_error"} for audit-trail transparency rather than silently dropped.
 
+\emph{Finding 17: Multi-turn H6 entrenchment is only partially format-suppressible.}
+Findings 13--16 established that prompt-format suppressors (compact $\to$ verbose) substantially reduce single-turn defection (Haiku $-67$pp, Sonnet $-34$pp, Opus to floor).
+Wave 13 dispatched two Sonnet multi-turn conversations under verbose format and compares against the compact baselines from Finding 5's multi-turn pilot.
+
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Topic (Sonnet, neutral framing, 5 turns) & Compact $\Delta H$ & Verbose $\Delta H$ & Reduction \\
+\midrule
+climate\_mitigation & $-0.107$ (W6 baseline) & $-0.065$ (W13) & $\approx 40\%$ \\
+ai\_regulation & $-0.111$ (W6 baseline) & $-0.042$ (W13) & $\approx 60\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Verbose suppressor reduces multi-turn entrenchment by 40--60\% on the two tested topics but does not eliminate it (both $\Delta H$ still negative).
+Compare with single-turn Haiku covered\_compliance, which the same verbose suppressor eliminated entirely (Finding 13: $50\% \to 0\%$).
+
+\textbf{The two behavioural axes have qualitatively different suppressor sensitivity}:
+\begin{itemize}[leftmargin=*]
+\item \emph{Single-turn defection} responds sharply to suppressor strings; covered-compliance and balance-injection can be largely or fully eliminated.
+\item \emph{Multi-turn entrenchment} responds partially; suppressor strings reduce but do not eliminate the cumulative narrowing.
+\end{itemize}
+
+The likely mechanism: single-turn defection is a single decision the model can be steered away from with explicit instructions; multi-turn entrenchment is an emergent property of the model conditioning on its own developing output across turns, which suppressor strings only weakly govern.
+This implication is practically important for evaluation design: a study that measures only single-turn bias with strong suppressors will systematically under-report the cumulative bias that emerges in real multi-turn user sessions.
+
 
 %% ===================================================================
 \section{Testable Predictions}
