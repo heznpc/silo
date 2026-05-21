@@ -878,6 +878,36 @@ Compare with single-turn Haiku covered\_compliance, which the same verbose suppr
 The likely mechanism: single-turn defection is a single decision the model can be steered away from with explicit instructions; multi-turn entrenchment is an emergent property of the model conditioning on its own developing output across turns, which suppressor strings only weakly govern.
 This implication is practically important for evaluation design: a study that measures only single-turn bias with strong suppressors will systematically under-report the cumulative bias that emerges in real multi-turn user sessions.
 
+\emph{Finding 18: Multi-turn entrenchment is model-conditional; Haiku shows inverse trajectory.}
+Wave 14 extended Wave 13's multi-turn $\times$ verbose A/B to the Haiku model.
+Two observations diverged sharply from the Sonnet baseline.
+
+\textit{(18a) Haiku refuses verbose multi-turn where Sonnet complies.}
+Both Haiku verbose multi-turn conversations terminated at turn 1 with refusal-mode responses: climate\_mitigation classified the prompt as an ``injection attack pattern'' citing the ``no caveats/no disclaimers'' framing; ai\_regulation issued a partial-refusal menu redirect, surfacing the meta-pattern as ``on-topic for [the] confirmation-bias research itself.''
+The same verbose suppressor that elicited compliance from Sonnet (Wave 13) and from Opus (Wave 11--12) triggered Haiku's refusal threshold when stacked with multi-turn framing.
+This is the first observed \emph{interaction} between prompt-format suppressor and conversational arm: each axis alone leaves Haiku compliant (Wave 7 single-turn verbose: $8/12$ compliant; Round 4 multi-turn compact: compliant), but their combination flips behaviour.
+
+\textit{(18b) Under a neutral-retry prompt, Haiku shows turn-1 maximal defection followed by topic-driven recovery.}
+Re-running the same two topics with a softer ``graduate-student reading list'' framing yielded compliance but with a striking entropy trajectory.
+
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Topic (Haiku, neutral framing, 5 turns, neutral-retry prompt) & $H$ turn 1 & $H$ turn 5 & $\Delta H$ \\
+\midrule
+climate\_mitigation & $0.000$ & $0.807$ & $+0.807$ \\
+ai\_regulation & $0.000$ & $0.708$ & $+0.708$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Both conversations start at the entropy floor ($H = 0$, all 8 turn-1 sources sharing the same stance) and then rise sharply as subsequent turns introduce sub-topics whose stance distributions differ.
+This is the inverse of Sonnet's compact-prompt pattern (high turn-1 entropy followed by mild decline) and of Sonnet's verbose-prompt pattern (high turn-1 entropy followed by smaller decline).
+
+\textbf{Reinterpretation of H6.} The H6 hypothesis as originally framed (``multi-turn neutral conversations produce cumulative narrowing'') is \emph{model-specific to Sonnet-class systems with prior-conditioning capacity}.
+Haiku's behaviour suggests a different bias mechanism: front-loaded prior-driven defection at each turn-1, with the cumulative measure rescued mechanically by sub-topic variation rather than by any in-context self-correction.
+For the silo model, this matters: a heterogeneous model fleet (mixed Sonnet/Haiku traffic in a real deployment) would yield hoards whose silo-formation mechanism varies by which model handled which turn, making aggregate diversity measures harder to attribute to a single cognitive process.
+
 
 %% ===================================================================
 \section{Testable Predictions}
