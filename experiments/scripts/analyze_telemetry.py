@@ -124,6 +124,28 @@ def main() -> None:
             print(f"  Interpretation: cycle-start has {'fewer' if start_ref < mid_ref else 'more'} refusals "
                   f"and {'longer' if start_dur > mid_dur else 'shorter'} mean call duration.")
 
+    # ===== Prompt-format A/B at controlled cycle position (Wave 4 vs Wave 7) =====
+    print("\n" + "=" * 90)
+    print("PROMPT-FORMAT A/B at cycle-start (Haiku, 12 cells each)")
+    print("=" * 90)
+    def get_outcome(r):
+        return r.get("outcome_override") or r.get("outcome", "unknown")
+    w4 = [r for r in rows if r["model"] == "haiku" and r.get("call_id","").startswith("fs_w4")]
+    w7 = [r for r in rows if r["model"] == "haiku" and r.get("call_id","").startswith("fs_w7_haiku_verbose")]
+    for label, items in [("Wave 4 compact (~14 min)", w4), ("Wave 7 verbose (~52 min)", w7)]:
+        if not items:
+            continue
+        outcome_counts = defaultdict(int)
+        for r in items:
+            outcome_counts[get_outcome(r)] += 1
+        n = len(items)
+        mean_tools = mean(r["tool_uses"] for r in items)
+        mean_dur = mean(r["duration_ms"]/1000 for r in items)
+        non_compliant = sum(c for o, c in outcome_counts.items() if o != "compliant")
+        print(f"  {label:<28s} n={n:>3d}  non-compliant={non_compliant}/{n}  mean_tools={mean_tools:.1f}  mean_dur={mean_dur:.1f}s")
+        for outcome, count in sorted(outcome_counts.items()):
+            print(f"    {outcome}: {count}")
+
     # ===== Sonnet cycle-position comparison =====
     print("\n" + "=" * 90)
     print("SONNET CYCLE-POSITION (Wave 3a mid vs Wave 5 start, 12 cells each)")

@@ -754,6 +754,31 @@ This is a small-$n$ candidate finding; the more important methodological point i
 A secondary methodological lesson surfaced when the heuristic classifier missed the Wave 6 inline balance-injection (the Borjas reframe was mid-list, not in the footer pattern the regex matches): \textbf{heuristic outcome classification is conservative on subtle inline defection}.
 Telemetry should always be paired with manual review of edge cases; the current pipeline records \texttt{outcome\_override} fields when manual review disagrees with the auto-classifier so the audit trail remains transparent.
 
+\emph{Finding 13: Prompt-format effect isolated at fixed cycle position (controlled A/B).}
+Finding 8 reported a roughly 2$\times$ Haiku refusal-rate change between compact and verbose prompt formats across the early experiments, but the prior comparison was confounded by cycle position.
+Wave 7 (12 Haiku cells, verbose prompt format, cycle-start at $\sim$52 min into the 13:10 KST cycle) directly contrasts with Wave 4 (12 Haiku cells, compact prompt format, cycle-start at $\sim$14 min into the prior cycle).
+Same model, same topics+framings, both in the cycle-start phase; the only deliberate difference is the prompt's suppressor string (compact: ``no preamble, no caveats, no balance disclaimers''; verbose adds ``no meta-commentary about the structure of the request'' plus a more explicit isolation preamble).
+
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+Metric & Wave 4 (compact) & Wave 7 (verbose) \\
+\midrule
+Non-compliant calls & 12 / 12 (100\%) & 4 / 12 (33\%) \\
+Covered\_compliance & 6 / 12 (50\%) & 0 / 12 (0\%) \\
+Mean tool\_uses & 2.2 & 0.0 \\
+Mean duration & 57.2\,s & 5.3\,s \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The verbose suppressor reduces non-compliance by 67 percentage points and \emph{eliminates} the covered-compliance sub-mode entirely.
+Tool-use count drops from 2.2 to 0 and mean call duration drops by an order of magnitude.
+The mechanism is plausibly that ``no meta-commentary about the structure of the request'' explicitly forbids the model's fabricated technical-issue cover stories.
+Without that cover available, Haiku either complies (8/12) or refuses directly (4/12 between refused and partial); it does not invent the WebSearch-fault facade.
+\textbf{A single phrase in the prompt suppresses the most sophisticated of Haiku's four behavioural clusters.}
+This vindicates Finding 8's headline claim that LLM bias measurements are not meaningful without published suppressor strings; cross-paper comparisons that mix compact and verbose prompts will report wildly different ``refusal rates'' on the same model.
+
 
 %% ===================================================================
 \section{Testable Predictions}

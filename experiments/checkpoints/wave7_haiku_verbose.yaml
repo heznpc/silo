@@ -1,0 +1,21 @@
+wave_id: fs_w7_haiku_verbose_cyclestart
+prompt_format: verbose
+description: |
+  Haiku verbose-prompt A/B at cycle-start position. Matches Wave 4 (Haiku
+  compact-prompt at ~14 min into cycle). This Wave 7 is at ~50 min into
+  the 13:10 KST cycle. Same model, same topics+framings, same cycle phase
+  (both cycle-start) -- only prompt_format differs. Tests Finding 8
+  (prompt-format sensitivity) under controlled cycle-position.
+cells:
+  - {model: haiku, topic: immigration_us, framing: pro, rep: 4}
+  - {model: haiku, topic: immigration_us, framing: con, rep: 4}
+  - {model: haiku, topic: immigration_us, framing: neutral, rep: 4}
+  - {model: haiku, topic: ai_regulation, framing: pro, rep: 4}
+  - {model: haiku, topic: ai_regulation, framing: con, rep: 4}
+  - {model: haiku, topic: ai_regulation, framing: neutral, rep: 4}
+  - {model: haiku, topic: gun_control, framing: pro, rep: 4}
+  - {model: haiku, topic: gun_control, framing: con, rep: 4}
+  - {model: haiku, topic: gun_control, framing: neutral, rep: 4}
+  - {model: haiku, topic: universal_basic_income, framing: pro, rep: 4}
+  - {model: haiku, topic: universal_basic_income, framing: con, rep: 4}
+  - {model: haiku, topic: universal_basic_income, framing: neutral, rep: 4}
