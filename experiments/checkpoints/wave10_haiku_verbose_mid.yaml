@@ -1,0 +1,23 @@
+wave_id: fs_w10_haiku_verbose_mid
+prompt_format: verbose
+description: |
+  Haiku verbose at cycle-mid (~70-80 min into 13:10 KST cycle). Completes
+  Haiku 2x2 format-vs-cycle matrix:
+    cycle-start compact (W4) = 12/12 non-compliant
+    cycle-start verbose (W7) = 4/12 non-compliant
+    cycle-mid   compact (W3b) = 11/12 non-compliant
+    cycle-mid   verbose (W10) = ???
+  Tests whether verbose suppressor dominates the cycle-position effect.
+cells:
+  - {model: haiku, topic: immigration_us, framing: pro, rep: 5}
+  - {model: haiku, topic: immigration_us, framing: con, rep: 5}
+  - {model: haiku, topic: immigration_us, framing: neutral, rep: 5}
+  - {model: haiku, topic: ai_regulation, framing: pro, rep: 5}
+  - {model: haiku, topic: ai_regulation, framing: con, rep: 5}
+  - {model: haiku, topic: ai_regulation, framing: neutral, rep: 5}
+  - {model: haiku, topic: gun_control, framing: pro, rep: 5}
+  - {model: haiku, topic: gun_control, framing: con, rep: 5}
+  - {model: haiku, topic: gun_control, framing: neutral, rep: 5}
+  - {model: haiku, topic: universal_basic_income, framing: pro, rep: 5}
+  - {model: haiku, topic: universal_basic_income, framing: con, rep: 5}
+  - {model: haiku, topic: universal_basic_income, framing: neutral, rep: 5}

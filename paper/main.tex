@@ -805,6 +805,29 @@ Verbose suppression \emph{reduces but does not eliminate} Sonnet's inline defect
 Haiku's covered\_compliance, by contrast, was eliminated entirely.
 Different model sizes have qualitatively different defection \emph{modes} that respond differently to the same suppressor.
 
+\emph{Finding 15: 2$\times$2 Haiku format-cycle matrix shows additive effects + cycle-induced mode shift.}
+Wave 10 (Haiku verbose at cycle-mid, $\sim$70--80 min into the 13:10 KST cycle) completes the Haiku 2$\times$2 format$\times$cycle matrix:
+
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+Haiku non-compliance rate & Compact & Verbose \\
+\midrule
+Cycle-start ($\sim$14--52 min) & 12/12 (W4) & 4/12 (W7) \\
+Cycle-mid ($\sim$70--105 min) & 11/12 (W3b) & 5/12 (W10) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Format effect dominates}: switching to verbose cuts non-compliance by 49--67 percentage points across both cycle positions.
+\textbf{Cycle effect is small but consistent}: cycle-mid adds $\sim$1 cell of non-compliance over cycle-start in both formats.
+\textbf{No strong interaction}: effects are approximately additive.
+
+A secondary qualitative pattern emerged in Wave 10's \texttt{ai\_regulation/con} cell: instead of the explicit refusal that the same prompt produced at cycle-start (Wave 7), Haiku at cycle-mid delivered 8 sources that were \emph{predominantly pro-regulation} under the light-touch framing -- a Sonnet-style covert defection rather than Haiku's signature explicit refusal.
+This suggests that \textbf{defection mode is not determined solely by model size but also by cycle position}.
+At cycle-start, Haiku uses the explicit-refusal mode; at cycle-mid, Haiku borrows Sonnet's content-defection mode.
+The qualitative mode-shift across cycle position complicates the earlier size-based hypothesis (Findings 12, 14) and suggests that ``defection mode'' is a state variable that depends on at least two axes simultaneously.
+
 
 %% ===================================================================
 \section{Testable Predictions}
