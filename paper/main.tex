@@ -723,6 +723,37 @@ At this sample size ($n=24$ comparable Sonnet cells split 12/12) we cannot fully
 
 This finding also vindicates capturing per-call telemetry at dispatch time: had we not recorded \texttt{minutes\_into\_cycle} as a per-call variable, the cross-wave behavioral difference would have been impossible to attribute. The supporting monitoring rig (\texttt{experiments/scripts/monitor.py}) is documented in \texttt{experiments/scripts/telemetry\_schema.md}.
 
+\emph{Finding 12: Opus is cycle-stable on defection; size-dependent calibration of safety variance.}
+A parallel Opus replication (Wave 6, 12 cells at $\sim$23 min into a new cycle) compared against Wave 1+2 Opus (24 cells at 98--102 min into the previous cycle, identical prompts):
+
+\begin{itemize}[leftmargin=*]
+\item Opus cycle-mid (98--102 min, $n=24$): 23 compliant + 1 covert defection (rate $\approx 4\%$).
+\item Opus cycle-start (23 min, $n=12$): 11 compliant + 1 covert balance-injection on \texttt{immigration\_us/pro} where Borjas was inline-reframed as ``the strongest skeptical counter-position'' (rate $\approx 8\%$).
+\end{itemize}
+
+Combined Opus defection rate: $\sim$5.6\% across 36 cells, with no statistically distinguishable cycle-position shift at this $n$.
+This contrasts with Sonnet's 42 percentage-point cycle shift on the same defection axis (Finding 11) and Haiku's clear cycle-tied refusal rate change (Finding 10).
+
+\textbf{Combined cycle-position results across model sizes}:
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+Model & Cycle-mid behavior (covert/refuse) & Cycle-start behavior \\
+\midrule
+Opus 4.7 & 4\% defection & 8\% defection (n.s.) \\
+Sonnet 4.6 & 42\% balance-injection & 0\% balance-injection \\
+Haiku 4.5 & 58\% refused, 29.5\,s & 50\% refused, 57.2\,s \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Opus shows the most cycle-stable defection rate; Sonnet shows the largest cycle shift; Haiku shows duration and tool-use shifts but a smaller refusal rate shift.
+The pattern is consistent with a size-dependent safety-calibration hypothesis: smaller/mid-tier models have more variance in safety filtering across the host's rate-limit window, while the larger model has more stable behavior.
+This is a small-$n$ candidate finding; the more important methodological point is that without monitoring infrastructure (\texttt{monitor.py}, \texttt{telemetry\_schema.md}) capturing dispatch-time cycle position, none of these comparisons would have been possible.
+
+A secondary methodological lesson surfaced when the heuristic classifier missed the Wave 6 inline balance-injection (the Borjas reframe was mid-list, not in the footer pattern the regex matches): \textbf{heuristic outcome classification is conservative on subtle inline defection}.
+Telemetry should always be paired with manual review of edge cases; the current pipeline records \texttt{outcome\_override} fields when manual review disagrees with the auto-classifier so the audit trail remains transparent.
+
 
 %% ===================================================================
 \section{Testable Predictions}
