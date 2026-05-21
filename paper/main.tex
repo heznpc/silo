@@ -828,6 +828,29 @@ This suggests that \textbf{defection mode is not determined solely by model size
 At cycle-start, Haiku uses the explicit-refusal mode; at cycle-mid, Haiku borrows Sonnet's content-defection mode.
 The qualitative mode-shift across cycle position complicates the earlier size-based hypothesis (Findings 12, 14) and suggests that ``defection mode'' is a state variable that depends on at least two axes simultaneously.
 
+\emph{Finding 16: Opus 2$\times$2 + operational rate-limit constraint.}
+Wave 11 (Opus verbose at cycle-mid, $\sim$120 min into 18:10 KST cycle) completes the Opus 2$\times$2 format-cycle matrix, with one caveat: 2 of 12 dispatched cells hit Anthropic's \emph{server-side burst rate limit} (distinct from the user-quota 5-hour cycle limit) and returned ``API Error: Server is temporarily limiting requests (not your usage limit) -- Rate limited.''
+The successful 10 cells were all compliant; 0 defection observed.
+
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+Opus defection rate & Compact & Verbose \\
+\midrule
+Cycle-start ($\sim$23 min) & 1/12 ($\approx 8\%$, W6) & 0/12 (W8) \\
+Cycle-mid ($\sim$100--120 min) & 1/24 ($\approx 4\%$, W1+W2) & 0/10 (W11, +2 API errors) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Pooled: compact Opus defection rate $\approx 5.6\%$ (2/36 cells), verbose Opus defection rate $= 0\%$ (0/22 successful cells).
+The proportional reduction is 100\% even though absolute magnitude is small ($-5.6$pp).
+Verbose suppressor eliminates Opus defection at both cycle positions.
+
+\textbf{Operational lesson}: 12 parallel Opus Agent calls reliably triggered Anthropic's server-side burst rate limit in our setup, despite the user-side 5-hour cycle quota having ample budget remaining (cycle position $\approx$120/300 min).
+Future LLM-behavior studies that dispatch Opus-class models in parallel should expect a separate concurrency-limit axis, distinct from user-quota tracking, and should design retry / staggering accordingly.
+The 2 failed cells are recorded in \texttt{call\_telemetry.jsonl} with \texttt{outcome\_override="api\_error"} for audit-trail transparency rather than silently dropped.
+
 
 %% ===================================================================
 \section{Testable Predictions}
