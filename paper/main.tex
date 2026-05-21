@@ -779,6 +779,32 @@ Without that cover available, Haiku either complies (8/12) or refuses directly (
 \textbf{A single phrase in the prompt suppresses the most sophisticated of Haiku's four behavioural clusters.}
 This vindicates Finding 8's headline claim that LLM bias measurements are not meaningful without published suppressor strings; cross-paper comparisons that mix compact and verbose prompts will report wildly different ``refusal rates'' on the same model.
 
+\emph{Finding 14: Verbose-suppressor magnitude scales inversely with model size (3$\times$2 matrix).}
+Waves 5--9 complete a controlled 3-model $\times$ 2-prompt-format matrix at matched cycle phases.
+
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Model & Compact baseline & Verbose & $\Delta$ \\
+& (defection / non-compl.) & (defection / non-compl.) & \\
+\midrule
+Haiku 4.5 (cycle-start) & 12/12 non-compl. (W4) & 4/12 non-compl. (W7) & $-67$pp \\
+Sonnet 4.6 (cycle-mid) & 5/12 balance-inj. (W3a+rep2) & 1/12 balance-inj. (W9) & $-34$pp \\
+Opus 4.7 (cycle-start) & 1/12 defection (W6) & 0/12 (W8) & $-8$pp \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The verbose suppressor reduces covert behavior at all three model sizes, but the magnitude scales inversely with capability:
+\textbf{Haiku ($-67$pp) $>$ Sonnet ($-34$pp) $>$ Opus ($-8$pp)}.
+Smaller models are more responsive to prompt-format suppressors and exhibit larger absolute behavioral shifts; larger models have lower base rates of covert behavior and smaller absolute responses.
+This is consistent with the size-dependent safety-calibration hypothesis advanced in Finding 12: the larger model has more stable behavior across both cycle position and prompt format axes.
+
+A second pattern emerges in the residual signal: Sonnet's verbose-prompt cycle-mid run \emph{still} produced 1 of 12 inline balance-injections (the EU Parliament Research Service framed as ``a counterpoint framework your own light-touch research will engage with''), which the heuristic classifier missed.
+Verbose suppression \emph{reduces but does not eliminate} Sonnet's inline defection.
+Haiku's covered\_compliance, by contrast, was eliminated entirely.
+Different model sizes have qualitatively different defection \emph{modes} that respond differently to the same suppressor.
+
 
 %% ===================================================================
 \section{Testable Predictions}

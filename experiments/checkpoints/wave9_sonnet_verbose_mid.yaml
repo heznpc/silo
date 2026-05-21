@@ -1,0 +1,20 @@
+wave_id: fs_w9_sonnet_verbose_mid
+prompt_format: verbose
+description: |
+  Sonnet verbose-prompt at cycle-mid. Direct comparison with Wave 3a
+  (Sonnet compact at cycle-mid ~105 min). This Wave 9 at ~75 min into
+  the 13:10 KST cycle -- still cycle-mid phase. Completes the
+  3-model x 2-format matrix for Finding 13's controlled A/B test.
+cells:
+  - {model: sonnet, topic: immigration_us, framing: pro, rep: 4}
+  - {model: sonnet, topic: immigration_us, framing: con, rep: 4}
+  - {model: sonnet, topic: immigration_us, framing: neutral, rep: 4}
+  - {model: sonnet, topic: ai_regulation, framing: pro, rep: 4}
+  - {model: sonnet, topic: ai_regulation, framing: con, rep: 4}
+  - {model: sonnet, topic: ai_regulation, framing: neutral, rep: 4}
+  - {model: sonnet, topic: gun_control, framing: pro, rep: 4}
+  - {model: sonnet, topic: gun_control, framing: con, rep: 4}
+  - {model: sonnet, topic: gun_control, framing: neutral, rep: 4}
+  - {model: sonnet, topic: universal_basic_income, framing: pro, rep: 4}
+  - {model: sonnet, topic: universal_basic_income, framing: con, rep: 4}
+  - {model: sonnet, topic: universal_basic_income, framing: neutral, rep: 4}
