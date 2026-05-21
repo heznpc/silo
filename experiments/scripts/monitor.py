@@ -350,6 +350,77 @@ def cmd_harvest(args):
         print(f"  {o}: {c}")
 
 
+def cmd_dashboard(_args):
+    """Single-screen status + per-wave outcome distribution + running cost.
+
+    Designed to be pasted into chat after every wave so the user sees
+    monitoring state without opening JSONL files.
+    """
+    now, start, mins = cycle_pos_now()
+    next_reset = start + CYCLE
+
+    rows = []
+    if TELE_PATH.exists():
+        for line in open(TELE_PATH):
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                r = json.loads(line)
+                if "_comment" in r:
+                    continue
+                rows.append(r)
+            except Exception:
+                pass
+
+    def get_outcome(r):
+        return r.get("outcome_override") or r.get("outcome") or r.get("status") or "?"
+
+    # By wave
+    from collections import defaultdict, Counter
+    by_wave = defaultdict(list)
+    for r in rows:
+        wave = r.get("wave") or r.get("call_id", "?").split(":")[0]
+        by_wave[wave].append(r)
+
+    # Cost
+    PRICES_BLEND = {"opus": 39.0, "sonnet": 7.8, "haiku": 2.08}
+    total_cost = 0.0
+    by_model_cost = defaultdict(float)
+    for r in rows:
+        m = r.get("model", "")
+        toks = r.get("total_tokens", 0)
+        c = toks * PRICES_BLEND.get(m, 0) / 1_000_000
+        total_cost += c
+        by_model_cost[m] += c
+
+    pending = sum(1 for r in rows if r.get("status") == "dispatched_pending_response")
+    harvested = sum(1 for r in rows if r.get("status") == "harvested" or r.get("outcome") or r.get("outcome_override"))
+
+    print("=" * 72)
+    print(f"SILO MONITORING DASHBOARD  ({now.strftime('%Y-%m-%d %H:%M:%S KST')})")
+    print("=" * 72)
+    print(f"Cycle:   {start.strftime('%H:%M')}-{next_reset.strftime('%H:%M')}  "
+          f"(now {mins:.0f}/300 min, {(next_reset - now)} to reset)")
+    print(f"Calls:   {len(rows)} total telemetry records, "
+          f"{harvested} harvested, {pending} pending")
+    print(f"Cost:    ~${total_cost:.2f}  "
+          f"(opus ${by_model_cost.get('opus',0):.2f} / sonnet ${by_model_cost.get('sonnet',0):.2f} / haiku ${by_model_cost.get('haiku',0):.2f})")
+    print()
+    print(f"{'wave':<40s} {'n':>3s} {'compl':>5s} {'covered':>7s} {'refused':>7s} {'partial':>7s} {'defect':>6s} {'balinj':>6s}")
+    print("-" * 90)
+    for wave, items in sorted(by_wave.items()):
+        outcomes = Counter(get_outcome(r) for r in items)
+        n = len(items)
+        print(f"{wave:<40s} {n:>3d} "
+              f"{outcomes.get('compliant',0):>5d} "
+              f"{outcomes.get('covered_compliance',0):>7d} "
+              f"{outcomes.get('refused',0):>7d} "
+              f"{outcomes.get('partial_refused',0):>7d} "
+              f"{outcomes.get('covert_defection',0):>6d} "
+              f"{outcomes.get('covert_balance_injection',0):>6d}")
+
+
 def cmd_classify(args):
     text = open(args.path).read() if Path(args.path).exists() else args.path
     print(classify(text, args.tool_uses))
@@ -371,6 +442,9 @@ def main():
     p_harv.add_argument("wave_id")
     p_harv.add_argument("responses")
     p_harv.set_defaults(func=cmd_harvest)
+
+    p_dash = sub.add_parser("dashboard")
+    p_dash.set_defaults(func=cmd_dashboard)
 
     p_cls = sub.add_parser("classify")
     p_cls.add_argument("path")
