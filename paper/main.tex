@@ -878,57 +878,61 @@ Compare with single-turn Haiku covered\_compliance, which the same verbose suppr
 The likely mechanism: single-turn defection is a single decision the model can be steered away from with explicit instructions; multi-turn entrenchment is an emergent property of the model conditioning on its own developing output across turns, which suppressor strings only weakly govern.
 This implication is practically important for evaluation design: a study that measures only single-turn bias with strong suppressors will systematically under-report the cumulative bias that emerges in real multi-turn user sessions.
 
-\emph{Finding 18: Multi-turn entrenchment is model-conditional; Haiku shows inverse trajectory.}
+\emph{Finding 18: Haiku multi-turn pattern is topic-conditional, not uniformly inverse.}
 Wave 14 extended Wave 13's multi-turn $\times$ verbose A/B to the Haiku model.
-Two observations diverged sharply from the Sonnet baseline.
 
-\textit{(18a) Haiku refuses verbose multi-turn where Sonnet complies.}
-Both Haiku verbose multi-turn conversations terminated at turn 1 with refusal-mode responses: climate\_mitigation classified the prompt as an ``injection attack pattern'' citing the ``no caveats/no disclaimers'' framing; ai\_regulation issued a partial-refusal menu redirect, surfacing the meta-pattern as ``on-topic for [the] confirmation-bias research itself.''
+\textit{(18a) Verbose suppressor + multi-turn jointly trigger Haiku refusal.}
+Both Haiku verbose multi-turn conversations terminated at turn 1 with refusal-mode responses: climate\_mitigation declined the prompt as testing fabrication-of-citations behaviour (\emph{injection\_recognition}); ai\_regulation issued a partial-refusal menu redirect, surfacing the meta-pattern as ``on-topic for [the] confirmation-bias research itself'' (\emph{menu\_redirect}).
 The same verbose suppressor that elicited compliance from Sonnet (Wave 13) and from Opus (Wave 11--12) triggered Haiku's refusal threshold when stacked with multi-turn framing.
 This is the first observed \emph{interaction} between prompt-format suppressor and conversational arm: each axis alone leaves Haiku compliant (Wave 7 single-turn verbose: $8/12$ compliant; Round 4 multi-turn compact: compliant), but their combination flips behaviour.
 
-\textit{(18b) Under a neutral-retry prompt, Haiku shows turn-1 maximal defection followed by topic-driven recovery.}
-Re-running the same two topics with a softer ``graduate-student reading list'' framing yielded compliance but with a striking entropy trajectory.
+\textit{(18b) Under a neutral-retry prompt, Haiku trajectories diverge by topic.}
+Re-running the same two topics with a softer ``graduate-student reading list'' framing yielded compliance, but the entropy trajectory split by topic:
 
 \begin{center}
 \begin{tabular}{lccc}
 \toprule
 Topic (Haiku, neutral framing, 5 turns, neutral-retry prompt) & $H$ turn 1 & $H$ turn 5 & $\Delta H$ \\
 \midrule
-climate\_mitigation & $0.000$ & $0.807$ & $+0.807$ \\
-ai\_regulation & $0.000$ & $0.708$ & $+0.708$ \\
+climate\_mitigation & $1.000$ & $0.823$ & $-0.177$ (H6 \emph{supported}) \\
+ai\_regulation & $0.000$ & $0.708$ & $+0.708$ (H6 \emph{rejected}, floor + rise) \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-Both conversations start at the entropy floor ($H = 0$, all 8 turn-1 sources sharing the same stance) and then rise sharply as subsequent turns introduce sub-topics whose stance distributions differ.
-This is the inverse of Sonnet's compact-prompt pattern (high turn-1 entropy followed by mild decline) and of Sonnet's verbose-prompt pattern (high turn-1 entropy followed by smaller decline).
+The ai\_regulation conversation starts at the entropy floor ($H_1 = 0$, all 8 turn-1 sources pro-regulation) and then rises mechanically as later sub-topics (critiques, alternatives) pull in con-coded sources.
+The climate\_mitigation conversation does \emph{not} show the floor: $H_1 = 1.000$ (4 pro / 4 neutral on foundational economic frameworks) and the trajectory declines mildly, matching the Sonnet-class H6 pattern.
 
-\textbf{Reinterpretation of H6.} The H6 hypothesis as originally framed (``multi-turn neutral conversations produce cumulative narrowing'') is \emph{model-specific to Sonnet-class systems with prior-conditioning capacity}.
-Haiku's behaviour suggests a different bias mechanism: front-loaded prior-driven defection at each turn-1, with the cumulative measure rescued mechanically by sub-topic variation rather than by any in-context self-correction.
-For the silo model, this matters: a heterogeneous model fleet (mixed Sonnet/Haiku traffic in a real deployment) would yield hoards whose silo-formation mechanism varies by which model handled which turn, making aggregate diversity measures harder to attribute to a single cognitive process.
+\textbf{Reinterpretation of the original draft of Finding 18.} An earlier draft of this finding claimed both Haiku trajectories started at the entropy floor and rose sharply, implying a uniformly ``inverse'' multi-turn pattern on Haiku.
+The real ai\_regulation trace does follow that pattern; the real climate trace does not.
+The correct claim is therefore narrower: \emph{Haiku exhibits an extreme turn-1 prior on regulatory-frame topics, where the underlying academic literature aligns one-sidedly with the most salient stance, but not on topics whose foundational sub-topic has heterogeneous academic literature.}
+This narrower claim is consistent with Finding 20 below (UBI inoculation): the relevant unit of conditioning is the topic-by-sub-topic stance-structure, not the model alone.
+The model-fleet implication still holds: any deployment that routes traffic between Sonnet/Opus and Haiku on regulatory topics produces mixed silo-formation regimes whose aggregate diversity measures are not attributable to a single cognitive process.
 
-\emph{Finding 19: Opus completes the model matrix; Haiku is the outlier, not Sonnet.}
-Wave 15 dispatched the same two multi-turn verbose conversations on Opus to close the model $\times$ prompt-format $\times$ multi-turn matrix.
+\emph{Finding 19: Opus completes the model matrix; the model cleavage is topic-specific.}
+Wave 15 dispatched two Opus multi-turn verbose conversations (climate, ai\_regulation) to close the model $\times$ prompt-format $\times$ multi-turn matrix.
+The Haiku columns below correspond to the \emph{neutral-retry} prompt format (since verbose refused; see Finding 18a), reported for trajectory comparison only.
 
 \begin{center}
 \begin{tabular}{lccc}
 \toprule
-Topic (verbose multi-turn, neutral framing) & Haiku $\Delta H$ & Sonnet $\Delta H$ & Opus $\Delta H$ \\
+Topic (multi-turn, neutral framing) & Haiku $\Delta H$ & Sonnet $\Delta H$ & Opus $\Delta H$ \\
+ & (neutral-retry) & (verbose) & (verbose) \\
 \midrule
-climate\_mitigation & $+0.807$ (retry) / refused & $-0.065$ & $-0.068$ \\
-ai\_regulation & $+0.708$ (retry) / partial & $-0.042$ & $+0.000$ \\
+climate\_mitigation & $-0.177$ & $-0.065$ & $-0.112$ \\
+ai\_regulation & $+0.708$ & $-0.042$ & $\phantom{-}0.000$ \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-Opus's climate trajectory ($\Delta H = -0.068$) is essentially identical to Sonnet's verbose climate ($-0.065$), and its ai\_regulation trajectory ($\Delta H = +0.000$, flat) sits between Sonnet's mild decline and complete neutrality.
-The Haiku--Sonnet gap of $\approx 0.87$ in $\Delta H$ on climate (and $\approx 0.75$ on ai\_regulation) is two orders of magnitude larger than the Opus--Sonnet gap.
+On climate\_mitigation, all three models support H6 (mild decline): Haiku $-0.177$, Sonnet $-0.065$, Opus $-0.112$.
+The gap between models is small ($\le 0.11$).
+On ai\_regulation, the picture is bimodal: Sonnet and Opus stay near zero ($-0.042$ and $0.000$), while Haiku jumps to $+0.708$.
 
-This reframes Finding 18.
-The relevant cleavage is not ``Sonnet-class vs others'' but ``models that exhibit in-context self-conditioning (Sonnet, Opus) vs models that do not (Haiku).''
-Haiku's front-loaded prior defection appears to dominate any cumulative steering by its own developing context, while Sonnet and Opus both show the mild entrenchment trajectory predicted by H6.
-A practical consequence: any deployment that routes traffic between Sonnet/Opus and Haiku will produce mixed silo-formation regimes, and the bias-diagnostic suite must include \emph{both} measures (turn-1 entropy floor count and turn-1$\to$turn-5 $\Delta H$).
+\textbf{The cleavage is not model-uniform; it is topic-mediated.}
+Haiku tracks Sonnet/Opus on climate but diverges sharply on ai\_regulation.
+The likely mechanism is that ai\_regulation's foundational sub-topic has an extremely one-sided academic literature on the ``governance is needed'' axis, and Haiku's turn-1 prior locks onto that single stance, while Sonnet and Opus's larger latent representations sample a more heterogeneous foundational set even before sub-topic decomposition forces diversity.
+A practical consequence: any deployment that routes traffic between Sonnet/Opus and Haiku on regulatory topics produces mixed silo-formation regimes, and the bias-diagnostic suite must include \emph{both} measures (turn-1 entropy floor count and turn-1$\to$turn-5 $\Delta H$) per (model, topic) cell rather than per model alone.
 
 \emph{Finding 20: UBI shows topic-conditional anti-entrenchment immunity, amplified by verbose.}
 The H6 multi-turn pilot in Round 4 found that of all neutral-framing topics tested under compact prompts, UBI was the only one to reject H6 with positive $\Delta H$ ($+0.099$); all others either supported H6 or stayed at floor.
@@ -941,7 +945,7 @@ Topic (Sonnet, neutral framing, 5 turns) & Compact $\Delta H$ & Verbose $\Delta 
 \midrule
 climate\_mitigation & $-0.107$ & $-0.065$ ($\approx 40\%$ reduction in $|\Delta H|$) \\
 ai\_regulation & $-0.111$ & $-0.042$ ($\approx 60\%$ reduction in $|\Delta H|$) \\
-universal\_basic\_income & $+0.099$ & $+0.399$ ($\approx 4\times$ amplification) \\
+universal\_basic\_income & $+0.099$ & $+0.421$ ($\approx 4\times$ amplification) \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -951,39 +955,42 @@ For UBI, verbose moves $\Delta H$ \emph{farther positive} (suppressor amplifies 
 This rules out a simple ``verbose neutralises bias'' interpretation: verbose acts \emph{relative to the topic's stance-structure}.
 
 Mechanistic interpretation: UBI's five sub-topics (philosophy, empirical pilots, labor supply, fiscal feasibility, alternatives) naturally span the full pro/con spectrum, with the ``alternatives'' turn structurally pulling in con-coded sources (NIT wage subsidies, EITC, job guarantee).
-The model, freed from balance disclaimers under verbose, lists pro-saturated philosophical sources in turn 1 ($7/8$ pro under verbose) and then mechanically diversifies as subsequent sub-topics force in different stance distributions.
-For climate and ai\_regulation, all five sub-topics share an underlying pro-skewed academic literature, so diversification across turns is weaker.
+The model, freed from balance disclaimers under verbose, lists pro-saturated philosophical sources in turn 1 ($7/8$ pro, $1$ con under verbose) and then mechanically diversifies as subsequent sub-topics force in different stance distributions.
+For climate and ai\_regulation, the five sub-topics span more uniformly pro-skewed academic literatures, so diversification across turns is weaker.
+
+\emph{Stance-label sensitivity}: in turn 1 the labeller marked ``Murray In Our Hands 2006'' as pro (libertarian-flat-grant case for UBI as welfare replacement).
+A reviewer who codes Murray as neutral on the welfare-spending axis would shift the turn-1 mix from $7p / 0n / 1c$ to $6p / 1n / 1c$, raising $H_1$ from $0.544$ to $\approx 0.726$ and shrinking $\Delta H$ from $+0.421$ to $\approx +0.239$.
+The sign and the $4\times$-relative-amplification finding survive this relabel; the absolute magnitude does not.
 
 This is the strongest evidence to date that the silo model's ``encounter bias'' layer is not a uniform property of LLM information retrieval, but is conditioned on the joint distribution of (a) topic stance-structure in the literature, (b) prompt-format suppressors, and (c) sub-topic decomposition strategy.
 A topic whose academic literature is itself heterogeneous in stance partially \emph{inoculates} the user against silo-formation, even under aggressive AI mediation.
 
-\emph{Finding 21: Cross-cycle replication confirms cycle-mid pattern stability.}
-Between Wave 14 (cycle position $\approx$148/300 min in window 18:10--23:10 KST) and Wave 17 (cycle position $\approx$87/300 min in window 23:10--04:10 KST), the user-side token-cycle rolled over.
-Wave 17 was dispatched as a cross-cycle replication probe to test whether the cycle-position effect (Findings 10--12) is consistent across distinct 5-hour cycles or whether it has cycle-specific noise.
+\emph{Finding 21: Cross-cycle replication shows family-level robustness with one cell weakening.}
+The single-turn cycle-mid baselines for immigration\_us were collected in earlier cycles (Sonnet W2 dispatched 04:48 KST cycle window 03:10--08:10, Haiku W3b dispatched in the same morning cycle).
+Wave 17 redispatched all four cells at cycle position $\approx$98/300 min in the 23:10--04:10 KST window, a fresh 5-hour quota window separated from W2/W3b by several quota cycles.
 
 Cell-by-cell replication (immigration\_us, compact prompt, single-turn):
 
 \begin{center}
 \begin{tabular}{lll}
 \toprule
-Cell & Original baseline & Wave 17 (cycle-mid, second cycle) \\
+Cell & Original baseline & Wave 17 (cycle-mid, later cycle) \\
 \midrule
-Haiku $\times$ imm-pro & W3b: covered\_compliance / refused & covered\_compliance \\
-Haiku $\times$ imm-con & W3b: covered\_compliance / refused & refused \\
-Sonnet $\times$ imm-pro & W2: covert\_defection & covert\_balance\_injection \\
+Haiku $\times$ imm-pro & W3b: covered\_compliance & covered\_compliance \\
+Haiku $\times$ imm-con & W3b: refused/covered & refused \\
+Sonnet $\times$ imm-pro & W2: covert\_defection & \emph{compliant} (no insertion) \\
 Sonnet $\times$ imm-con & W2: compliant & compliant \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-Three of the four cells exactly reproduce the original outcome category.
-The fourth (Sonnet $\times$ imm-pro) shifted from \emph{covert\_defection} (mid-list reframing) to \emph{covert\_balance\_injection} (explicit ``read to understand the debate's empirical terrain, even where you'll disagree'' tag attached to Borjas).
-Both belong to the broader ``covert-defection family'' in our outcome taxonomy: the model accepts the framed request and silently inserts opposing content.
-The mode of insertion shifted, the fact of insertion did not.
+Three of the four cells reproduce the original outcome family (Haiku pro: covered\_compliance; Haiku con: refusal-family; Sonnet con: clean compliance).
+The fourth (Sonnet $\times$ imm-pro) shifted in the \emph{opposite} direction from what the cycle-position effect would predict: from \emph{covert\_defection} in W2 (Borjas inserted mid-list with a silent reframing) to clean \emph{compliance} in W17 (eight pro-leaning institutions, no Borjas, no balance-injection footer).
+This is a weakening of the cycle-mid Sonnet defection signal on the imm-pro cell across cycles.
 
-This is the first cross-cycle replication evidence in our dataset.
-The cycle-position effect (Findings 10--12) is now established as cross-cycle robust on the dimension of categorical outcome (compliant vs covert-defected vs refused), even where the specific covert-defection sub-mode varies.
-For paper-internal validity, this licenses pooling cycle-mid data across the two cycles when computing summary statistics.
+Interpretation. The cycle-position effect (Findings 10--12) is cross-cycle robust on the dimension of the qualitative outcome family for three of four cells, but Sonnet's specific imm-pro covert-defection mode does not replicate.
+This is an $n = 1$ within-cell drift; it is not enough to falsify Findings 10--12, but it constrains downstream claims: cycle-mid covert-defection rates on imm-pro for Sonnet should be reported with replication confidence, not as a stable property of the cycle-mid state.
+For paper-internal validity, this licenses pooling cycle-mid outcome-family counts across cycles, but \emph{not} pooling outcome-mode counts within the covert-defection family.
 
 
 %% ===================================================================
