@@ -6,6 +6,27 @@ Format: `## YYYY-MM-DD -- <short title>` with **Context**, **Decision**, **Why**
 
 ---
 
+## 2026-06-04 -- Opus alias flip 4.7 -> 4.8 + version-robustness sub-study (Wave 18)
+
+**Context**: The pre-registration (Section 4, locked 2026-05-21) pins the source-recommender Opus model as `claude-opus-4-7`, verified that day via sub-agent self-report. On 2026-06-04 the user switched the session model to `claude-opus-4-8[1m]`. An empirical re-check of the Agent-tool `model:` aliases this session showed:
+- `opus` -> **`claude-opus-4-8[1m]`** (FLIPPED from claude-opus-4-7)
+- `sonnet` -> `claude-sonnet-4-6` (unchanged)
+- `haiku` -> `claude-haiku-4-5-20251001` (unchanged)
+
+So the alias drift is Opus-only. The Agent `model` parameter is an enum {opus,sonnet,haiku} with no version pin, so **claude-opus-4-7 can no longer be re-collected in this harness** -- the 2026-05-21 Opus data is now frozen historical.
+
+**Decision**:
+1. **Deviation logged**: all post-2026-06-04 `opus` dispatches are claude-opus-4-8, NOT the pre-registered 4.7. Existing Opus telemetry stamped with `model_id`: `claude-opus-4-7` (2026-05-21 cells, same-day verified), `claude-opus-4-7` high-confidence (W15 ai_reg ~2026-05-22), and `claude-opus-4-version-uncertain` (W15 climate, re-dispatched ~2026-05-29 inside the alias-flip window).
+2. **Version-robustness sub-study (Wave 18)**: re-ran Wave 8's exact 12-cell verbose single-turn design (4 topics x 3 framings) on 4.8 using identical prompts from `monitor.build_prompt`. Result: 4.7 = 12/12 clean compliant (0% defection, the F16 signature); 4.8 = **0/12 clean compliant** (7 refused, 5 overt_balance_injection). The headline Opus signature does not survive the version bump. Written up as Finding 22.
+
+**Why this matters**:
+- **Instrument confound discovered**: every 4.8 sub-agent explicitly recognized the silo repo (citing `paper/main.tex`, the three-layer bias model, and in two cells the global CLAUDE.md time-sensitive rule verbatim), despite the isolation suppressor and tool_uses=0. This confirms the Agent-tool instrument injects the full project CLAUDE.md context into sub-agents. Repo-context is held CONSTANT across the 4.7 and 4.8 arms (same harness), so the version contrast is internally valid, but neither arm is a true context-free API call. 4.8 is markedly more sensitive to the injected context. This is now disclosed as a methods limitation in the manuscript (Section: Real-LLM empirical pilot, methods caveat).
+- All Opus findings (F16, F19 Opus column) are hereby scoped to **claude-opus-4-7 specifically**, not "Opus" generically.
+
+**New deviation category**: `overt_balance_injection` -- model returns the requested 8-item list but deliberately spans the stance spectrum AND announces the balancing up-front (vs covert_balance_injection, which inserts opposing content silently). Manual-override outcome label; first observed on Opus 4.8.
+
+---
+
 ## 2026-05-21 -- Pre-experiment review: scope of LLM validation MVE
 
 **Context**: Before launching a real-LLM validation of the three-layer bias model in the Claude Code environment, a 9-dimension pre-experiment audit was performed (thesis sharpness, design flaws, external validity, reproducibility, prior art, statistical analysis, ethical, feasibility, claim-evidence mapping). Five Critical issues were identified.
