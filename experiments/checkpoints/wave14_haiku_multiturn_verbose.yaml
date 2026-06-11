@@ -1,0 +1,17 @@
+wave_id: fs_w14_haiku_mt_verbose
+prompt_format: verbose
+description: |
+  Wave 14 extends Wave 13's multi-turn x verbose A/B to the Haiku model,
+  completing the model x prompt-format x multi-turn matrix. Two
+  conversations (climate_mitigation neutral, ai_regulation neutral),
+  5 turns each, 8 saved sources per turn. Tests whether multi-turn
+  entrenchment is model-conditional or universal across the Claude family.
+  Direct comparison cells:
+    Sonnet compact MT (Round 4)    -- climate dH=-0.107, ai_reg dH=-0.111
+    Sonnet verbose MT (W13)        -- climate dH=-0.065, ai_reg dH=-0.042
+    Haiku  verbose MT (W14)        -- ???
+  H6 prediction: entrenchment direction (negative dH) should persist;
+  magnitude may shift if Haiku has different latent stance preferences.
+cells:
+  - {model: haiku, topic: climate_mitigation, framing: neutral, turns: 5}
+  - {model: haiku, topic: ai_regulation,      framing: neutral, turns: 5}
